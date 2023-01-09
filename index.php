@@ -189,11 +189,11 @@ session_start();
                                         </form>
                                     </td>
                                     <?php
-                                    //Price
-                                    echo "<td>" . round($item['Price'] / $_SESSION['rate'], 2) . " USD</td>";
-                                    //Subtotal
-                                    echo "<td>" . transferNumber(round($item['Price'] / $_SESSION['rate'] * $_SESSION['NumCart'][$j], 2)) . " USD</td>";
-                                    $pay += $item['Price'] / $_SESSION['rate'] * $_SESSION['NumCart'][$j];
+                                //Price
+                                echo "<td>" . transferNumber(round($item['Price'] * $_SESSION['rate'])) . " VND</td>";
+                                //Subtotal
+                                echo "<td>" . transferNumber(round($item['Price'] * $_SESSION['rate']) * $_SESSION['NumCart'][$j])  . " VND</td>";
+                                $pay += round($item['Price'] * $_SESSION['rate']) * $_SESSION['NumCart'][$j];
                                     ?>
 
                                     <td>
@@ -216,7 +216,7 @@ session_start();
 
                     <!-- Total -->
                     <div class="totalPay">
-                        <p>Total: <span style="color:red;"><?php echo transferNumber($pay)  ?> USD</span> </p>
+                        <p>Total: <span style="color:red;"><?php echo transferNumber($pay)  ?> VND</span> </p>
                     </div>
 
                     <!-- Checkout -->
@@ -503,7 +503,6 @@ session_start();
             $_SESSION['NumCart'] = array();
             $_SESSION['StoreID'] = 0;
             $_SESSION['page_number'] = 1;
-
             ///Call api to get transfer rate
             {
                 $url = "https://portal.vietcombank.com.vn/Usercontrols/TVPortal.TyGia/pXML.aspx?b=10";
@@ -579,10 +578,10 @@ session_start();
                             </td>
                             <?php
                             //Price
-                            echo "<td>" . round($item['Price'] / $_SESSION['rate'], 2) . " USD</td>";
+                            echo "<td>" . transferNumber(round($item['Price'] * $_SESSION['rate'])) . " VND</td>";
                             //Subtotal
-                            echo "<td>" . transferNumber(round($item['Price'] / $_SESSION['rate'] * $_SESSION['NumCart'][$j], 2)) . " USD</td>";
-                            $pay += $item['Price'] / $_SESSION['rate'] * $_SESSION['NumCart'][$j];
+                            echo "<td>" . transferNumber(round($item['Price'] * $_SESSION['rate']) * $_SESSION['NumCart'][$j])  . " VND</td>";
+                            $pay += round($item['Price'] * $_SESSION['rate']) * $_SESSION['NumCart'][$j];
                             ?>
 
                             <td>
@@ -605,7 +604,7 @@ session_start();
 
             <!-- Total -->
             <div class="totalPay">
-                <p>Total: <span style="color:red;"><?php echo transferNumber($pay)  ?> USD</span> </p>
+                <p>Total: <span style="color:red;"><?php echo transferNumber($pay)  ?> VND</span> </p>
             </div>
 
             <!-- Checkout -->
@@ -798,10 +797,10 @@ session_start();
                 return "invalid value";
             } else {
                 if (!$pma && !$pmi) return "";
-                else if ($pmi && !$pma) return "(a.price>=" . floor($pmi) * $rate . ") AND";
-                else if (!$pmi && $pma) return "(a.price<=" . ($pma + 0.005) * $rate . ") AND";
+                else if ($pmi && !$pma) return "(a.price>=" . $pmi/ $rate . ") AND";
+                else if (!$pmi && $pma) return "(a.price<=" . $pma/ $rate . ") AND";
                 else
-                    return "(a.price>=" . floor($pmi) * $rate . " AND a.price<=" . ($pma + 0.005) * $rate . ") AND";
+                    return "(a.price>=" . $pmi / $rate . " AND a.price<=" . $pma / $rate     . ") AND";
             }
         }
         function filterPublic($p)
@@ -906,7 +905,7 @@ session_start();
                             <!-- name -->
                             <p style="color:black; font-size: 100%; margin-top:0px;height:3%"><?php echo $item['Product']; ?></p>
                             <!-- price -->
-                            <p style="font-weight:bold; color: black;margin-top:0px;height:3% "><?php echo round($item['Price'] / $_SESSION['rate'], 2); ?> USD</p>
+                            <p style="font-weight:bold; color: black;margin-top:0px;height:3% "><?php echo TransferNumber(round($item['Price'] * $_SESSION['rate'])); ?> VND</p>
                             <!-- inventory -->
                             <p style="color: #000;height:3%"><?php echo $item['StoreName']; ?></p>
                             <!-- view details -->

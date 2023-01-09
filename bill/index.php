@@ -156,12 +156,12 @@
                     // $quan=      $row['quantity'];
                     echo "<td>" . $ID . "</td>";
                     echo "<td>" . ($row['NamePro']) . "</td>";
-                    echo "<td>" . round($row['price']/$res,2) . " USD</td>";
+                    echo "<td>" . TransferNumber(round($row['price']*$res)) . " VND</td>";
                     echo "<td>" . ($row['Quantity']) . "</td>";
-                    echo "<td>" . round(($row['price'])/$res * ($row['Quantity']),2) . " USD</td>";
+                    echo "<td>" . TransferNumber(round($row['price'] * $res)* ($row['Quantity'])). " VND</td>";
                     //$total += $price * $quan;
 
-                    $total += ($row['price']) / $res * ($row['Quantity']);
+                    $total += round($row['price'] * $res) * ($row['Quantity']);
                     $ID++;
                     echo "</tr>";
                 }
@@ -170,7 +170,7 @@
             </tr>
         </table>
         <div class="total">
-            <p id="total">Total <span id="value"><?php echo round($total,2); ?></span> USD</p>
+            <p id="total">Total <span id="value"><?php echo TransferNumber($total); ?></span> VND</p>
         </div>
 
     </div>

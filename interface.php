@@ -51,7 +51,7 @@ session_start();
         <h1>Details</h1>
         <br>
         <h3> Product name: <span><?php echo $name; ?></span></h3>
-        <h3> Product price: <span class="infor"><?php echo round($price / $_SESSION['rate'], 2); ?> USD</span></h3>
+        <h3> Product price: <span class="infor"><?php echo TransferNumber(round($price * $_SESSION['rate'])); ?> VND</span></h3>
         <h3> Remain: <span><?php echo $remain; ?></span></h3>
         <h3> Store name: <span><?php echo $inven; ?></span></h3>
         <h3> Address bill : <span><?php echo $address; ?></span></h3>
