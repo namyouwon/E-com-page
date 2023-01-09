@@ -1,0 +1,261 @@
+
+.items{
+    margin-top:0px;
+    width: 100%;
+    text-align: center;
+}
+.itemss {
+
+    font-weight: bold;
+    border: 1px solid;
+    font-size: 18px;
+
+    color: black;
+
+    padding: 8px 16px;
+
+    text-decoration: none;
+
+    margin: 2px;
+
+}
+.current{
+    float: left;
+    border: 1px solid;
+    width: 5%;
+}
+.next{
+    border: 1px solid;
+    float: left;
+    width: 5%;
+}
+.Prev{
+    border: 1px solid;
+    float: left;
+    width: 5%;
+    margin-left:40%;
+}
+.active {
+    font-weight: bold;
+    border: 1px solid;
+    font-size: 18px;
+
+    color: black;
+
+    padding: 8px 16px;
+
+    text-decoration: none;
+
+    margin: 2px;
+    background-color: rgba(175, 201, 244, 0.97);
+
+}
+
+.itemss:hover:not(.active) {
+
+    background-color: #87ceeb;
+
+}
+#form{
+    width: 100%;
+    padding-top: 10px;
+    border-radius: 10px;
+    /*  margin-left: 5%; */
+    background-image: linear-gradient(rgb(235, 235, 189), white);
+}
+#showBox{
+    margin-top: 10px;
+    width: 100%;
+    height: 700px;
+    display: block;
+    padding:10px;
+    text-align: center;
+    border-radius: 5px;
+    background-image: linear-gradient(#f9d9f4, #fdf9fa);
+}
+.product{
+    position: relative;
+    width: 11%;
+    height: 45%;
+    float:left;
+    margin-top: 0.3%;
+    text-align: center;
+    padding-top: 2px;
+    border-radius: 25px;
+    z-index: 1;
+    background-color:  white;
+}
+.product12{
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+.product10{
+     margin-left: 3.5%;
+    margin-right: 3.5%;
+}
+.product8{
+    margin-left: 5.5%;
+    margin-right: 5.5%;
+}
+/* .product:hover{
+    transform:scale(1.1);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+} */
+.details {
+   
+    padding: 20px;
+    float: right;
+    text-align: left;
+    position: sticky;
+    position: -webkit-sticky;
+    margin-top: 50px;
+    margin-right: 0px;
+    width: 20%;
+    height: 450px;
+    border-radius: 15px;
+    background-image: linear-gradient(#7EE8FA, #fdf9fa);
+}
+.LargeCat,.ChildCat{
+    text-align: left;
+    width: 45%;
+}
+.ChildCat{
+    float:right;
+    margin-right: 5%;
+}
+.LargeCat{
+    margin-left: 5%;
+}
+#ChildComent{
+    color: rgb(7, 7, 7);
+    font-size: 1.5rem;
+    margin: 0% 0% 0% 0%;
+}
+#ChildCategory,#LargeCategory{
+    margin: 0px 0px 0px 0px;
+    border-radius: 5px;
+    width: 95%;
+    height: 30px;
+    font-size: 1.2rem;
+}
+#keyword{
+    border-radius: 4px;
+    width: 87%;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    margin-left: 5%;
+}
+.onsubmit{
+    text-align: center;
+}
+.PriceFrom{
+    width:45%;
+    margin-left:5.2%;
+    
+}
+.PriceTo{
+    float:right;
+    width: 45%;
+    margin-right:2.3%;
+}
+.price{
+    width: 95%;
+}
+#MinPrice,#MaxPrice{
+    width: 100%;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+.checkbox{
+    margin-top: 1%;
+    text-align: center;
+    padding-bottom: 10px;
+    
+}
+#NumOfPro,#SortBy{
+    border-radius: 4px;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    
+}
+#NumOfPro{
+    float: left;
+}
+#submit{
+    background-color: rgb(34, 93, 244);
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+#ClearSearch{
+    background-color: rgb(225, 56, 56);
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+#IsPublic,#IsEmpty{
+    font-size: 1.2rem;
+    height: 30px;
+    width: 30px;
+}
+#NumOfPro,#SortBy{
+    margin-left: 2%;
+    margin-top: 10px;
+    font-size: 1rem;
+    text-align: center;
+    height: 30px;
+}
+.radioButton,#SortBy{
+    margin-top: 10px;
+    float: right;
+}
+#sort{
+    width: 10%;
+    height: 15px;
+}
+#sortBar{
+    background-image: linear-gradient(rgb(247, 215, 215), rgb(251, 237, 237),rgb(247, 215, 215));
+    height: 50px;
+    width: 100%;
+    position: relative;
+}
+#NoPro{
+    margin-top: 50px;
+    font-size: 3rem;
+}
+.container{
+    height: 100%;
+    text-align: center;
+}
+
+.totalform{
+    height:100%;
+    background-color: white;
+}
+.view,#CartSubmit{
+    border-radius: 3px;
+    background-color: white;
+    color: rgb(17, 131, 172);
+    font-style: inherit;
+    border: 1px solid rgb(161, 151, 151);
+    font-size: 80%;
+}
+.view:hover,#CartSubmit:hover{
+    background-color: #cde6ef;
+    transform:scale(1.1);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+.SoldOut{
+    position: absolute;
+    font-size: 200%;
+    color: red;
+    width:100%;
+    height: 50%;
+    top:5%;
+    left:30%;
+    font-weight: bold;
+    z-index: 10;
+    transform: rotate(-60deg);
+}
+

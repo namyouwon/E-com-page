@@ -1,0 +1,93 @@
+.form{
+    border: 1px solid;
+    width:50%;
+    margin-left: 25%;
+    
+}
+img{
+    height:200px;
+    width: 20%;
+    float:left;
+    margin-left: 10px;
+}
+.InforCus{
+    width:50%;
+    font-size: 1.2rem;
+    text-align: left;
+    margin-left: 30%;
+}
+.InforBill{
+    width:50%;
+    font-size: 1.5rem;
+    text-align: left;
+    margin-left: 5%;
+}
+.header{
+    font-weight: bold;
+}
+h1{
+    text-align:center;
+}
+#phone{
+    margin-left: 225px;
+}
+#address{
+    margin-left: 225px;
+}
+#ID{
+    margin-left: 225px;
+}
+span{
+    font-weight: lighter;
+}
+#invoice{
+    text-align: center;
+    font-weight: bold;
+    font-size: 3rem;
+}
+#cusName{
+    margin-left: 10px;
+}
+#outCusName{
+    font-weight: bold;
+    margin-left: 30px;
+    font-size: 1.5rem;
+}
+#shipAdd{
+    margin-left: 10px;
+}
+#outShipAdd{
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-left: 50px;
+}
+.output{
+    margin-top: 10px;
+    width: 80%;
+    margin-left:10%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    margin-left: 90px;
+    font-size: 1.5rem;
+}
+.output td,th{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+#total{
+    margin-left: 350px;
+    font-size: 1.5rem;
+}
+#value{
+    font-weight: bold;
+    color:red;
+}
+#orderNo{
+    font-weight: bold;
+    color:red;
+}
+.total{
+    text-align: right;
+    margin-right:10%;
+}

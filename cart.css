@@ -1,0 +1,246 @@
+.Cart{
+  position: relative;
+  /* width: 5%; */
+  height: 30px;
+  margin-top: 10px;
+  float: right;
+}
+#subCart{
+  height: 30px;
+  /* width: 80%; */
+  top: 20%;
+  /* margin-left: 71%; */
+  border-radius: 5px;
+  background-color: white;
+  border: 2px solid rgb(0, 119, 255);
+  color:rgb(0, 119, 255);
+}
+#subCart:hover{
+  background-color:rgb(241, 240, 240);
+  cursor: pointer;
+}
+.bubble{
+  position:absolute;
+  margin-left: 80%;
+  background-color: rgb(27, 112, 239);
+  font-size:0.8rem;
+  color: white;
+  padding-top: 1px;
+  width: 20px;
+  height: 18px;
+  top: 0;
+  border-radius: 50%;
+  text-align: center;
+}
+.CartBox{
+    position: absolute;
+    width:100%;
+    border-radius: 15px;
+    text-align: center;
+    z-index: 3;
+    background-color: rgb(251, 250, 250);
+    box-shadow: 1px 1px 2px rgb(249, 245, 245), 0 0 25px rgb(52, 221, 244), 0 0 5px rgb(57, 57, 232);
+    overflow: auto;
+    
+}
+.Error{
+  position: absolute;
+  z-index: 4;
+  color: red;
+  background-color: rgb(135, 241, 191);
+  border-radius: 20px;
+  margin-left: 85%;
+}
+.CartBoxAlert{
+    position: absolute;
+    width:40%;
+    top: 30%;
+    color: red;
+    padding-bottom: 5px;
+    margin-left:30%;
+    border-radius: 15px;
+    text-align: center;
+    z-index: 4;
+    background-color: rgb(251, 250, 250);
+    box-shadow: 1px 1px 2px rgb(249, 245, 245), 0 0 25px rgb(244, 52, 90), 0 0 5px rgb(232, 57, 92);
+    overflow: auto;
+}
+.DisableBox{
+    pointer-events: none;
+    position: fixed;
+    
+    filter: brightness(70%);
+}
+.DisableCart{
+  pointer-events: none;
+  position: fixed;
+  filter: brightness(70%);
+}
+table, th, td {
+  border-collapse: collapse;
+}
+
+table{
+  width: 90%;
+  margin-left: 5%;
+  border-top: 5px solid rgb(187, 184, 184);
+  border-bottom: 5px solid rgb(187, 184, 184);
+}
+th{
+  font-size:1.2rem;
+}
+
+td,th{
+  border-top: 2px solid black;
+  height: 45px;
+}
+.valuebutton {
+  display: inline-block;
+  border: 1px solid #ddd;
+  margin: 0px;
+  width: 20%;
+  height: 40px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 11px 0;
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.valuebutton:hover {
+  cursor: pointer;
+  background: rgb(249, 244, 244);
+}
+#decbut {
+  margin-right: -4px;
+  border-radius: 8px 0 0 8px;
+  float:left;
+  margin-left: 15%;
+}
+
+#incbut {
+  margin-left: -4px;
+  border-radius: 0 8px 8px 0;
+  float: left;
+  margin-left: 1%;
+}
+
+.numberChange {
+  margin: 0px;
+  padding: 0px;
+  float:left;
+  margin-left: 2%;
+}
+
+.numberChange {
+  text-align: center;
+  border: none;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  width: 20%;
+  height: 40px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.DelBut{
+  background-color: rgb(177, 27, 27);
+  color:white;
+  height: 35px;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  width: 80px;
+
+}
+
+.DelBut:hover{
+  background-color:rgb(225, 33, 33);
+  cursor: pointer;
+}
+
+#Cancel{
+  height: 40px;
+  background-color: rgb(222, 220, 220);
+  border-radius:5px;
+  font-size: 1.2rem;
+  color: rgb(9, 109, 241);
+  float: right;
+  margin-top:10px;
+  margin-right:0.25%;
+}
+#Permit{
+  height: 40px;
+  background-color: rgb(222, 220, 220);
+  border-radius:5px;
+  font-size: 1.2rem;
+  color: rgb(9, 109, 241);
+  margin-top:10px;
+  margin-right:0.25%;
+}
+#Permit:hover{
+  cursor: pointer;
+  background-color: rgb(195, 191, 191);
+}
+#Cancel:hover{
+  cursor: pointer;
+  background-color: rgb(195, 191, 191);
+}
+#Checkout{
+  height: 40px;
+  background-color: rgb(9, 109, 241);
+  border-radius:5px;
+  font-size: 1.2rem;
+  color: rgb(234, 232, 232);
+  float:right;
+  margin-right:10%;
+  margin-top: 10px;
+}
+#EachCheckout{
+  height: 40px;
+  background-color: green;
+  border-radius:5px;
+  font-size: 1.2rem;
+  color: rgb(234, 232, 232);
+  float:right;
+  margin-right:10%;
+  margin-top: 10px;
+}
+#EachCheckout:hover{
+  cursor: pointer;
+  background-color: rgb(12, 174, 12);
+}
+#Checkout:hover{
+  cursor: pointer;
+  background-color: rgb(3, 134, 211);
+}
+.totalPay{
+  height: 40px;
+  margin-right:10%;
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.Permission{
+  border: 1px solid;
+  width:30%;
+}
+
+
+.CustomerBox{
+  text-align: center;
+  width: 80%;
+  margin-left:10%;
+}
+
+
