@@ -67,8 +67,7 @@ session_start();
 <body>
     <?php
     $res = 1;
-    function TransferNumber($num)
-    {
+    function transferNumber($num){
         $str = "";
         $count = 0;
         $decimal = $num - floor($num);
@@ -86,8 +85,7 @@ session_start();
             $decimal *= 100;
             $decimal = round($decimal);
             $str .= $decimal;
-        }
-            
+        }  
         return $str;
     }
     function generateRandomString($length = 9)
@@ -101,28 +99,28 @@ session_start();
         return $randomString;
     }
     $mysqli = new mysqli("localhost", "root", "", "e_commerce");
-    $CustomerSQL = "SELECT * FROM customercontact";
-    $CustomerList = mysqli_query($mysqli, $CustomerSQL);
-    $CusNumRows = mysqli_num_rows($CustomerList);
+    $customerSQL = "SELECT * FROM customercontact";
+    $customerList = mysqli_query($mysqli, $customerSQL);
+    $cusNumRows = mysqli_num_rows($customerList);
     if ($mysqli->connect_error) {
         exit('Could not connect');
     }
     $sql = "SELECT NamePro as Name,price as Price,ID as id
             FROM product";
     $result = mysqli_query($mysqli, $sql);
-    $temp = 0;
+    $disableBackground = false;
+    $showCart = false;
 
 
-    //POST///////////////////////////////////////////
-    $ShowCart = false;
+    //POST/////////////////////////////////////////// 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //Inc,Dec,Delete,ChangeNum
         for ($i = 0; $i < count($_SESSION['NumCart']); $i++) {
             $_SESSION['NumCart'][$i] = isset($_POST["number" . $i]) ? $_POST['number' . $i] : $_SESSION['NumCart'][$i];
             //change num of product
             if (isset($_POST['number' . $i])) {
-                $temp = 1;
-                $ShowCart = true;
+                $disableBackground = true;
+                $showCart = true;
                 if ($_POST['number' . $i] <= 0) {
                     $_SESSION['NumCart'][$i] = 1;
                 } else {
@@ -139,7 +137,7 @@ session_start();
             }
             //click DELETE product
             if (isset($_POST['delete' . $i]) || $_SESSION['NumCart'][$i] == 0) {
-                $temp = 2;
+                $disableBackground = true;
     ?>
                 <div class="CartBoxAlert">
                     <h1>Are you sure to delete this product?</h1>
@@ -190,7 +188,7 @@ session_start();
                                     </td>
                                     <?php
                                 echo "<td>" . round($item['Price'] / $_SESSION['rate'], 2) . " USD</td>";
-                                echo "<td>" . TransferNumber(round($item['Price'] / $_SESSION['rate'] * $_SESSION['NumCart'][$j], 2)) . " USD</td>";
+                                echo "<td>" . transferNumber(round($item['Price'] / $_SESSION['rate'] * $_SESSION['NumCart'][$j], 2)) . " USD</td>";
                                     $pay += $item['Price'] / $_SESSION['rate'] * $_SESSION['NumCart'][$j];
                                     ?>
                                     <div class="sub"></div>
@@ -212,7 +210,7 @@ session_start();
 
                     </table>
                     <div class="totalPay">
-                        <p>Total: <span style="color:red;"><?php echo TransferNumber($pay)  ?> USD</span> </p>
+                        <p>Total: <span style="color:red;"><?php echo transferNumber($pay)  ?> USD</span> </p>
                     </div>
                     <form method="post">
                         <button id="Checkout" name="Checkout">Checkout</button>
@@ -234,8 +232,8 @@ session_start();
             }
             //click INCREASE/DECREASE product
             if (isset($_POST['incqty' . $i]) || isset($_POST['decqty' . $i])) {
-                $temp = 1;
-                $ShowCart = true;
+                $disableBackground = true;
+                $showCart = true;
                 if (isset($_POST['incqty' . $i])) {
                     $_SESSION['NumCart'][$i]++;
                     $remainSQL = "SELECT Remain FROM productinventory WHERE productID=" . $_SESSION['Cart'][$i];
@@ -258,23 +256,23 @@ session_start();
             }
             //Agree DELETE
             if (isset($_POST['YPermit' . $i])) {
-                $temp = 1;
+                $disableBackground = true;
                 array_splice($_SESSION['NumCart'], $i, 1);
                 array_splice($_SESSION['Cart'], $i, 1);
-                $ShowCart = true;
+                $showCart = true;
                 break;
             }
             //Disagree DELETE
             if (isset($_POST['NPermit' . $i])) {
-                $temp = 1;
-                $ShowCart = true;
+                $disableBackground = true;
+                $showCart = true;
                 break;
             }
         }
 
         //Add data to db
-        for ($i = 1; $i <= $CusNumRows; $i++) {
-            foreach ($CustomerList as $item) {
+        for ($i = 1; $i <= $cusNumRows; $i++) {
+            foreach ($customerList as $item) {
                 if (isset($_POST['Customer' . $i . '_' . $item['ID']])) {
                     $random = generateRandomString();
                     $total = 0;
@@ -303,7 +301,7 @@ session_start();
 
         //click CHECKOUT
         if (isset($_POST['Checkout'])) {
-            $temp = 1;
+            $disableBackground = true;
             if (count($_SESSION['NumCart']) == 0) {
             ?>
                 <div class="CartBox">
@@ -329,7 +327,7 @@ session_start();
 
                         <?php
                         $No = 1;
-                        foreach ($CustomerList as $item) {
+                        foreach ($customerList as $item) {
                             echo "<tr>";
                             echo "<td>" . $No . "</td>";
                             echo "<td>" . $item['Name'] . "</td>";
@@ -358,13 +356,13 @@ session_start();
         }
         // click Cart
         if (isset($_POST["subCart"])) {
-            $temp = 1;
-            $ShowCart = true;
+            $disableBackground = true;
+            $showCart = true;
         }
         // click Cancel
         if (isset($_POST['cancel'])) {
-            $temp = 0;
-            $ShowCart = false;
+            $disableBackground = 0;
+            $showCart = false;
         }
         // click Add To Cart
         if (isset($_POST['CartSubmit'])) {
@@ -527,7 +525,7 @@ session_start();
 
 
     //////Show Cart Box
-    if ($ShowCart == true) {
+    if ($showCart == true) {
         ?>
         <div class="CartBox" id="CartBox">
 
@@ -572,7 +570,7 @@ session_start();
                             </td>
                             <?php
                             echo "<td>" . round($item['Price']/$_SESSION['rate'],2) . " USD</td>";
-                            echo "<td>" . TransferNumber(round($item['Price']/ $_SESSION['rate'] * $_SESSION['NumCart'][$j],2)) . " USD</td>";
+                            echo "<td>" . transferNumber(round($item['Price']/ $_SESSION['rate'] * $_SESSION['NumCart'][$j],2)) . " USD</td>";
                             $pay += $item['Price'] / $_SESSION['rate'] * $_SESSION['NumCart'][$j];
                             ?>
                             <div class="sub"></div>
@@ -594,7 +592,7 @@ session_start();
 
             </table>
             <div class="totalPay">
-                <p>Total: <span style="color:red;"><?php echo TransferNumber($pay)  ?> USD</span> </p>
+                <p>Total: <span style="color:red;"><?php echo transferNumber($pay)  ?> USD</span> </p>
             </div>
             <form method="post">
                 <button id="Checkout" name="Checkout">Checkout</button>
@@ -647,7 +645,7 @@ session_start();
 
 
     <!-- FORM -->
-    <div class="totalform <?php if ($temp >= 1) echo "DisableBox" ?>">
+    <div class="totalform <?php if ($disableBackground ==true) echo "DisableBox" ?>">
         <form method="post">
             <div id="form">
                 <div class="InputKeyWord">
