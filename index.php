@@ -66,8 +66,9 @@ session_start();
 
 <body>
     <?php
-    $res = 1;
-    function transferNumber($num){
+    $res = 0;
+    function transferNumber($num)
+    {
         $str = "";
         $count = 0;
         $decimal = $num - floor($num);
@@ -80,12 +81,12 @@ session_start();
             $count++;
             $num = floor($num / 10);
         }
-        if ($decimal != 0){
+        if ($decimal != 0) {
             $str = $str . '.';
             $decimal *= 100;
             $decimal = round($decimal);
             $str .= $decimal;
-        }  
+        }
         return $str;
     }
     function generateRandomString($length = 9)
@@ -114,10 +115,11 @@ session_start();
 
     //POST/////////////////////////////////////////// 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        //Inc,Dec,Delete,ChangeNum
+        //Inc,Dec,Delete,ChangeNum in Cart
         for ($i = 0; $i < count($_SESSION['NumCart']); $i++) {
             $_SESSION['NumCart'][$i] = isset($_POST["number" . $i]) ? $_POST['number' . $i] : $_SESSION['NumCart'][$i];
-            //change num of product
+
+            //Change Num of product
             if (isset($_POST['number' . $i])) {
                 $disableBackground = true;
                 $showCart = true;
@@ -126,7 +128,7 @@ session_start();
                 } else {
                     $remainSQL = "SELECT Remain FROM productinventory WHERE productID=" . $_SESSION['Cart'][$i];
                     $remainValidate = mysqli_query($mysqli, $remainSQL);
-                    $remain = 1000;
+                    $remain = 0;
                     foreach ($remainValidate as $item) {
                         $remain = $item['Remain'];
                     }
@@ -135,10 +137,12 @@ session_start();
                 }
                 break;
             }
+
             //click DELETE product
             if (isset($_POST['delete' . $i]) || $_SESSION['NumCart'][$i] == 0) {
                 $disableBackground = true;
     ?>
+                <!-- Show Delete Alert -->
                 <div class="CartBoxAlert">
                     <h1>Are you sure to delete this product?</h1>
                     <form method="post">
@@ -146,6 +150,8 @@ session_start();
                         <button id="Permit" name="NPermit<?= $i; ?>">No</button>
                     </form>
                 </div>
+
+                <!-- Hide Cart -->
                 <div class="CartBox DisableBox" id="CartBox">
                     <h1>Cart</h1>
                     <table id="table">
@@ -157,8 +163,6 @@ session_start();
                             <th>Price</th>
                             <th>Sub total</th>
                         </tr>
-                        <!-- <form method="post"> -->
-
                         <?php
                         $pay = 0;
                         for ($j = 0; $j < count($_SESSION["NumCart"]); $j++) {
@@ -167,31 +171,31 @@ session_start();
                             foreach ($result as $item) {
                                 if ($item['id'] == $_SESSION["Cart"][$j]) {
                                     echo "<td>" . $item['Name'] . "</td>";
-
                         ?>
                                     <td>
-                                        <span>
-                                            <form method="post">
-                                                <button class="valuebutton" id="decbut" name='decqty<?php echo $j; ?>' onclick="decreaseValue(<?php echo $j; ?>)">-</button>
-                                            </form>
-                                        </span>
-                                        <!-- <formm method="post"> -->
-                                        <span>
-                                            <form method="post">
-                                                <input class="numberChange" type="number" name="number<?php echo $j; ?>" id="number<?php echo $j; ?>" value="<?= $_SESSION['NumCart'][$j]; ?>" onchange="this.form.submit()" />
-                                            </form>
-                                        </span>
-                                        <!-- </formm> -->
+                                        <!-- decrease button -->
                                         <form method="post">
-                                            <button class="valuebutton" id="incbut" name='incqty<?php echo $j; ?>' onclick="increaseValue(<?php echo $j; ?>)">+</button>
+                                            <button class="valuebutton" id="decbut" name='decqty<?php echo $j; ?>'>-</button>
+                                        </form>
+
+                                        <!-- show num of product -->
+                                        <form method="post">
+                                            <input class="numberChange" type="number" name="number<?php echo $j; ?>" id="number<?php echo $j; ?>" value="<?= $_SESSION['NumCart'][$j]; ?>" onchange="this.form.submit()" />
+                                        </form>
+
+                                        <!-- increase button -->
+                                        <form method="post">
+                                            <button class="valuebutton" id="incbut" name='incqty<?php echo $j; ?>'>+</button>
                                         </form>
                                     </td>
                                     <?php
-                                echo "<td>" . round($item['Price'] / $_SESSION['rate'], 2) . " USD</td>";
-                                echo "<td>" . transferNumber(round($item['Price'] / $_SESSION['rate'] * $_SESSION['NumCart'][$j], 2)) . " USD</td>";
+                                    //Price
+                                    echo "<td>" . round($item['Price'] / $_SESSION['rate'], 2) . " USD</td>";
+                                    //Subtotal
+                                    echo "<td>" . transferNumber(round($item['Price'] / $_SESSION['rate'] * $_SESSION['NumCart'][$j], 2)) . " USD</td>";
                                     $pay += $item['Price'] / $_SESSION['rate'] * $_SESSION['NumCart'][$j];
                                     ?>
-                                    <div class="sub"></div>
+
                                     <td>
                                         <form method="post">
                                             <button name="delete<?php echo $j; ?>" class="DelBut">Delete</button>
@@ -209,24 +213,24 @@ session_start();
 
 
                     </table>
+
+                    <!-- Total -->
                     <div class="totalPay">
                         <p>Total: <span style="color:red;"><?php echo transferNumber($pay)  ?> USD</span> </p>
                     </div>
+
+                    <!-- Checkout -->
                     <form method="post">
                         <button id="Checkout" name="Checkout">Checkout</button>
                     </form>
+
+                    <!-- Cancel -->
                     <form method="post">
                         <input type="submit" name="cancel" id="Cancel" value="Cancel">
                     </form>
                 </div>
 
-                <!-- <div class="Permission">
-                <p>Are you sure to delete this product?</p>
-                <form method="post">
-                    <button class="permission" id="YPermission" name="Y_Permission<?php echo $i; ?>">Yes</button>
-                    <button class="permission" id="NPermission" name="N_Permission<?php echo $i; ?>">No</button>
-                </form>
-            </div> -->
+
             <?php
                 break;
             }
@@ -238,7 +242,7 @@ session_start();
                     $_SESSION['NumCart'][$i]++;
                     $remainSQL = "SELECT Remain FROM productinventory WHERE productID=" . $_SESSION['Cart'][$i];
                     $remainValidate = mysqli_query($mysqli, $remainSQL);
-                    $remain = 1000;
+                    $remain = 0;
                     foreach ($remainValidate as $item) {
                         $remain = $item['Remain'];
                     }
@@ -270,7 +274,8 @@ session_start();
             }
         }
 
-        //Add data to db
+        //Add data to database
+        //2 loops use to find infor of product to add db
         for ($i = 1; $i <= $cusNumRows; $i++) {
             foreach ($customerList as $item) {
                 if (isset($_POST['Customer' . $i . '_' . $item['ID']])) {
@@ -278,8 +283,8 @@ session_start();
                     $total = 0;
                     $CusID = $item['ID'];
                     for ($i = 0; $i < count($_SESSION['NumCart']); $i++) {
+                        //add to ORDERDETAIL TABLE
                         $InsertOrderDetails = "INSERT INTO `orderdetail` (`ID`, `Quantity`, `productID`, `orderID`) VALUES ('', " . $_SESSION['NumCart'][$i] . ", " . $_SESSION['Cart'][$i] . ", " . $random . ");";
-                        // echo $InsertOrderDetails;
                         $mysqli->query($InsertOrderDetails);
                         foreach ($result as $item) {
                             if ($item['id'] == $_SESSION["Cart"][$i]) {
@@ -287,12 +292,16 @@ session_start();
                             }
                         }
                     }
+                    //add to ORDER TABLE
                     $InsertOrder
                         = "INSERT INTO `orders` (`ID`, `StoreID`, `Customer`, `Total`) VALUES (" . $random . ", " . 7777 . "," . $CusID . ", " . $total . ");";
                     $mysqli->query($InsertOrder);
+                    //After checkout, return empty cart
                     $_SESSION["Cart"] = array();
                     $_SESSION['NumCart'] = array();
                     $_SESSION['StoreID'] = 0;
+
+                    //Redirect to bill
                     header("Location: bill/index.php?ID=$random&CusID=$CusID");
                     exit();
                 }
@@ -315,6 +324,7 @@ session_start();
             <?php
             } else {
             ?>
+                <!-- Show list of customer to checkout -->
                 <div class="CartBox">
                     <h1>Customer List Checkout</h1>
                     <table>
@@ -351,7 +361,7 @@ session_start();
                     </form>
                 </div>
 
-                <?php
+        <?php
             }
         }
         // click Cart
@@ -366,22 +376,24 @@ session_start();
         }
         // click Add To Cart
         if (isset($_POST['CartSubmit'])) {
-            $index = -3;
-
+            $index = -1;
             if (count($_SESSION['Cart']) == 0) {
                 $_SESSION['StoreID'] = $_POST['StoreID'];
                 array_splice($_SESSION['Cart'], count($_SESSION['Cart']), 0, $_POST['ProductID']);
                 array_splice($_SESSION['NumCart'], count($_SESSION['NumCart']), 0, 1);
             } else {
+                //Validate store
                 if ($_POST['StoreID'] == $_SESSION['StoreID']) {
+                    //Find number of product
                     for ($i = 0; $i < count($_SESSION['Cart']); $i++) {
                         if ($_POST['ProductID'] == $_SESSION['Cart'][$i]) {
                             $index = $i;
                             break;
                         } else
-                            $index = -2;
+                            $index = -1;
                     }
-                    if ($index == -2) {
+                    ///Update number of product
+                    if ($index == -1) {
                         array_splice($_SESSION['Cart'], count($_SESSION['Cart']), 0, $_POST['ProductID']);
                         array_splice($_SESSION['NumCart'], count($_SESSION['NumCart']), 0, 1);
                     } else $_SESSION['NumCart'][$index] += 1;
@@ -396,12 +408,14 @@ session_start();
             $_SESSION['KeyWord'] = $_POST["KeyWord"];
             $_SESSION['Large'] = $_POST['LargeName'];
             $_SESSION['Child'] = $_POST['ChildName'];
+            ///Validate price from
             $_SESSION['Min'] = $_POST['MinPrice'];
             if (preg_match("/^[a-zA-Z-' ]*$/", $_SESSION['Min']) && $_SESSION['Min']) {
                 $_SESSION['faultmin'] = "Value is invalid!";
             } else {
                 $_SESSION['faultmin'] = '';
             }
+            ///Validate price to
             $_SESSION['Max'] = $_POST['MaxPrice'];
             if (preg_match("/^[a-zA-Z-' ]*$/", $_SESSION['Max']) && $_SESSION['Max']) {
                 $_SESSION['faultmax'] = "Value is invalid!";
@@ -489,37 +503,37 @@ session_start();
             $_SESSION['NumCart'] = array();
             $_SESSION['StoreID'] = 0;
             $_SESSION['page_number'] = 1;
-            $url = "https://portal.vietcombank.com.vn/Usercontrols/TVPortal.TyGia/pXML.aspx?b=10";
 
-            $curl = curl_init($url);
-            curl_setopt($curl, CURLOPT_URL, $url);
-            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
-            $headers = array(
+            ///Call api to get transfer rate
+            {
+                $url = "https://portal.vietcombank.com.vn/Usercontrols/TVPortal.TyGia/pXML.aspx?b=10";
+                $curl = curl_init($url);
+                curl_setopt($curl, CURLOPT_URL, $url);
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                $headers = array(
                     "Accept: application/json",
                 );
-            curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-            //for debug only!
-            curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-
-            $resp = curl_exec($curl);
-            curl_close($curl);
-            $findUSD = "USD";
-            $findTransfer = "Transfer=";
-            $posUSD = strpos($resp, $findUSD);
-            $posTransfer = strpos($resp, $findTransfer, $posUSD);
-            $res = 0;
-            for ($i = $posTransfer + 10; $i < strlen($resp); $i++) {
-                if ($resp[$i] == "\"")
-                break;
-                else if ($resp[$i] == "," || $resp[$i] == ".")
-                continue;
-                else
-                    $res = $res * 10 + $resp[$i];
+                curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+                curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+                curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+                $resp = curl_exec($curl);
+                curl_close($curl);
+                $findUSD = "USD";
+                $findTransfer = "Transfer=";
+                $posUSD = strpos($resp, $findUSD);
+                $posTransfer = strpos($resp, $findTransfer, $posUSD);
+                $res = 0;
+                for ($i = $posTransfer + 10; $i < strlen($resp); $i++) {
+                    if ($resp[$i] == "\"")
+                        break;
+                    else if ($resp[$i] == "," || $resp[$i] == ".")
+                        continue;
+                    else
+                        $res = $res * 10 + $resp[$i];
+                }
+                $res /= 100;
+                $_SESSION['rate'] = $res;
             }
-            $res /= 100;
-            $_SESSION['rate'] = $res;
         }
     }
 
@@ -528,19 +542,16 @@ session_start();
     if ($showCart == true) {
         ?>
         <div class="CartBox" id="CartBox">
-
             <h1>Cart</h1>
-            <table >
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Product Name</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                        <th>Sub total</th>
-                    </tr>
-                </thead>
+            <table id="table">
+                <tr>
+                    <th>No</th>
+                    <th>Product Name</th>
 
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Sub total</th>
+                </tr>
                 <?php
                 $pay = 0;
                 for ($j = 0; $j < count($_SESSION["NumCart"]); $j++) {
@@ -549,31 +560,31 @@ session_start();
                     foreach ($result as $item) {
                         if ($item['id'] == $_SESSION["Cart"][$j]) {
                             echo "<td>" . $item['Name'] . "</td>";
-
                 ?>
                             <td>
-                                <span>
-                                    <form method="post">
-                                        <button class="valuebutton" id="decbut" name='decqty<?php echo $j; ?>' onclick="decreaseValue(<?php echo $j; ?>)">-</button>
-                                    </form>
-                                </span>
-                                <!-- <formm method="post"> -->
-                                <span>
-                                    <form method="post">
-                                        <input class="numberChange" type="number" name="number<?php echo $j; ?>" id="number<?php echo $j; ?>" value="<?= $_SESSION['NumCart'][$j]; ?>" onchange="this.form.submit()" />
-                                    </form>
-                                </span>
-                                <!-- </formm> -->
+                                <!-- decrease button -->
                                 <form method="post">
-                                    <button class="valuebutton" id="incbut" name='incqty<?php echo $j; ?>' onclick="increaseValue(<?php echo $j; ?>)">+</button>
+                                    <button class="valuebutton" id="decbut" name='decqty<?php echo $j; ?>'>-</button>
+                                </form>
+
+                                <!-- show num of product -->
+                                <form method="post">
+                                    <input class="numberChange" type="number" name="number<?php echo $j; ?>" id="number<?php echo $j; ?>" value="<?= $_SESSION['NumCart'][$j]; ?>" onchange="this.form.submit()" />
+                                </form>
+
+                                <!-- increase button -->
+                                <form method="post">
+                                    <button class="valuebutton" id="incbut" name='incqty<?php echo $j; ?>'>+</button>
                                 </form>
                             </td>
                             <?php
-                            echo "<td>" . round($item['Price']/$_SESSION['rate'],2) . " USD</td>";
-                            echo "<td>" . transferNumber(round($item['Price']/ $_SESSION['rate'] * $_SESSION['NumCart'][$j],2)) . " USD</td>";
+                            //Price
+                            echo "<td>" . round($item['Price'] / $_SESSION['rate'], 2) . " USD</td>";
+                            //Subtotal
+                            echo "<td>" . transferNumber(round($item['Price'] / $_SESSION['rate'] * $_SESSION['NumCart'][$j], 2)) . " USD</td>";
                             $pay += $item['Price'] / $_SESSION['rate'] * $_SESSION['NumCart'][$j];
                             ?>
-                            <div class="sub"></div>
+
                             <td>
                                 <form method="post">
                                     <button name="delete<?php echo $j; ?>" class="DelBut">Delete</button>
@@ -591,21 +602,24 @@ session_start();
 
 
             </table>
+
+            <!-- Total -->
             <div class="totalPay">
                 <p>Total: <span style="color:red;"><?php echo transferNumber($pay)  ?> USD</span> </p>
             </div>
+
+            <!-- Checkout -->
             <form method="post">
                 <button id="Checkout" name="Checkout">Checkout</button>
             </form>
+
+            <!-- Cancel -->
             <form method="post">
                 <input type="submit" name="cancel" id="Cancel" value="Cancel">
             </form>
-
         </div>
     <?php
     }
-
-    /////Show CustomerBox
 
 
     $_SESSION['ID'] = $_SESSION['KeyWord'] . '_' . $_SESSION['Large'] . '_' . $_SESSION['Child'] . '_' . $_SESSION['Min'] . '_' . $_SESSION['Max'] . '_' . $_SESSION['Public'] . '_' . $_SESSION['Empty'] . '_' . $_SESSION['CheckedPublic'] . '_' . $_SESSION['CheckedEmpty'] . '_' . $_SESSION['NumPage'] . '_' . $_SESSION['Field'] . '_' . $_SESSION['Order'];
@@ -645,7 +659,7 @@ session_start();
 
 
     <!-- FORM -->
-    <div class="totalform <?php if ($disableBackground ==true) echo "DisableBox" ?>">
+    <div class="totalform <?php if ($disableBackground == true) echo "DisableBox" ?>">
         <form method="post">
             <div id="form">
                 <div class="InputKeyWord">
@@ -778,14 +792,14 @@ session_start();
                 return "(e.CatName='" . $dad . "' AND ch.CatName='" . $son . "') AND";
             }
         }
-        function filterPrice($pmi, $pma,$rate)
+        function filterPrice($pmi, $pma, $rate)
         {
             if ((preg_match("/^[a-zA-Z-' ]*$/", $pmi) && $pmi) || (preg_match("/^[a-zA-Z-' ]*$/", $pma) && $pma)) {
                 return "invalid value";
             } else {
                 if (!$pma && !$pmi) return "";
-                else if ($pmi && !$pma) return "(a.price>=" . floor($pmi)* $rate . ") AND";
-                else if (!$pmi && $pma) return "(a.price<=" . ($pma+0.005)* $rate . ") AND";
+                else if ($pmi && !$pma) return "(a.price>=" . floor($pmi) * $rate . ") AND";
+                else if (!$pmi && $pma) return "(a.price<=" . ($pma + 0.005) * $rate . ") AND";
                 else
                     return "(a.price>=" . floor($pmi) * $rate . " AND a.price<=" . ($pma + 0.005) * $rate . ") AND";
             }
@@ -865,7 +879,7 @@ session_start();
         }
         $sql2 = "(ch.CatName LIKE '%" . $_SESSION['KeyWord'] . "%' OR e.CatName LIKE '%" . $_SESSION['KeyWord'] . "%' OR a.NamePro LIKE'%" . $_SESSION['KeyWord'] . "%')";
         $limit_query = "LIMIT " . $initial_page . "," . $_SESSION['NumPage'] . "";
-        if (filterPrice($_SESSION['Min'], $_SESSION['Max'],$_SESSION['rate']) != "invalid value")
+        if (filterPrice($_SESSION['Min'], $_SESSION['Max'], $_SESSION['rate']) != "invalid value")
             $sql = $sql1 . filterLevel($_SESSION['Large'], $_SESSION['Child']) . filterPrice($_SESSION['Min'], $_SESSION['Max'], $_SESSION['rate']) . filterPublic($_SESSION['Public']) . filterEmpty($_SESSION['Empty']) . $sql2 . SortBy($_SESSION['Field']) . Order($_SESSION['Order']);
         else
             $sql = $sql1 . filterLevel($_SESSION['Large'], $_SESSION['Child']) . filterPublic($_SESSION['Public']) . filterEmpty($_SESSION['Empty']) . $sql2 . SortBy($_SESSION['Field']) . Order($_SESSION['Order']);
@@ -892,7 +906,7 @@ session_start();
                             <!-- name -->
                             <p style="color:black; font-size: 100%; margin-top:0px;height:3%"><?php echo $item['Product']; ?></p>
                             <!-- price -->
-                            <p style="font-weight:bold; color: black;margin-top:0px;height:3% "><?php echo round($item['Price']/$_SESSION['rate'],2); ?> USD</p>
+                            <p style="font-weight:bold; color: black;margin-top:0px;height:3% "><?php echo round($item['Price'] / $_SESSION['rate'], 2); ?> USD</p>
                             <!-- inventory -->
                             <p style="color: #000;height:3%"><?php echo $item['StoreName']; ?></p>
                             <!-- view details -->
@@ -917,7 +931,7 @@ session_start();
             </div>
 
 
-
+            <!-- Pagination -->
             <div class="items">
                 <?php
                 for ($i = 1; $i <= $total_pages; $i++) {
