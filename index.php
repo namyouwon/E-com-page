@@ -14,14 +14,14 @@ session_start();
     <!-- view detail of product -->
     <script>
         function showProduct(num) {
-            var myArray = num.split("_");
+            var myArray = num.split("_"); // không nên đặt tên không rõ ràng như myArray, nên đặt là productArray
             var page = myArray[2];
             if (num == "") {
                 document.getElementById("showBlock").innerHTML = "";
                 return;
             }
             //resize block to show detail
-            var div = document.getElementById("showBox");
+            var div = document.getElementById("showBox"); // biến element của html cũng nên đặt tên rõ ràng
             div.style.width = "70%";
             //resize element to show detail
             var items = document.getElementsByClassName('product');
@@ -119,7 +119,7 @@ session_start();
         for ($i = 0; $i < count($_SESSION['NumCart']); $i++) {
             $_SESSION['NumCart'][$i] = isset($_POST["number" . $i]) ? $_POST['number' . $i] : $_SESSION['NumCart'][$i];
 
-            //Change Num of product
+            //Change Num of product // <-- những chỗ logic phức tạp như này chú thích lại là đúng r đó
             if (isset($_POST['number' . $i])) {
                 $disableBackground = true;
                 $showCart = true;
@@ -505,7 +505,7 @@ session_start();
             $_SESSION['NumCart'] = array();
             $_SESSION['StoreID'] = 0;
             $_SESSION['page_number'] = 1;
-            ///Call api to get transfer rate
+            ///Call api to get transfer rate // <-- chỗ này nếu được thì invoke function call API, những chức năng có thể dùng lại nhiều lần như call API thì nên viết thành 1 function riêng để dễ xử lý
             {
                 $url = "https://portal.vietcombank.com.vn/Usercontrols/TVPortal.TyGia/pXML.aspx?b=10";
                 $curl = curl_init($url);
@@ -876,7 +876,7 @@ session_start();
                 LEFT JOIN product a ON a.Category=ch.ID
                 LEFT JOIN productinventory p ON p.productID=a.ID
                 LEFT JOIN inventory i ON i.ID=p.InvenID
-                WHERE ";
+                WHERE "; // <-- nên đặt tên rõ cho câu query như này để dễ hiểu, ví dụ: categoryQueryStr
         }
         $sql2 = "(ch.CatName LIKE '%" . $_SESSION['KeyWord'] . "%' OR e.CatName LIKE '%" . $_SESSION['KeyWord'] . "%' OR a.NamePro LIKE'%" . $_SESSION['KeyWord'] . "%')";
         $limit_query = "LIMIT " . $initial_page . "," . $_SESSION['NumPage'] . "";

@@ -8,7 +8,8 @@
 <body>
     <?php
     {
-        $url = "https://portal.vietcombank.com.vn/Usercontrols/TVPortal.TyGia/pXML.aspx?b=10";
+        /** Nên viết riêng 1 function để call API */
+        $url = "https://portal.vietcombank.com.vn/Usercontrols/TVPortal.TyGia/pXML.aspx?b=10"; // <-- có thể đặt tên tạm cho những biến dùng 1 lần như này
 
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_URL, $url);
@@ -24,7 +25,7 @@
 
         $resp = curl_exec($curl);
         curl_close($curl);
-        $findUSD = "USD";
+        $findUSD = "USD"; // <-- hạn chế sử dụng động từ cho biến, có thể đặt là usdSymbol
         $findTransfer = "Transfer=";
         $posUSD = strpos($resp, $findUSD);
         $posTransfer = strpos($resp, $findTransfer, $posUSD);
@@ -42,7 +43,7 @@
     $ID = 1;
     function TransferNumber($num)
     {
-        $str = "";
+        $str = ""; // <-- những biến viết tắt nên hạn chế (có thể dùng cho biến dùng 1 lần trong for, ...)
         $count = 0;
         while ($num) {
             if ($count == 3) {
@@ -61,8 +62,8 @@
         $table1 = "SELECT NamePro,price,Quantity
                         FROM orderdetail 
                         INNER JOIN product ON orderdetail.productID=product.ID
-                        WHERE orderID=" . $orderID;
-        $list1 = $conn->query($table1);
+                        WHERE orderID=" . $orderID; // <-- nên đặt tên cho biến table = tableName
+        $list1 = $conn->query($table1); // <-- chỗ list này cũng vậy, nên đặt là listTableName
         $numrow = $list1->num_rows;
         if ($numrow == 0) {
             echo "Not found";
@@ -147,7 +148,7 @@
             </tr>
             <tr>
                 <?php
-                $total = 0;
+                $total = 0; // hạn chế đặt tên chung chung như thế này để tránh nhầm với những total khác, như totalProduct, totalOrder, ...
                 while ($row = $list1->fetch_assoc()) {
                     echo "<tr>";
                     //echo "id: " . $row["email"]. " - Name: " . $row["customerName"]. "<br>";
