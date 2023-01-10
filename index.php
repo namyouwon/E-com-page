@@ -14,51 +14,51 @@ session_start();
     <!-- view detail of product -->
     <script>
         function showProduct(num) {
-            var myArray = num.split("_");
-            var page = myArray[2];
+            var viewDetailsArray = num.split("_"); // không nên đặt tên không rõ ràng như myArray, nên đặt là productArray
+            var page = viewDetailsArray[2];
             if (num == "") {
                 document.getElementById("showBlock").innerHTML = "";
                 return;
             }
             //resize block to show detail
-            var div = document.getElementById("showBox");
-            div.style.width = "70%";
+            var showProductBlock = document.getElementById("showBox"); // biến element của html cũng nên đặt tên rõ ràng
+            showProductBlock.style.width = "70%";
             //resize element to show detail
-            var items = document.getElementsByClassName('product');
+            var showOneProductBlock = document.getElementsByClassName('product');
             if (page == 12) {
-                for (var i = 0; i < items.length; i++) {
-                    items[i].style.margin = '1% 2% 0% 1%';
-                    items[i].style.backgroundColor = "white";
-                    items[i].style.width = "13%";
+                for (var i = 0; i < showOneProductBlock.length; i++) {
+                    showOneProductBlock[i].style.margin = '1% 2% 0% 1%';
+                    showOneProductBlock[i].style.backgroundColor = "white";
+                    showOneProductBlock[i].style.width = "13%";
                 }
             } else if (page == 10) {
-                for (var i = 0; i < items.length; i++) {
-                    items[i].style.margin = '0.3% 3% 0% 3%';
-                    items[i].style.backgroundColor = "white";
-                    items[i].style.width = "13%";
+                for (var i = 0; i < showOneProductBlock.length; i++) {
+                    showOneProductBlock[i].style.margin = '0.3% 3% 0% 3%';
+                    showOneProductBlock[i].style.backgroundColor = "white";
+                    showOneProductBlock[i].style.width = "13%";
                 }
             } else {
-                for (var i = 0; i < items.length; i++) {
-                    items[i].style.margin = '0.3% 6% 0% 6%';
-                    items[i].style.backgroundColor = "white";
-                    items[i].style.width = "13%";
+                for (var i = 0; i < showOneProductBlock.length; i++) {
+                    showOneProductBlock[i].style.margin = '0.3% 6% 0% 6%';
+                    showOneProductBlock[i].style.backgroundColor = "white";
+                    showOneProductBlock[i].style.width = "13%";
                 }
             }
-
-            var div1 = document.getElementById(num);
-            div1.style.background = "rgb(203, 203, 203)";
+            //setting view detail block
+            var viewDetailsBlock = document.getElementById(num);
+            viewDetailsBlock.style.background = "rgb(203, 203, 203)";
+            //Call AJAX to show details
             const xhttp = new XMLHttpRequest();
-
             xhttp.onload = function() {
                 document.getElementById("showBlock").innerHTML = this.responseText;
             }
-            xhttp.open("GET", "interface.php?q=" + myArray[0] + "&r=" + myArray[1]);
+            xhttp.open("GET", "interface.php?q=" + viewDetailsArray[0] + "&r=" + viewDetailsArray[1]);
             xhttp.send();
         }
     </script>
 
     <script>
-        function Alert() {
+        function alert() {
             alert("Error: product in different shop");
         }
     </script>
@@ -99,6 +99,36 @@ session_start();
         }
         return $randomString;
     }
+    function getCurrentcyRate($currencyName)
+    {
+        $url = "https://portal.vietcombank.com.vn/Usercontrols/TVPortal.TyGia/pXML.aspx?b=10";
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        $headers = array(
+            "Accept: application/json",
+        );
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+        $resp = curl_exec($curl);
+        curl_close($curl);
+        $findUSD = $currencyName;
+        $findTransfer = "Transfer=";
+        $posUSD = strpos($resp, $findUSD);
+        $posTransfer = strpos($resp, $findTransfer, $posUSD);
+        $res = 0;
+        for ($i = $posTransfer + 10; $i < strlen($resp); $i++) {
+            if ($resp[$i] == "\"")
+                break;
+            else if ($resp[$i] == "," || $resp[$i] == ".")
+                continue;
+            else
+                $res = $res * 10 + $resp[$i];
+        }
+        $res /= 100;
+        $_SESSION['rate'] = $res;
+    }
     $mysqli = new mysqli("localhost", "root", "", "e_commerce");
     $customerSQL = "SELECT * FROM customercontact";
     $customerList = mysqli_query($mysqli, $customerSQL);
@@ -106,9 +136,9 @@ session_start();
     if ($mysqli->connect_error) {
         exit('Could not connect');
     }
-    $sql = "SELECT NamePro as Name,price as Price,ID as id
+    $informationProductSQL = "SELECT NamePro as Name,price as Price,ID as id
             FROM product";
-    $result = mysqli_query($mysqli, $sql);
+    $informationProductDB = mysqli_query($mysqli, $informationProductSQL);
     $disableBackground = false;
     $showCart = false;
 
@@ -119,7 +149,7 @@ session_start();
         for ($i = 0; $i < count($_SESSION['NumCart']); $i++) {
             $_SESSION['NumCart'][$i] = isset($_POST["number" . $i]) ? $_POST['number' . $i] : $_SESSION['NumCart'][$i];
 
-            //Change Num of product
+            //Change Num of product // <-- những chỗ logic phức tạp như này chú thích lại là đúng r đó
             if (isset($_POST['number' . $i])) {
                 $disableBackground = true;
                 $showCart = true;
@@ -168,7 +198,7 @@ session_start();
                         for ($j = 0; $j < count($_SESSION["NumCart"]); $j++) {
                             echo "<tr>";
                             echo "<td>" . ($j + 1) . "</td>";
-                            foreach ($result as $item) {
+                            foreach ($informationProductDB as $item) {
                                 if ($item['id'] == $_SESSION["Cart"][$j]) {
                                     echo "<td>" . $item['Name'] . "</td>";
                         ?>
@@ -189,11 +219,11 @@ session_start();
                                         </form>
                                     </td>
                                     <?php
-                                //Price
-                                echo "<td>" . transferNumber(round($item['Price'] * $_SESSION['rate'])) . " VND</td>";
-                                //Subtotal
-                                echo "<td>" . transferNumber(round($item['Price'] * $_SESSION['rate']) * $_SESSION['NumCart'][$j])  . " VND</td>";
-                                $pay += round($item['Price'] * $_SESSION['rate']) * $_SESSION['NumCart'][$j];
+                                    //Price
+                                    echo "<td>" . transferNumber(round($item['Price'] * $_SESSION['rate'])) . " VND</td>";
+                                    //Subtotal
+                                    echo "<td>" . transferNumber(round($item['Price'] * $_SESSION['rate']) * $_SESSION['NumCart'][$j])  . " VND</td>";
+                                    $pay += round($item['Price'] * $_SESSION['rate']) * $_SESSION['NumCart'][$j];
                                     ?>
 
                                     <td>
@@ -286,7 +316,7 @@ session_start();
                         //add to ORDERDETAIL TABLE
                         $InsertOrderDetails = "INSERT INTO `orderdetail` (`ID`, `Quantity`, `productID`, `orderID`) VALUES ('', " . $_SESSION['NumCart'][$i] . ", " . $_SESSION['Cart'][$i] . ", " . $random . ");";
                         $mysqli->query($InsertOrderDetails);
-                        foreach ($result as $item) {
+                        foreach ($informationProductDB as $item) {
                             if ($item['id'] == $_SESSION["Cart"][$i]) {
                                 $total += $_SESSION['NumCart'][$i] * $item['Price'];
                             }
@@ -364,11 +394,13 @@ session_start();
         <?php
             }
         }
+
         // click Cart
         if (isset($_POST["subCart"])) {
             $disableBackground = true;
             $showCart = true;
         }
+
         // click Cancel
         if (isset($_POST['cancel'])) {
             $disableBackground = 0;
@@ -503,36 +535,8 @@ session_start();
             $_SESSION['NumCart'] = array();
             $_SESSION['StoreID'] = 0;
             $_SESSION['page_number'] = 1;
-            ///Call api to get transfer rate
-            {
-                $url = "https://portal.vietcombank.com.vn/Usercontrols/TVPortal.TyGia/pXML.aspx?b=10";
-                $curl = curl_init($url);
-                curl_setopt($curl, CURLOPT_URL, $url);
-                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-                $headers = array(
-                    "Accept: application/json",
-                );
-                curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-                curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-                curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-                $resp = curl_exec($curl);
-                curl_close($curl);
-                $findUSD = "USD";
-                $findTransfer = "Transfer=";
-                $posUSD = strpos($resp, $findUSD);
-                $posTransfer = strpos($resp, $findTransfer, $posUSD);
-                $res = 0;
-                for ($i = $posTransfer + 10; $i < strlen($resp); $i++) {
-                    if ($resp[$i] == "\"")
-                        break;
-                    else if ($resp[$i] == "," || $resp[$i] == ".")
-                        continue;
-                    else
-                        $res = $res * 10 + $resp[$i];
-                }
-                $res /= 100;
-                $_SESSION['rate'] = $res;
-            }
+            ///Call api to get transfer rate // <-- chỗ này nếu được thì invoke function call API, những chức năng có thể dùng lại nhiều lần như call API thì nên viết thành 1 function riêng để dễ xử lý
+            getCurrentcyRate("USD");
         }
     }
 
@@ -556,7 +560,7 @@ session_start();
                 for ($j = 0; $j < count($_SESSION["NumCart"]); $j++) {
                     echo "<tr>";
                     echo "<td>" . ($j + 1) . "</td>";
-                    foreach ($result as $item) {
+                    foreach ($informationProductDB as $item) {
                         if ($item['id'] == $_SESSION["Cart"][$j]) {
                             echo "<td>" . $item['Name'] . "</td>";
                 ?>
@@ -625,7 +629,7 @@ session_start();
     $initial_page = ($_SESSION['page_number'] - 1) * $_SESSION['NumPage'];
     //SQL/////////////////////////////////////////////
     {
-        $sql = "WITH RECURSIVE categories AS (
+        $categorySelectorSQL = "WITH RECURSIVE categories AS (
                 SELECT      ID,
                             CatName,
                             ParentID,
@@ -652,7 +656,7 @@ session_start();
                 LEFT JOIN categry e
                 ON ch.ParentID = e.ID
                 ORDER BY ch.hierarchy_level, ch.ParentID;";
-        $result = mysqli_query($mysqli, $sql);
+        $categorySelectorDB = mysqli_query($mysqli, $categorySelectorSQL);
     }
     ?>
 
@@ -661,16 +665,19 @@ session_start();
     <div class="totalform <?php if ($disableBackground == true) echo "DisableBox" ?>">
         <form method="post">
             <div id="form">
+                <!-- Input KEYWORD -->
                 <div class="InputKeyWord">
                     <input type=" text" placeholder="Enter keyword..." name="KeyWord" id="keyword" value="<?php echo $_SESSION["KeyWord"]; ?>">
                 </div>
+
+                <!-- Input CHILD CATEGORY -->
                 <div class="level">
                     <div class="ChildCat">
                         <h3 id="ChildComent">Child Category</h3>
                         <select id="ChildCategory" name="ChildName">
                             <?php
 
-                            foreach ($result as $child) {
+                            foreach ($categorySelectorDB as $child) {
                                 if ($child['hierarchy_level'] == 1) {
                             ?>
                                     <option <?php if ($_SESSION['Child'] == $child['ProName']) { ?>selected="true" <?php }; ?>data-option="<?php echo $child['CatName']; ?>" value="<?php echo $child['ProName']; ?>"><?php echo $child['ProName']; ?></option>
@@ -692,7 +699,7 @@ session_start();
                         <h3 id="ChildComent">Large Category</h3>
                         <select id="LargeCategory" name="LargeName" onchange="giveSelection(this.value)">
                             <?php
-                            foreach ($result as $item) {
+                            foreach ($categorySelectorDB as $item) {
                                 if ($item['hierarchy_level'] == 0) {
                             ?>
                                     <option <?php if ($_SESSION['Large'] == $item['ProName']) { ?>selected="true" <?php }; ?>value="<?php echo $item['ProName']; ?>"><?php echo $item['ProName']; ?></option>
@@ -704,6 +711,8 @@ session_start();
                         </select>
                     </div>
                 </div>
+
+                <!-- Input LARGE CATEGORY -->
                 <div class="price">
                     <div class="PriceTo">
                         <h3 id="ChildComent">Price to</h3>
@@ -716,12 +725,16 @@ session_start();
                         <p id="ChildComent" style="color: red; font-size: 1.5rem;font-weight:bold"><?php echo $_SESSION['faultmin']; ?></p><br>
                     </div>
                 </div>
+
+                <!-- Input EMPTY/PUBLIC -->
                 <div class="checkbox">
                     <input type="checkbox" id="IsPublic" name="Publish" value="1" <?php echo $_SESSION['CheckedPublic']; ?> />
                     <label for="IsPublic" style="font-size: 1.6rem; margin-right: 0px;">Is Public?</label>
                     <input type="checkbox" id="IsEmpty" name="Empty" value="1" <?php echo $_SESSION['CheckedEmpty']; ?>>
                     <label for="Empty" style="font-size: 1.6rem; margin-right: 0px;">Empty Inventory?</label>
                 </div>
+
+                <!-- click Search/ClearSearch -->
                 <div class="onsubmit">
                     <input type="submit" value="Search" id="submit" name="submit">
                     <input type="submit" id="ClearSearch" name="ClearSearch" value="Clear Search" />
@@ -730,26 +743,35 @@ session_start();
             </div>
         </form>
         <form method="post" id="sortBar">
+            <!-- filter by NUMBER OF PRODUCT -->
             <select id="NumOfPro" name="NumOfPro" onchange="this.form.submit()">
                 <option value="12" <?php if ($_SESSION["NumPage"] == 12) echo 'selected=true'; ?>>12</option>
                 <option value="10" <?php if ($_SESSION["NumPage"] == 10) echo 'selected=true'; ?>>10</option>
                 <option value="8" <?php if ($_SESSION["NumPage"] == 8) echo 'selected=true'; ?>>8</option>
 
             </select>
+
+            <!-- filter by ASC/DESC -->
             <div class="radioButton">
                 <input type="radio" onclick="this.form.submit()" id="sort" name="sort" value='ASC' <?php if ($_SESSION["Order"] == 'ASC') echo 'checked'; ?>>
                 <label for="ASC">ASC</label>
                 <input type="radio" onclick="this.form.submit()" id="sort" name="sort" value='DESC' <?php if ($_SESSION["Order"] == 'DESC') echo 'checked'; ?>>
                 <label for="DEC">DESC</label>
             </div>
+
+            <!-- filter by NAME/PRICE -->
             <select id="SortBy" name="SortBy" onchange="this.form.submit()">
                 <option value="name" <?php if ($_SESSION["Field"] == 'name') echo 'selected=true'; ?>>Name</option>
                 <option value="price" <?php if ($_SESSION["Field"] == 'price') echo 'selected=true'; ?>>Price</option>
             </select>
+
+            <!-- CART -->
             <div class="Cart">
                 <form method="post">
                     <button name="subCart" id="subCart" onclick="DisableBox()">Cart</button>
                 </form>
+
+                <!-- BUBBLE -->
                 <div class="bubble">
                     <?php
                     $val = 0;
@@ -765,19 +787,19 @@ session_start();
 
         <!-- Connect 2 selectors/////////////////////////////////////////////////-->
         <script>
-            var sel1 = document.querySelector('#LargeCategory');
-            var sel2 = document.querySelector('#ChildCategory');
-            var options2 = sel2.querySelectorAll('option');
+            var largeCategorySelector = document.querySelector('#LargeCategory');
+            var ChildCategorySelector = document.querySelector('#ChildCategory');
+            var optionsInChild = ChildCategorySelector.querySelectorAll('option');
 
-            function giveSelection(selValue) {
-                sel2.innerHTML = 'noe';
-                for (var i = 0; i < options2.length; i++) {
-                    if (options2[i].dataset.option === selValue) {
-                        sel2.appendChild(options2[i]);
+            function giveSelection(selectValue) {
+                ChildCategorySelector.innerHTML = 'No';
+                for (var i = 0; i < optionsInChild.length; i++) {
+                    if (optionsInChild[i].dataset.option === selectValue) {
+                        ChildCategorySelector.appendChild(optionsInChild[i]);
                     }
                 }
             }
-            giveSelection(sel1.value);
+            giveSelection(largeCategorySelector.value);
         </script>
 
         <?php
@@ -797,8 +819,8 @@ session_start();
                 return "invalid value";
             } else {
                 if (!$pma && !$pmi) return "";
-                else if ($pmi && !$pma) return "(a.price>=" . $pmi/ $rate . ") AND";
-                else if (!$pmi && $pma) return "(a.price<=" . $pma/ $rate . ") AND";
+                else if ($pmi && !$pma) return "(a.price>=" . $pmi / $rate . ") AND";
+                else if (!$pmi && $pma) return "(a.price<=" . $pma / $rate . ") AND";
                 else
                     return "(a.price>=" . $pmi / $rate . " AND a.price<=" . $pma / $rate     . ") AND";
             }
@@ -835,7 +857,7 @@ session_start();
 
         //SQL-recursive db/////////////////////////////////////////////////////////////////////////////// 
         {
-            $sql1 = "WITH RECURSIVE categories AS (
+            $categoryRecursiveSQL = "WITH RECURSIVE categories AS (
                 SELECT ID,
                 CatName,
                 ParentID,
@@ -874,18 +896,18 @@ session_start();
                 LEFT JOIN product a ON a.Category=ch.ID
                 LEFT JOIN productinventory p ON p.productID=a.ID
                 LEFT JOIN inventory i ON i.ID=p.InvenID
-                WHERE ";
+                WHERE "; // <-- nên đặt tên rõ cho câu query như này để dễ hiểu, ví dụ: categoryQueryStr
         }
-        $sql2 = "(ch.CatName LIKE '%" . $_SESSION['KeyWord'] . "%' OR e.CatName LIKE '%" . $_SESSION['KeyWord'] . "%' OR a.NamePro LIKE'%" . $_SESSION['KeyWord'] . "%')";
+        $searchFormSQL = "(ch.CatName LIKE '%" . $_SESSION['KeyWord'] . "%' OR e.CatName LIKE '%" . $_SESSION['KeyWord'] . "%' OR a.NamePro LIKE'%" . $_SESSION['KeyWord'] . "%')";
         $limit_query = "LIMIT " . $initial_page . "," . $_SESSION['NumPage'] . "";
         if (filterPrice($_SESSION['Min'], $_SESSION['Max'], $_SESSION['rate']) != "invalid value")
-            $sql = $sql1 . filterLevel($_SESSION['Large'], $_SESSION['Child']) . filterPrice($_SESSION['Min'], $_SESSION['Max'], $_SESSION['rate']) . filterPublic($_SESSION['Public']) . filterEmpty($_SESSION['Empty']) . $sql2 . SortBy($_SESSION['Field']) . Order($_SESSION['Order']);
+            $categorySQL = $categoryRecursiveSQL . filterLevel($_SESSION['Large'], $_SESSION['Child']) . filterPrice($_SESSION['Min'], $_SESSION['Max'], $_SESSION['rate']) . filterPublic($_SESSION['Public']) . filterEmpty($_SESSION['Empty']) . $searchFormSQL . SortBy($_SESSION['Field']) . Order($_SESSION['Order']);
         else
-            $sql = $sql1 . filterLevel($_SESSION['Large'], $_SESSION['Child']) . filterPublic($_SESSION['Public']) . filterEmpty($_SESSION['Empty']) . $sql2 . SortBy($_SESSION['Field']) . Order($_SESSION['Order']);
-        $listForCount = mysqli_query($mysqli, $sql);
-        $numrows = mysqli_num_rows($listForCount);
-        $sql = $sql . $limit_query;
-        $list = mysqli_query($mysqli, $sql);
+            $categorySQL = $categoryRecursiveSQL . filterLevel($_SESSION['Large'], $_SESSION['Child']) . filterPublic($_SESSION['Public']) . filterEmpty($_SESSION['Empty']) . $searchFormSQL . SortBy($_SESSION['Field']) . Order($_SESSION['Order']);
+        $categoryDB = mysqli_query($mysqli, $categorySQL);
+        $numrows = mysqli_num_rows($categoryDB);
+        $categorySQL = $categorySQL . $limit_query;
+        $categoryOnePageSQL = mysqli_query($mysqli, $categorySQL);
         $total_pages = ceil($numrows / $_SESSION['NumPage']);
         $pageURL = "";
         ?>
@@ -896,7 +918,7 @@ session_start();
             <div class="showBox" id="showBox">
                 <?php
                 if ($numrows > 0) {
-                    foreach ($list as $item) {
+                    foreach ($categoryOnePageSQL as $item) {
                 ?>
                         <!-- 1 product -->
                         <div class='product product<?php echo $_SESSION['NumPage']; ?>' id="<?php echo $item['ProductID'] . '_' . $item['InvenID'] . '_' . $_SESSION['NumPage']; ?>">
@@ -913,7 +935,7 @@ session_start();
                             <!-- add to cart -->
                             <div class="AddToCart">
 
-                                <form method="post" <?php if (($item['InvenID'] != $_SESSION['StoreID']) && $_SESSION['StoreID']) echo "onsubmit='Alert()'" ?>>
+                                <form method="post" <?php if (($item['InvenID'] != $_SESSION['StoreID']) && $_SESSION['StoreID']) echo "onsubmit='alert()'" ?>>
                                     <input type="hidden" name="ProductID" value="<?php echo $item['ProductID']; ?>">
                                     <input type="hidden" name="StoreID" value="<?php echo $item['InvenID']; ?>">
                                     <input type="submit" name="CartSubmit" id="<?php if ($item['Empty'] != 0) echo 'CartSubmit'; ?>" value="Add To Cart" <?php if ($item['Empty'] == 0) echo "disabled"  ?>>
