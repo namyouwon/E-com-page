@@ -364,11 +364,13 @@ session_start();
         <?php
             }
         }
+
         // click Cart
         if (isset($_POST["subCart"])) {
             $disableBackground = true;
             $showCart = true;
         }
+        
         // click Cancel
         if (isset($_POST['cancel'])) {
             $disableBackground = 0;
