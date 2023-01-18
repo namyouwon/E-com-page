@@ -1,0 +1,5838 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Default Tabs renders default tabs 1`] = `
+<div
+  className="slds-tabs_default"
+>
+  <ul
+    className="slds-tabs_default__nav"
+    role="tablist"
+  >
+    <li
+      className="slds-tabs_default__item slds-is-active"
+      role="presentation"
+      title="Item One"
+    >
+      <a
+        aria-controls="tab-default-1"
+        aria-selected={true}
+        className="slds-tabs_default__link"
+        href="#"
+        id="tab-default-1__item"
+        onClick={[Function]}
+        role="tab"
+        tabIndex={0}
+      >
+        Item One
+      </a>
+    </li>
+    <li
+      className="slds-tabs_default__item"
+      role="presentation"
+      title="Item Two"
+    >
+      <a
+        aria-controls="tab-default-2"
+        aria-selected={false}
+        className="slds-tabs_default__link"
+        href="#"
+        id="tab-default-2__item"
+        onClick={[Function]}
+        role="tab"
+        tabIndex={-1}
+      >
+        Item Two
+      </a>
+    </li>
+    <li
+      className="slds-tabs_default__item"
+      role="presentation"
+      title="Item Three"
+    >
+      <a
+        aria-controls="tab-default-3"
+        aria-selected={false}
+        className="slds-tabs_default__link"
+        href="#"
+        id="tab-default-3__item"
+        onClick={[Function]}
+        role="tab"
+        tabIndex={-1}
+      >
+        Item Three
+      </a>
+    </li>
+  </ul>
+  <div
+    aria-labelledby="tab-default-1__item"
+    className="slds-tabs_default__content slds-show"
+    id="tab-default-1"
+    role="tabpanel"
+  >
+    Item One Content
+  </div>
+  <div
+    aria-labelledby="tab-default-2__item"
+    className="slds-tabs_default__content slds-hide"
+    id="tab-default-2"
+    role="tabpanel"
+  >
+    Item Two Content
+  </div>
+  <div
+    aria-labelledby="tab-default-3__item"
+    className="slds-tabs_default__content slds-hide"
+    id="tab-default-3"
+    role="tabpanel"
+  >
+    Item Three Content
+  </div>
+</div>
+`;
+
+exports[`Default Tabs renders default tabs with error 1`] = `
+<div
+  className="demo-only"
+  style={
+    Object {
+      "height": "12rem",
+    }
+  }
+>
+  <div
+    className="slds-tabs_default"
+  >
+    <ul
+      className="slds-tabs_default__nav"
+      role="tablist"
+    >
+      <li
+        className="slds-tabs_default__item slds-is-active"
+        role="presentation"
+        title="Item One"
+      >
+        <a
+          aria-controls="tab-default-1"
+          aria-selected={true}
+          className="slds-tabs_default__link"
+          href="#"
+          id="tab-default-1__item"
+          onClick={[Function]}
+          role="tab"
+          tabIndex={0}
+        >
+          Item One
+        </a>
+      </li>
+      <li
+        className="slds-tabs_default__item"
+        role="presentation"
+        title="Item Two"
+      >
+        <a
+          aria-controls="tab-default-2"
+          aria-selected={false}
+          className="slds-tabs_default__link"
+          href="#"
+          id="tab-default-2__item"
+          onClick={[Function]}
+          role="tab"
+          tabIndex={-1}
+        >
+          Item Two
+          <span
+            className="slds-tabs__right-icon"
+          >
+            <span
+              className="slds-icon_container slds-icon-utility-error"
+              title="This item has an error"
+            >
+              <svg
+                aria-hidden={true}
+                className="slds-icon slds-icon_x-small slds-icon-text-error"
+              >
+                <use
+                  xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#error"
+                />
+              </svg>
+              <span
+                className="slds-assistive-text"
+              >
+                This item has an error
+              </span>
+            </span>
+          </span>
+        </a>
+      </li>
+      <li
+        className="slds-tabs_default__item"
+        role="presentation"
+        title="Item Three"
+      >
+        <a
+          aria-controls="tab-default-3"
+          aria-selected={false}
+          className="slds-tabs_default__link"
+          href="#"
+          id="tab-default-3__item"
+          onClick={[Function]}
+          role="tab"
+          tabIndex={-1}
+        >
+          Item Three
+        </a>
+      </li>
+      <li
+        className="slds-tabs_default__item"
+        role="presentation"
+        title="Item Four"
+      >
+        <a
+          aria-controls="tab-default-4"
+          aria-selected={false}
+          className="slds-tabs_default__link"
+          href="#"
+          id="tab-default-4__item"
+          onClick={[Function]}
+          role="tab"
+          tabIndex={-1}
+        >
+          Item Four
+        </a>
+      </li>
+    </ul>
+    <div
+      aria-labelledby="tab-default-1__item"
+      className="slds-tabs_default__content slds-show"
+      id="tab-default-1"
+      role="tabpanel"
+    >
+      <h2>
+        Item One Content
+      </h2>
+    </div>
+    <div
+      aria-labelledby="tab-default-2__item"
+      className="slds-tabs_default__content slds-hide"
+      id="tab-default-2"
+      role="tabpanel"
+    >
+      <h2>
+        Item Two Content - Has Error
+      </h2>
+    </div>
+    <div
+      aria-labelledby="tab-default-3__item"
+      className="slds-tabs_default__content slds-hide"
+      id="tab-default-3"
+      role="tabpanel"
+    >
+      <h2>
+        Item Three Content
+      </h2>
+    </div>
+    <div
+      aria-labelledby="tab-default-4__item"
+      className="slds-tabs_default__content slds-hide"
+      id="tab-default-4"
+      role="tabpanel"
+    >
+      <h2>
+        Item Four Content
+      </h2>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Default Tabs renders default tabs with icons 1`] = `
+<div
+  className="demo-only"
+  style={
+    Object {
+      "height": "12rem",
+    }
+  }
+>
+  <div
+    className="slds-tabs_default"
+  >
+    <ul
+      className="slds-tabs_default__nav"
+      role="tablist"
+    >
+      <li
+        className="slds-tabs_default__item slds-is-active"
+        role="presentation"
+        title="Opportunities"
+      >
+        <a
+          aria-controls="tab-default-1"
+          aria-selected={true}
+          className="slds-tabs_default__link"
+          href="#"
+          id="tab-default-1__item"
+          onClick={[Function]}
+          role="tab"
+          tabIndex={0}
+        >
+          <span
+            className="slds-tabs__left-icon"
+          >
+            <span
+              className="slds-icon_container slds-icon-standard-opportunity"
+              title="Opportunities"
+            >
+              <svg
+                aria-hidden={true}
+                className="slds-icon slds-icon_small"
+              >
+                <use
+                  xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#opportunity"
+                />
+              </svg>
+            </span>
+          </span>
+          Opportunities
+        </a>
+      </li>
+      <li
+        className="slds-tabs_default__item"
+        role="presentation"
+        title="Cases"
+      >
+        <a
+          aria-controls="tab-default-2"
+          aria-selected={false}
+          className="slds-tabs_default__link"
+          href="#"
+          id="tab-default-2__item"
+          onClick={[Function]}
+          role="tab"
+          tabIndex={-1}
+        >
+          <span
+            className="slds-tabs__left-icon"
+          >
+            <span
+              className="slds-icon_container slds-icon-standard-case"
+              title="Cases"
+            >
+              <svg
+                aria-hidden={true}
+                className="slds-icon slds-icon_small"
+              >
+                <use
+                  xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+                />
+              </svg>
+            </span>
+          </span>
+          Cases
+        </a>
+      </li>
+      <li
+        className="slds-tabs_default__item"
+        role="presentation"
+        title="Products"
+      >
+        <a
+          aria-controls="tab-default-3"
+          aria-selected={false}
+          className="slds-tabs_default__link"
+          href="#"
+          id="tab-default-3__item"
+          onClick={[Function]}
+          role="tab"
+          tabIndex={-1}
+        >
+          <span
+            className="slds-tabs__left-icon"
+          >
+            <span
+              className="slds-icon_container slds-icon-standard-product"
+              title="Products"
+            >
+              <svg
+                aria-hidden={true}
+                className="slds-icon slds-icon_small"
+              >
+                <use
+                  xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#product"
+                />
+              </svg>
+            </span>
+          </span>
+          Products
+        </a>
+      </li>
+      <li
+        className="slds-tabs_default__item"
+        role="presentation"
+        title="Price Books"
+      >
+        <a
+          aria-controls="tab-default-4"
+          aria-selected={false}
+          className="slds-tabs_default__link"
+          href="#"
+          id="tab-default-4__item"
+          onClick={[Function]}
+          role="tab"
+          tabIndex={-1}
+        >
+          <span
+            className="slds-tabs__left-icon"
+          >
+            <span
+              className="slds-icon_container slds-icon-standard-pricebook"
+              title="Price Books"
+            >
+              <svg
+                aria-hidden={true}
+                className="slds-icon slds-icon_small"
+              >
+                <use
+                  xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#pricebook"
+                />
+              </svg>
+            </span>
+          </span>
+          Price Books
+        </a>
+      </li>
+      <li
+        className="slds-tabs_default__item"
+        role="presentation"
+        title="Contacts"
+      >
+        <a
+          aria-controls="tab-default-5"
+          aria-selected={false}
+          className="slds-tabs_default__link"
+          href="#"
+          id="tab-default-5__item"
+          onClick={[Function]}
+          role="tab"
+          tabIndex={-1}
+        >
+          <span
+            className="slds-tabs__left-icon"
+          >
+            <span
+              className="slds-icon_container slds-icon-standard-contact"
+              title="Contacts"
+            >
+              <svg
+                aria-hidden={true}
+                className="slds-icon slds-icon_small"
+              >
+                <use
+                  xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#contact"
+                />
+              </svg>
+            </span>
+          </span>
+          Contacts
+        </a>
+      </li>
+      <li
+        className="slds-tabs_default__item slds-tabs_default__overflow-button"
+        role="presentation"
+        title="More Tabs"
+      >
+        <div
+          className="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open"
+        >
+          <button
+            aria-haspopup={true}
+            className="slds-button"
+            onClick={[Function]}
+          >
+            More
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon slds-button__icon_x-small slds-button__icon_right"
+            >
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
+              />
+            </svg>
+          </button>
+          <div
+            className="slds-dropdown slds-dropdown_right"
+          >
+            <ul
+              className="slds-dropdown__list slds-dropdown_length-with-icon-10"
+              role="menu"
+            >
+              <li
+                className="slds-dropdown__item"
+                role="presentation"
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  <span
+                    className="slds-truncate"
+                    title="Accounts"
+                  >
+                    <span
+                      className="slds-media slds-media_center"
+                    >
+                      <span
+                        className="slds-media__figure"
+                      >
+                        <span
+                          className="slds-icon_container slds-icon-standard-account"
+                          title="Description of icon when needed"
+                        >
+                          <svg
+                            aria-hidden={true}
+                            className="slds-icon slds-icon_small"
+                          >
+                            <use
+                              xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#account"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span
+                        className="slds-media__body"
+                      >
+                        Accounts
+                      </span>
+                    </span>
+                  </span>
+                </a>
+              </li>
+              <li
+                className="slds-dropdown__item"
+                role="presentation"
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  <span
+                    className="slds-truncate"
+                    title="Approvals"
+                  >
+                    <span
+                      className="slds-media slds-media_center"
+                    >
+                      <span
+                        className="slds-media__figure"
+                      >
+                        <span
+                          className="slds-icon_container slds-icon-standard-approval"
+                          title="Description of icon when needed"
+                        >
+                          <svg
+                            aria-hidden={true}
+                            className="slds-icon slds-icon_small"
+                          >
+                            <use
+                              xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#approval"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span
+                        className="slds-media__body"
+                      >
+                        Approvals
+                      </span>
+                    </span>
+                  </span>
+                </a>
+              </li>
+              <li
+                className="slds-dropdown__item"
+                role="presentation"
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  <span
+                    className="slds-truncate"
+                    title="Lead"
+                  >
+                    <span
+                      className="slds-media slds-media_center"
+                    >
+                      <span
+                        className="slds-media__figure"
+                      >
+                        <span
+                          className="slds-icon_container slds-icon-standard-lead"
+                          title="Description of icon when needed"
+                        >
+                          <svg
+                            aria-hidden={true}
+                            className="slds-icon slds-icon_small"
+                          >
+                            <use
+                              xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#lead"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                      <span
+                        className="slds-media__body"
+                      >
+                        Leads
+                      </span>
+                    </span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div
+      aria-labelledby="tab-default-1__item"
+      className="slds-tabs_default__content slds-show"
+      id="tab-default-1"
+      role="tabpanel"
+    >
+      <h2>
+        Item One Content
+      </h2>
+    </div>
+    <div
+      aria-labelledby="tab-default-2__item"
+      className="slds-tabs_default__content slds-hide"
+      id="tab-default-2"
+      role="tabpanel"
+    >
+      <h2>
+        Item Two Content
+      </h2>
+    </div>
+    <div
+      aria-labelledby="tab-default-3__item"
+      className="slds-tabs_default__content slds-hide"
+      id="tab-default-3"
+      role="tabpanel"
+    >
+      <h2>
+        Item Three Content
+      </h2>
+    </div>
+    <div
+      aria-labelledby="tab-default-4__item"
+      className="slds-tabs_default__content slds-hide"
+      id="tab-default-4"
+      role="tabpanel"
+    >
+      <h2>
+        Item Four Content
+      </h2>
+    </div>
+    <div
+      aria-labelledby="tab-default-5__item"
+      className="slds-tabs_default__content slds-hide"
+      id="tab-default-5"
+      role="tabpanel"
+    >
+      <h2>
+        Item Five Content
+      </h2>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Default Tabs renders default tabs with nested scoped tabs 1`] = `
+<div
+  className="slds-tabs_default"
+>
+  <ul
+    className="slds-tabs_default__nav"
+    role="tablist"
+  >
+    <li
+      className="slds-tabs_default__item slds-is-active"
+      role="presentation"
+      title="Item One"
+    >
+      <a
+        aria-controls="tab-default-1"
+        aria-selected={true}
+        className="slds-tabs_default__link"
+        href="#"
+        id="tab-default-1__item"
+        onClick={[Function]}
+        role="tab"
+        tabIndex={0}
+      >
+        Item One
+      </a>
+    </li>
+    <li
+      className="slds-tabs_default__item"
+      role="presentation"
+      title="Item Two"
+    >
+      <a
+        aria-controls="tab-default-2"
+        aria-selected={false}
+        className="slds-tabs_default__link"
+        href="#"
+        id="tab-default-2__item"
+        onClick={[Function]}
+        role="tab"
+        tabIndex={-1}
+      >
+        Item Two
+      </a>
+    </li>
+    <li
+      className="slds-tabs_default__item"
+      role="presentation"
+      title="Item Three"
+    >
+      <a
+        aria-controls="tab-default-3"
+        aria-selected={false}
+        className="slds-tabs_default__link"
+        href="#"
+        id="tab-default-3__item"
+        onClick={[Function]}
+        role="tab"
+        tabIndex={-1}
+      >
+        Item Three
+      </a>
+    </li>
+  </ul>
+  <div
+    aria-labelledby="tab-default-1__item"
+    className="slds-tabs_default__content slds-show"
+    id="tab-default-1"
+    role="tabpanel"
+  >
+    <div
+      className="slds-tabs_scoped"
+    >
+      <ul
+        className="slds-tabs_scoped__nav"
+        role="tablist"
+      >
+        <li
+          className="slds-tabs_scoped__item slds-is-active"
+          role="presentation"
+          title="Item One"
+        >
+          <a
+            aria-controls="tab-scoped-1"
+            aria-selected={true}
+            className="slds-tabs_scoped__link"
+            href="#"
+            id="tab-scoped-1__item"
+            onClick={[Function]}
+            role="tab"
+            tabIndex={0}
+          >
+            Item One
+          </a>
+        </li>
+        <li
+          className="slds-tabs_scoped__item"
+          role="presentation"
+          title="Item Two"
+        >
+          <a
+            aria-controls="tab-scoped-2"
+            aria-selected={false}
+            className="slds-tabs_scoped__link"
+            href="#"
+            id="tab-scoped-2__item"
+            onClick={[Function]}
+            role="tab"
+            tabIndex={-1}
+          >
+            Item Two
+          </a>
+        </li>
+        <li
+          className="slds-tabs_scoped__item"
+          role="presentation"
+          title="Item Three"
+        >
+          <a
+            aria-controls="tab-scoped-3"
+            aria-selected={false}
+            className="slds-tabs_scoped__link"
+            href="#"
+            id="tab-scoped-3__item"
+            onClick={[Function]}
+            role="tab"
+            tabIndex={-1}
+          >
+            Item Three
+          </a>
+        </li>
+      </ul>
+      <div
+        aria-labelledby="tab-scoped-1__item"
+        className="slds-tabs_scoped__content slds-show"
+        id="tab-scoped-1"
+        role="tabpanel"
+      >
+        Item One Content
+      </div>
+      <div
+        aria-labelledby="tab-scoped-2__item"
+        className="slds-tabs_scoped__content slds-hide"
+        id="tab-scoped-2"
+        role="tabpanel"
+      >
+        Item Two Content
+      </div>
+      <div
+        aria-labelledby="tab-scoped-3__item"
+        className="slds-tabs_scoped__content slds-hide"
+        id="tab-scoped-3"
+        role="tabpanel"
+      >
+        Item Three Content
+      </div>
+    </div>
+  </div>
+  <div
+    aria-labelledby="tab-default-2__item"
+    className="slds-tabs_default__content slds-hide"
+    id="tab-default-2"
+    role="tabpanel"
+  >
+    Item Two Content
+  </div>
+  <div
+    aria-labelledby="tab-default-3__item"
+    className="slds-tabs_default__content slds-hide"
+    id="tab-default-3"
+    role="tabpanel"
+  >
+    Item Three Content
+  </div>
+</div>
+`;
+
+exports[`Default Tabs renders default tabs with overflowing tab items 1`] = `
+<div
+  className="demo-only"
+  style={
+    Object {
+      "height": "12rem",
+    }
+  }
+>
+  <div
+    className="slds-tabs_default"
+  >
+    <ul
+      className="slds-tabs_default__nav"
+      role="tablist"
+    >
+      <li
+        className="slds-tabs_default__item slds-is-active"
+        role="presentation"
+        title="Item One"
+      >
+        <a
+          aria-controls="tab-default-1"
+          aria-selected={true}
+          className="slds-tabs_default__link"
+          href="#"
+          id="tab-default-1__item"
+          onClick={[Function]}
+          role="tab"
+          tabIndex={0}
+        >
+          Item One
+        </a>
+      </li>
+      <li
+        className="slds-tabs_default__item"
+        role="presentation"
+        title="Item Two"
+      >
+        <a
+          aria-controls="tab-default-2"
+          aria-selected={false}
+          className="slds-tabs_default__link"
+          href="#"
+          id="tab-default-2__item"
+          onClick={[Function]}
+          role="tab"
+          tabIndex={-1}
+        >
+          Item Two
+        </a>
+      </li>
+      <li
+        className="slds-tabs_default__item"
+        role="presentation"
+        title="Item Three"
+      >
+        <a
+          aria-controls="tab-default-3"
+          aria-selected={false}
+          className="slds-tabs_default__link"
+          href="#"
+          id="tab-default-3__item"
+          onClick={[Function]}
+          role="tab"
+          tabIndex={-1}
+        >
+          Item Three
+        </a>
+      </li>
+      <li
+        className="slds-tabs_default__item"
+        role="presentation"
+        title="Item Four"
+      >
+        <a
+          aria-controls="tab-default-4"
+          aria-selected={false}
+          className="slds-tabs_default__link"
+          href="#"
+          id="tab-default-4__item"
+          onClick={[Function]}
+          role="tab"
+          tabIndex={-1}
+        >
+          Item Four
+        </a>
+      </li>
+      <li
+        className="slds-tabs_default__item"
+        role="presentation"
+        title="Item Five"
+      >
+        <a
+          aria-controls="tab-default-5"
+          aria-selected={false}
+          className="slds-tabs_default__link"
+          href="#"
+          id="tab-default-5__item"
+          onClick={[Function]}
+          role="tab"
+          tabIndex={-1}
+        >
+          Item Five
+        </a>
+      </li>
+      <li
+        className="slds-tabs_default__item slds-tabs_default__overflow-button"
+        role="presentation"
+        title="More Tabs"
+      >
+        <div
+          className="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open"
+        >
+          <button
+            aria-haspopup={true}
+            className="slds-button"
+            onClick={[Function]}
+          >
+            More
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon slds-button__icon_x-small slds-button__icon_right"
+            >
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
+              />
+            </svg>
+          </button>
+          <div
+            className="slds-dropdown slds-dropdown_right"
+          >
+            <ul
+              className="slds-dropdown__list slds-dropdown_length-with-icon-10"
+              role="menu"
+            >
+              <li
+                className="slds-dropdown__item"
+                role="presentation"
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  <span
+                    className="slds-truncate"
+                    title="Accounts"
+                  >
+                    Accounts
+                  </span>
+                </a>
+              </li>
+              <li
+                className="slds-dropdown__item"
+                role="presentation"
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  <span
+                    className="slds-truncate"
+                    title="Approvals"
+                  >
+                    Approvals
+                  </span>
+                </a>
+              </li>
+              <li
+                className="slds-dropdown__item"
+                role="presentation"
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  <span
+                    className="slds-truncate"
+                    title="Lead"
+                  >
+                    Leads
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div
+      aria-labelledby="tab-default-1__item"
+      className="slds-tabs_default__content slds-show"
+      id="tab-default-1"
+      role="tabpanel"
+    >
+      <h2>
+        Item One Content
+      </h2>
+    </div>
+    <div
+      aria-labelledby="tab-default-2__item"
+      className="slds-tabs_default__content slds-hide"
+      id="tab-default-2"
+      role="tabpanel"
+    >
+      <h2>
+        Item Two Content
+      </h2>
+    </div>
+    <div
+      aria-labelledby="tab-default-3__item"
+      className="slds-tabs_default__content slds-hide"
+      id="tab-default-3"
+      role="tabpanel"
+    >
+      <h2>
+        Item Three Content
+      </h2>
+    </div>
+    <div
+      aria-labelledby="tab-default-4__item"
+      className="slds-tabs_default__content slds-hide"
+      id="tab-default-4"
+      role="tabpanel"
+    >
+      <h2>
+        Item Four Content
+      </h2>
+    </div>
+    <div
+      aria-labelledby="tab-default-5__item"
+      className="slds-tabs_default__content slds-hide"
+      id="tab-default-5"
+      role="tabpanel"
+    >
+      <h2>
+        Item Five Content
+      </h2>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Default Tabs renders large sized default tabs 1`] = `
+<div
+  className="slds-tabs_default slds-tabs_large"
+>
+  <ul
+    className="slds-tabs_default__nav"
+    role="tablist"
+  >
+    <li
+      className="slds-tabs_default__item slds-is-active"
+      role="presentation"
+      title="Item One"
+    >
+      <a
+        aria-controls="tab-default-1"
+        aria-selected={true}
+        className="slds-tabs_default__link"
+        href="#"
+        id="tab-default-1__item"
+        onClick={[Function]}
+        role="tab"
+        tabIndex={0}
+      >
+        Item One
+      </a>
+    </li>
+    <li
+      className="slds-tabs_default__item"
+      role="presentation"
+      title="Item Two"
+    >
+      <a
+        aria-controls="tab-default-2"
+        aria-selected={false}
+        className="slds-tabs_default__link"
+        href="#"
+        id="tab-default-2__item"
+        onClick={[Function]}
+        role="tab"
+        tabIndex={-1}
+      >
+        Item Two
+      </a>
+    </li>
+    <li
+      className="slds-tabs_default__item"
+      role="presentation"
+      title="Item Three"
+    >
+      <a
+        aria-controls="tab-default-3"
+        aria-selected={false}
+        className="slds-tabs_default__link"
+        href="#"
+        id="tab-default-3__item"
+        onClick={[Function]}
+        role="tab"
+        tabIndex={-1}
+      >
+        Item Three
+      </a>
+    </li>
+  </ul>
+  <div
+    aria-labelledby="tab-default-1__item"
+    className="slds-tabs_default__content slds-show"
+    id="tab-default-1"
+    role="tabpanel"
+  >
+    Item One Content
+  </div>
+  <div
+    aria-labelledby="tab-default-2__item"
+    className="slds-tabs_default__content slds-hide"
+    id="tab-default-2"
+    role="tabpanel"
+  >
+    Item Two Content
+  </div>
+  <div
+    aria-labelledby="tab-default-3__item"
+    className="slds-tabs_default__content slds-hide"
+    id="tab-default-3"
+    role="tabpanel"
+  >
+    Item Three Content
+  </div>
+</div>
+`;
+
+exports[`Default Tabs renders medium sized default tabs 1`] = `
+<div
+  className="slds-tabs_default slds-tabs_medium"
+>
+  <ul
+    className="slds-tabs_default__nav"
+    role="tablist"
+  >
+    <li
+      className="slds-tabs_default__item slds-is-active"
+      role="presentation"
+      title="Item One"
+    >
+      <a
+        aria-controls="tab-default-1"
+        aria-selected={true}
+        className="slds-tabs_default__link"
+        href="#"
+        id="tab-default-1__item"
+        onClick={[Function]}
+        role="tab"
+        tabIndex={0}
+      >
+        Item One
+      </a>
+    </li>
+    <li
+      className="slds-tabs_default__item"
+      role="presentation"
+      title="Item Two"
+    >
+      <a
+        aria-controls="tab-default-2"
+        aria-selected={false}
+        className="slds-tabs_default__link"
+        href="#"
+        id="tab-default-2__item"
+        onClick={[Function]}
+        role="tab"
+        tabIndex={-1}
+      >
+        Item Two
+      </a>
+    </li>
+    <li
+      className="slds-tabs_default__item"
+      role="presentation"
+      title="Item Three"
+    >
+      <a
+        aria-controls="tab-default-3"
+        aria-selected={false}
+        className="slds-tabs_default__link"
+        href="#"
+        id="tab-default-3__item"
+        onClick={[Function]}
+        role="tab"
+        tabIndex={-1}
+      >
+        Item Three
+      </a>
+    </li>
+  </ul>
+  <div
+    aria-labelledby="tab-default-1__item"
+    className="slds-tabs_default__content slds-show"
+    id="tab-default-1"
+    role="tabpanel"
+  >
+    Item One Content
+  </div>
+  <div
+    aria-labelledby="tab-default-2__item"
+    className="slds-tabs_default__content slds-hide"
+    id="tab-default-2"
+    role="tabpanel"
+  >
+    Item Two Content
+  </div>
+  <div
+    aria-labelledby="tab-default-3__item"
+    className="slds-tabs_default__content slds-hide"
+    id="tab-default-3"
+    role="tabpanel"
+  >
+    Item Three Content
+  </div>
+</div>
+`;
+
+exports[`Default Tabs renders tabs as a card 1`] = `
+<div
+  className="slds-tabs_default slds-tabs_card"
+>
+  <ul
+    className="slds-tabs_default__nav"
+    role="tablist"
+  >
+    <li
+      className="slds-tabs_default__item slds-is-active"
+      role="presentation"
+      title="Item One"
+    >
+      <a
+        aria-controls="tab-default-1"
+        aria-selected={true}
+        className="slds-tabs_default__link"
+        href="#"
+        id="tab-default-1__item"
+        onClick={[Function]}
+        role="tab"
+        tabIndex={0}
+      >
+        Item One
+      </a>
+    </li>
+    <li
+      className="slds-tabs_default__item"
+      role="presentation"
+      title="Item Two"
+    >
+      <a
+        aria-controls="tab-default-2"
+        aria-selected={false}
+        className="slds-tabs_default__link"
+        href="#"
+        id="tab-default-2__item"
+        onClick={[Function]}
+        role="tab"
+        tabIndex={-1}
+      >
+        Item Two
+      </a>
+    </li>
+    <li
+      className="slds-tabs_default__item"
+      role="presentation"
+      title="Item Three"
+    >
+      <a
+        aria-controls="tab-default-3"
+        aria-selected={false}
+        className="slds-tabs_default__link"
+        href="#"
+        id="tab-default-3__item"
+        onClick={[Function]}
+        role="tab"
+        tabIndex={-1}
+      >
+        Item Three
+      </a>
+    </li>
+  </ul>
+  <div
+    aria-labelledby="tab-default-1__item"
+    className="slds-tabs_default__content slds-show"
+    id="tab-default-1"
+    role="tabpanel"
+  >
+    <article
+      className="slds-card"
+    >
+      <div
+        className="slds-card__header slds-grid"
+      >
+        <header
+          className="slds-media slds-media_center slds-has-flexi-truncate"
+        >
+          <div
+            className="slds-media__figure"
+          >
+            <span
+              className="slds-icon_container slds-icon-standard-contact"
+              title="contact"
+            >
+              <svg
+                aria-hidden={true}
+                className="slds-icon slds-icon_small"
+              >
+                <use
+                  xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#contact"
+                />
+              </svg>
+              <span
+                className="slds-assistive-text"
+              >
+                contact
+              </span>
+            </span>
+          </div>
+          <div
+            className="slds-media__body"
+          >
+            <h2
+              className="slds-card__header-title"
+            >
+              <a
+                className="slds-card__header-link slds-truncate"
+                href="#"
+                onClick={[Function]}
+                title="Card Header"
+              >
+                <span>
+                  Card Header
+                </span>
+              </a>
+            </h2>
+          </div>
+          <div
+            className="slds-no-flex"
+          >
+            <button
+              className="slds-button slds-button_neutral"
+            >
+              New
+            </button>
+          </div>
+        </header>
+      </div>
+      <div
+        className="slds-card__body slds-card__body_inner"
+      >
+        This is a card inside an 
+        <code
+          className="doc"
+        >
+          .slds-tabs_card
+        </code>
+         
+        to show how styling is removed when cards are nested inside.
+      </div>
+      <footer
+        className="slds-card__footer"
+      >
+        <a
+          className="slds-card__footer-action"
+          href="#"
+          onClick={[Function]}
+        >
+          View All 
+          <span
+            className="slds-assistive-text"
+          >
+            Contacts
+          </span>
+        </a>
+      </footer>
+    </article>
+    <article
+      className="slds-card"
+    >
+      <div
+        className="slds-card__header slds-grid"
+      >
+        <header
+          className="slds-media slds-media_center slds-has-flexi-truncate"
+        >
+          <div
+            className="slds-media__figure"
+          >
+            <span
+              className="slds-icon_container slds-icon-standard-contact"
+              title="contact"
+            >
+              <svg
+                aria-hidden={true}
+                className="slds-icon slds-icon_small"
+              >
+                <use
+                  xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#contact"
+                />
+              </svg>
+              <span
+                className="slds-assistive-text"
+              >
+                contact
+              </span>
+            </span>
+          </div>
+          <div
+            className="slds-media__body"
+          >
+            <h2
+              className="slds-card__header-title"
+            >
+              <a
+                className="slds-card__header-link slds-truncate"
+                href="#"
+                onClick={[Function]}
+                title="Card Header"
+              >
+                <span>
+                  Card Header
+                </span>
+              </a>
+            </h2>
+          </div>
+          <div
+            className="slds-no-flex"
+          >
+            <button
+              className="slds-button slds-button_neutral"
+            >
+              New
+            </button>
+          </div>
+        </header>
+      </div>
+      <div
+        className="slds-card__body slds-card__body_inner"
+      >
+        This is a card inside an 
+        <code
+          className="doc"
+        >
+          .slds-tabs_card
+        </code>
+         
+        to show how styling is removed when cards are nested inside.
+      </div>
+      <footer
+        className="slds-card__footer"
+      >
+        <a
+          className="slds-card__footer-action"
+          href="#"
+          onClick={[Function]}
+        >
+          View All 
+          <span
+            className="slds-assistive-text"
+          >
+            Contacts
+          </span>
+        </a>
+      </footer>
+    </article>
+    <article
+      className="slds-card slds-card_boundary"
+    >
+      <div
+        className="slds-card__header slds-grid"
+      >
+        <header
+          className="slds-media slds-media_center slds-has-flexi-truncate"
+        >
+          <div
+            className="slds-media__figure"
+          >
+            <span
+              className="slds-icon_container slds-icon-standard-contact"
+              title="contact"
+            >
+              <svg
+                aria-hidden={true}
+                className="slds-icon slds-icon_small"
+              >
+                <use
+                  xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#contact"
+                />
+              </svg>
+              <span
+                className="slds-assistive-text"
+              >
+                contact
+              </span>
+            </span>
+          </div>
+          <div
+            className="slds-media__body"
+          >
+            <h2
+              className="slds-card__header-title"
+            >
+              <a
+                className="slds-card__header-link slds-truncate"
+                href="#"
+                onClick={[Function]}
+                title="Card Header"
+              >
+                <span>
+                  Card Header
+                </span>
+              </a>
+            </h2>
+          </div>
+          <div
+            className="slds-no-flex"
+          >
+            <button
+              className="slds-button slds-button_neutral"
+            >
+              New
+            </button>
+          </div>
+        </header>
+      </div>
+      <div
+        className="slds-card__body slds-card__body_inner"
+      >
+        This is a card inside an 
+        <code
+          className="doc"
+        >
+          .slds-tabs_card
+        </code>
+         
+        to illustrate how
+        <code
+          className="doc"
+        >
+          .slds-card_boundary
+        </code>
+         adds a rounded border when desired.
+      </div>
+      <footer
+        className="slds-card__footer"
+      >
+        <a
+          className="slds-card__footer-action"
+          href="#"
+          onClick={[Function]}
+        >
+          View All 
+          <span
+            className="slds-assistive-text"
+          >
+            Contacts
+          </span>
+        </a>
+      </footer>
+    </article>
+  </div>
+  <div
+    aria-labelledby="tab-default-2__item"
+    className="slds-tabs_default__content slds-hide"
+    id="tab-default-2"
+    role="tabpanel"
+  >
+    Item Two Content
+  </div>
+  <div
+    aria-labelledby="tab-default-3__item"
+    className="slds-tabs_default__content slds-hide"
+    id="tab-default-3"
+    role="tabpanel"
+  >
+    Item Three Content
+  </div>
+</div>
+`;
+
+exports[`Mobile stacked tabs renders a deprecated adjacent tab stack 1`] = `
+<div>
+  <ul
+    className="slds-tabs_mobile"
+  >
+    <li
+      className="slds-tabs_mobile__item"
+    >
+      <div
+        className="slds-tabs_mobile__title"
+      >
+        <button
+          className="slds-tabs_mobile__title-action slds-button slds-button_reset"
+        >
+          <span
+            className="slds-truncate"
+            title="List 1 Item One"
+          >
+            List 1 Item One
+          </span>
+          <svg
+            aria-hidden={true}
+            className="slds-icon slds-icon_x-small slds-icon-text-default"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      className="slds-tabs_mobile__item"
+    >
+      <div
+        className="slds-tabs_mobile__title"
+      >
+        <button
+          className="slds-tabs_mobile__title-action slds-button slds-button_reset"
+        >
+          <span
+            className="slds-truncate"
+            title="List 1 Item Two"
+          >
+            List 1 Item Two
+          </span>
+          <svg
+            aria-hidden={true}
+            className="slds-icon slds-icon_x-small slds-icon-text-default"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+  </ul>
+  <ul
+    className="slds-tabs_mobile"
+  >
+    <li
+      className="slds-tabs_mobile__item"
+    >
+      <div
+        className="slds-tabs_mobile__title"
+      >
+        <button
+          className="slds-tabs_mobile__title-action slds-button slds-button_reset"
+        >
+          <span
+            className="slds-truncate"
+            title="List 2 Item One"
+          >
+            List 2 Item One
+          </span>
+          <svg
+            aria-hidden={true}
+            className="slds-icon slds-icon_x-small slds-icon-text-default"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      className="slds-tabs_mobile__item"
+    >
+      <div
+        className="slds-tabs_mobile__title"
+      >
+        <button
+          className="slds-tabs_mobile__title-action slds-button slds-button_reset"
+        >
+          <span
+            className="slds-truncate"
+            title="List 2 Item Two with A Really Long Name"
+          >
+            List 2 Item Two with A Really Long Name
+          </span>
+          <svg
+            aria-hidden={true}
+            className="slds-icon slds-icon_x-small slds-icon-text-default"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      className="slds-tabs_mobile__item"
+    >
+      <div
+        className="slds-tabs_mobile__title"
+      >
+        <button
+          className="slds-tabs_mobile__title-action slds-button slds-button_reset"
+        >
+          <span
+            className="slds-truncate"
+            title="List 2 Item Three"
+          >
+            List 2 Item Three
+          </span>
+          <svg
+            aria-hidden={true}
+            className="slds-icon slds-icon_x-small slds-icon-text-default"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Mobile stacked tabs renders a deprecated tab item 1`] = `
+<li
+  className="slds-tabs_mobile__item"
+/>
+`;
+
+exports[`Mobile stacked tabs renders a deprecated tab list 1`] = `
+<ul
+  className="slds-tabs_mobile"
+/>
+`;
+
+exports[`Mobile stacked tabs renders a deprecated tab stack 1`] = `
+<ul
+  className="slds-tabs_mobile"
+>
+  <li
+    className="slds-tabs_mobile__item"
+  >
+    <div
+      className="slds-tabs_mobile__title"
+    >
+      <button
+        className="slds-tabs_mobile__title-action slds-button slds-button_reset"
+      >
+        <span
+          className="slds-truncate"
+          title="Item One"
+        >
+          Item One
+        </span>
+        <svg
+          aria-hidden={true}
+          className="slds-icon slds-icon_x-small slds-icon-text-default"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+          />
+        </svg>
+      </button>
+    </div>
+  </li>
+  <li
+    className="slds-tabs_mobile__item"
+  >
+    <div
+      className="slds-tabs_mobile__title"
+    >
+      <button
+        className="slds-tabs_mobile__title-action slds-button slds-button_reset"
+      >
+        <span
+          className="slds-truncate"
+          title="Item Two"
+        >
+          Item Two
+        </span>
+        <svg
+          aria-hidden={true}
+          className="slds-icon slds-icon_x-small slds-icon-text-default"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+          />
+        </svg>
+      </button>
+    </div>
+  </li>
+  <li
+    className="slds-tabs_mobile__item"
+  >
+    <div
+      className="slds-tabs_mobile__title"
+    >
+      <button
+        className="slds-tabs_mobile__title-action slds-button slds-button_reset"
+      >
+        <span
+          className="slds-truncate"
+          title="Item Three"
+        >
+          Item Three
+        </span>
+        <svg
+          aria-hidden={true}
+          className="slds-icon slds-icon_x-small slds-icon-text-default"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+          />
+        </svg>
+      </button>
+    </div>
+  </li>
+</ul>
+`;
+
+exports[`Mobile stacked tabs renders a deprecated tab title 1`] = `
+<div
+  className="slds-tabs_mobile__title"
+/>
+`;
+
+exports[`Mobile stacked tabs renders a deprecated tab title action 1`] = `
+<button
+  className="slds-tabs_mobile__title-action slds-button slds-button_reset"
+>
+  <span
+    className="slds-truncate"
+    title="List 1 Item One"
+  >
+    List 1 Item One
+  </span>
+  <svg
+    aria-hidden={true}
+    className="slds-icon slds-icon_x-small slds-icon-text-default"
+  >
+    <use
+      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+    />
+  </svg>
+</button>
+`;
+
+exports[`Mobile stacked tabs renders a hidden tab panel 1`] = `
+<div
+  aria-hidden={true}
+  className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-hidden"
+>
+  <div
+    className="slds-panel__header slds-panel__header_align-center"
+  >
+    <button
+      className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+      title="Collapse Item One Panel"
+    >
+      <svg
+        aria-hidden={true}
+        className="slds-button__icon"
+      >
+        <use
+          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+        />
+      </svg>
+      <span
+        className="slds-assistive-text"
+      >
+        Collapse Item One Panel
+      </span>
+    </button>
+    <h2
+      className="slds-panel__header-title slds-text-heading_small slds-truncate"
+      title="Item One Panel"
+    >
+      Item One Panel
+    </h2>
+  </div>
+  <div
+    className="slds-panel__body"
+  >
+    A panel body accepts any layout or component
+  </div>
+</div>
+`;
+
+exports[`Mobile stacked tabs renders a hidden tabset 1`] = `
+<ul
+  className="slds-tabs-mobile slds-hidden"
+/>
+`;
+
+exports[`Mobile stacked tabs renders a mobile tabs demo 1`] = `
+<div
+  className="slds-tabs-mobile__container"
+>
+  <ul
+    className="slds-tabs-mobile"
+  >
+    <li
+      className="slds-tabs-mobile__item"
+    >
+      <button
+        className="slds-button slds-button_full-width"
+        onClick={[Function]}
+      >
+        <span
+          className="slds-truncate"
+          title="Item One"
+        >
+          Item One
+        </span>
+        <svg
+          aria-hidden={true}
+          className="slds-icon slds-icon_x-small slds-icon-text-default"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+          />
+        </svg>
+      </button>
+    </li>
+    <li
+      className="slds-tabs-mobile__item"
+    >
+      <button
+        className="slds-button slds-button_full-width"
+        onClick={[Function]}
+      >
+        <span
+          className="slds-truncate"
+          title="Item Two"
+        >
+          Item Two
+        </span>
+        <svg
+          aria-hidden={true}
+          className="slds-icon slds-icon_x-small slds-icon-text-default"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+          />
+        </svg>
+      </button>
+    </li>
+    <li
+      className="slds-tabs-mobile__item"
+    >
+      <button
+        className="slds-button slds-button_full-width"
+        onClick={[Function]}
+      >
+        <span
+          className="slds-truncate"
+          title="Item Three"
+        >
+          Item Three
+        </span>
+        <svg
+          aria-hidden={true}
+          className="slds-icon slds-icon_x-small slds-icon-text-default"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+          />
+        </svg>
+      </button>
+    </li>
+  </ul>
+  <div
+    aria-hidden={true}
+    className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-hidden"
+  >
+    <div
+      className="slds-panel__header slds-panel__header_align-center"
+    >
+      <button
+        className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+        onClick={[Function]}
+        title="Collapse Item 1 Panel"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          Collapse Item 1 Panel
+        </span>
+      </button>
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Item 1 Panel"
+      >
+        Item 1 Panel
+      </h2>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+  <div
+    aria-hidden={true}
+    className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-hidden"
+  >
+    <div
+      className="slds-panel__header slds-panel__header_align-center"
+    >
+      <button
+        className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+        onClick={[Function]}
+        title="Collapse Item 2 Panel"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          Collapse Item 2 Panel
+        </span>
+      </button>
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Item 2 Panel"
+      >
+        Item 2 Panel
+      </h2>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+  <div
+    aria-hidden={true}
+    className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-hidden"
+  >
+    <div
+      className="slds-panel__header slds-panel__header_align-center"
+    >
+      <button
+        className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+        onClick={[Function]}
+        title="Collapse Item 3 Panel"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          Collapse Item 3 Panel
+        </span>
+      </button>
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Item 3 Panel"
+      >
+        Item 3 Panel
+      </h2>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Mobile stacked tabs renders a mobile tabs demo with a visible panel showing 1`] = `
+<div
+  className="slds-tabs-mobile__container"
+>
+  <ul
+    className="slds-tabs-mobile slds-hidden"
+  >
+    <li
+      className="slds-tabs-mobile__item"
+    >
+      <button
+        className="slds-button slds-button_full-width"
+        onClick={[Function]}
+      >
+        <span
+          className="slds-truncate"
+          title="Item One"
+        >
+          Item One
+        </span>
+        <svg
+          aria-hidden={true}
+          className="slds-icon slds-icon_x-small slds-icon-text-default"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+          />
+        </svg>
+      </button>
+    </li>
+    <li
+      className="slds-tabs-mobile__item"
+    >
+      <button
+        className="slds-button slds-button_full-width"
+        onClick={[Function]}
+      >
+        <span
+          className="slds-truncate"
+          title="Item Two"
+        >
+          Item Two
+        </span>
+        <svg
+          aria-hidden={true}
+          className="slds-icon slds-icon_x-small slds-icon-text-default"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+          />
+        </svg>
+      </button>
+    </li>
+    <li
+      className="slds-tabs-mobile__item"
+    >
+      <button
+        className="slds-button slds-button_full-width"
+        onClick={[Function]}
+      >
+        <span
+          className="slds-truncate"
+          title="Item Three"
+        >
+          Item Three
+        </span>
+        <svg
+          aria-hidden={true}
+          className="slds-icon slds-icon_x-small slds-icon-text-default"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+          />
+        </svg>
+      </button>
+    </li>
+  </ul>
+  <div
+    aria-hidden={false}
+    className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-is-open"
+  >
+    <div
+      className="slds-panel__header slds-panel__header_align-center"
+    >
+      <button
+        className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+        onClick={[Function]}
+        title="Collapse Item 1 Panel"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          Collapse Item 1 Panel
+        </span>
+      </button>
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Item 1 Panel"
+      >
+        Item 1 Panel
+      </h2>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+  <div
+    aria-hidden={true}
+    className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-hidden"
+  >
+    <div
+      className="slds-panel__header slds-panel__header_align-center"
+    >
+      <button
+        className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+        onClick={[Function]}
+        title="Collapse Item 2 Panel"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          Collapse Item 2 Panel
+        </span>
+      </button>
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Item 2 Panel"
+      >
+        Item 2 Panel
+      </h2>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+  <div
+    aria-hidden={true}
+    className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-hidden"
+  >
+    <div
+      className="slds-panel__header slds-panel__header_align-center"
+    >
+      <button
+        className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+        onClick={[Function]}
+        title="Collapse Item 3 Panel"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          Collapse Item 3 Panel
+        </span>
+      </button>
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Item 3 Panel"
+      >
+        Item 3 Panel
+      </h2>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Mobile stacked tabs renders a static mobile tabs demo 1`] = `
+<div
+  className="slds-tabs-mobile__container"
+>
+  <ul
+    className="slds-tabs-mobile"
+  >
+    <li
+      className="slds-tabs-mobile__item"
+    >
+      <button
+        className="slds-button slds-button_full-width"
+        onClick={[Function]}
+      >
+        <span
+          className="slds-truncate"
+          title="Item One"
+        >
+          Item One
+        </span>
+        <svg
+          aria-hidden={true}
+          className="slds-icon slds-icon_x-small slds-icon-text-default"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+          />
+        </svg>
+      </button>
+    </li>
+    <li
+      className="slds-tabs-mobile__item"
+    >
+      <button
+        className="slds-button slds-button_full-width"
+        onClick={[Function]}
+      >
+        <span
+          className="slds-truncate"
+          title="Item Two"
+        >
+          Item Two
+        </span>
+        <svg
+          aria-hidden={true}
+          className="slds-icon slds-icon_x-small slds-icon-text-default"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+          />
+        </svg>
+      </button>
+    </li>
+    <li
+      className="slds-tabs-mobile__item"
+    >
+      <button
+        className="slds-button slds-button_full-width"
+        onClick={[Function]}
+      >
+        <span
+          className="slds-truncate"
+          title="Item Three"
+        >
+          Item Three
+        </span>
+        <svg
+          aria-hidden={true}
+          className="slds-icon slds-icon_x-small slds-icon-text-default"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+          />
+        </svg>
+      </button>
+    </li>
+  </ul>
+  <div
+    aria-hidden={true}
+    className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-hidden"
+  >
+    <div
+      className="slds-panel__header slds-panel__header_align-center"
+    >
+      <button
+        className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+        onClick={[Function]}
+        title="Collapse Item 1 Panel"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          Collapse Item 1 Panel
+        </span>
+      </button>
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Item 1 Panel"
+      >
+        Item 1 Panel
+      </h2>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+  <div
+    aria-hidden={true}
+    className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-hidden"
+  >
+    <div
+      className="slds-panel__header slds-panel__header_align-center"
+    >
+      <button
+        className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+        onClick={[Function]}
+        title="Collapse Item 2 Panel"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          Collapse Item 2 Panel
+        </span>
+      </button>
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Item 2 Panel"
+      >
+        Item 2 Panel
+      </h2>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+  <div
+    aria-hidden={true}
+    className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-hidden"
+  >
+    <div
+      className="slds-panel__header slds-panel__header_align-center"
+    >
+      <button
+        className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+        onClick={[Function]}
+        title="Collapse Item 3 Panel"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          Collapse Item 3 Panel
+        </span>
+      </button>
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Item 3 Panel"
+      >
+        Item 3 Panel
+      </h2>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Mobile stacked tabs renders a static mobile tabs demo with a visible panel showing 1`] = `
+<div
+  className="slds-tabs-mobile__container"
+>
+  <ul
+    className="slds-tabs-mobile slds-hidden"
+  >
+    <li
+      className="slds-tabs-mobile__item"
+    >
+      <button
+        className="slds-button slds-button_full-width"
+        onClick={[Function]}
+      >
+        <span
+          className="slds-truncate"
+          title="Item One"
+        >
+          Item One
+        </span>
+        <svg
+          aria-hidden={true}
+          className="slds-icon slds-icon_x-small slds-icon-text-default"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+          />
+        </svg>
+      </button>
+    </li>
+    <li
+      className="slds-tabs-mobile__item"
+    >
+      <button
+        className="slds-button slds-button_full-width"
+        onClick={[Function]}
+      >
+        <span
+          className="slds-truncate"
+          title="Item Two"
+        >
+          Item Two
+        </span>
+        <svg
+          aria-hidden={true}
+          className="slds-icon slds-icon_x-small slds-icon-text-default"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+          />
+        </svg>
+      </button>
+    </li>
+    <li
+      className="slds-tabs-mobile__item"
+    >
+      <button
+        className="slds-button slds-button_full-width"
+        onClick={[Function]}
+      >
+        <span
+          className="slds-truncate"
+          title="Item Three"
+        >
+          Item Three
+        </span>
+        <svg
+          aria-hidden={true}
+          className="slds-icon slds-icon_x-small slds-icon-text-default"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+          />
+        </svg>
+      </button>
+    </li>
+  </ul>
+  <div
+    aria-hidden={false}
+    className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-is-open"
+  >
+    <div
+      className="slds-panel__header slds-panel__header_align-center"
+    >
+      <button
+        className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+        onClick={[Function]}
+        title="Collapse Item 1 Panel"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          Collapse Item 1 Panel
+        </span>
+      </button>
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Item 1 Panel"
+      >
+        Item 1 Panel
+      </h2>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+  <div
+    aria-hidden={true}
+    className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-hidden"
+  >
+    <div
+      className="slds-panel__header slds-panel__header_align-center"
+    >
+      <button
+        className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+        onClick={[Function]}
+        title="Collapse Item 2 Panel"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          Collapse Item 2 Panel
+        </span>
+      </button>
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Item 2 Panel"
+      >
+        Item 2 Panel
+      </h2>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+  <div
+    aria-hidden={true}
+    className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-hidden"
+  >
+    <div
+      className="slds-panel__header slds-panel__header_align-center"
+    >
+      <button
+        className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+        onClick={[Function]}
+        title="Collapse Item 3 Panel"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          Collapse Item 3 Panel
+        </span>
+      </button>
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Item 3 Panel"
+      >
+        Item 3 Panel
+      </h2>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Mobile stacked tabs renders a tab 1`] = `
+<li
+  className="slds-tabs-mobile__item"
+/>
+`;
+
+exports[`Mobile stacked tabs renders a tab button 1`] = `
+<button
+  className="slds-button slds-button_full-width"
+  onClick={[Function]}
+>
+  <span
+    className="slds-truncate"
+    title="List 1 Item One"
+  >
+    List 1 Item One
+  </span>
+  <svg
+    aria-hidden={true}
+    className="slds-icon slds-icon_x-small slds-icon-text-default"
+  >
+    <use
+      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+    />
+  </svg>
+</button>
+`;
+
+exports[`Mobile stacked tabs renders a tab container 1`] = `
+<div
+  className="slds-tabs-mobile__container"
+/>
+`;
+
+exports[`Mobile stacked tabs renders a tab group 1`] = `
+<div
+  className="slds-tabs-mobile__group"
+/>
+`;
+
+exports[`Mobile stacked tabs renders a tabset 1`] = `
+<ul
+  className="slds-tabs-mobile"
+/>
+`;
+
+exports[`Mobile stacked tabs renders a visible tab panel 1`] = `
+<div
+  aria-hidden={false}
+  className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-is-open"
+>
+  <div
+    className="slds-panel__header slds-panel__header_align-center"
+  >
+    <button
+      className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+      title="Collapse Item One Panel"
+    >
+      <svg
+        aria-hidden={true}
+        className="slds-button__icon"
+      >
+        <use
+          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+        />
+      </svg>
+      <span
+        className="slds-assistive-text"
+      >
+        Collapse Item One Panel
+      </span>
+    </button>
+    <h2
+      className="slds-panel__header-title slds-text-heading_small slds-truncate"
+      title="Item One Panel"
+    >
+      Item One Panel
+    </h2>
+  </div>
+  <div
+    className="slds-panel__body"
+  >
+    A panel body accepts any layout or component
+  </div>
+</div>
+`;
+
+exports[`Mobile stacked tabs renders nested mobile tabs 1`] = `
+<div
+  className="slds-tabs-mobile__container"
+>
+  <ul
+    className="slds-tabs-mobile slds-hidden"
+  >
+    <li
+      className="slds-tabs-mobile__item"
+    >
+      <button
+        className="slds-button slds-button_full-width"
+        onClick={[Function]}
+      >
+        <span
+          className="slds-truncate"
+          title="Item One"
+        >
+          Item One
+        </span>
+        <svg
+          aria-hidden={true}
+          className="slds-icon slds-icon_x-small slds-icon-text-default"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+          />
+        </svg>
+      </button>
+    </li>
+    <li
+      className="slds-tabs-mobile__item"
+    >
+      <button
+        className="slds-button slds-button_full-width"
+        onClick={[Function]}
+      >
+        <span
+          className="slds-truncate"
+          title="Item Two"
+        >
+          Item Two
+        </span>
+        <svg
+          aria-hidden={true}
+          className="slds-icon slds-icon_x-small slds-icon-text-default"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+          />
+        </svg>
+      </button>
+    </li>
+    <li
+      className="slds-tabs-mobile__item"
+    >
+      <button
+        className="slds-button slds-button_full-width"
+        onClick={[Function]}
+      >
+        <span
+          className="slds-truncate"
+          title="Item Three"
+        >
+          Item Three
+        </span>
+        <svg
+          aria-hidden={true}
+          className="slds-icon slds-icon_x-small slds-icon-text-default"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+          />
+        </svg>
+      </button>
+    </li>
+  </ul>
+  <div
+    aria-hidden={false}
+    className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-is-open"
+  >
+    <div
+      className="slds-panel__header slds-panel__header_align-center"
+    >
+      <button
+        className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+        title="Collapse Item 1 Panel"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          Collapse Item 1 Panel
+        </span>
+      </button>
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Item 1 Panel"
+      >
+        Item 1 Panel
+      </h2>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      <ul
+        className="slds-tabs-mobile"
+      >
+        <li
+          className="slds-tabs-mobile__item"
+        >
+          <button
+            className="slds-button slds-button_full-width"
+            onClick={[Function]}
+          >
+            <span
+              className="slds-truncate"
+              title="Nested Item One"
+            >
+              Nested Item One
+            </span>
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon_x-small slds-icon-text-default"
+            >
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+              />
+            </svg>
+          </button>
+        </li>
+        <li
+          className="slds-tabs-mobile__item"
+        >
+          <button
+            className="slds-button slds-button_full-width"
+            onClick={[Function]}
+          >
+            <span
+              className="slds-truncate"
+              title="Nested Item Two"
+            >
+              Nested Item Two
+            </span>
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon_x-small slds-icon-text-default"
+            >
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+              />
+            </svg>
+          </button>
+        </li>
+        <li
+          className="slds-tabs-mobile__item"
+        >
+          <button
+            className="slds-button slds-button_full-width"
+            onClick={[Function]}
+          >
+            <span
+              className="slds-truncate"
+              title="Nested Item Three"
+            >
+              Nested Item Three
+            </span>
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon_x-small slds-icon-text-default"
+            >
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+      <div>
+         Any content can be here 
+      </div>
+      <ul
+        className="slds-tabs-mobile"
+      >
+        <li
+          className="slds-tabs-mobile__item"
+        >
+          <button
+            className="slds-button slds-button_full-width"
+            onClick={[Function]}
+          >
+            <span
+              className="slds-truncate"
+              title="Nested Item Four"
+            >
+              Nested Item Four
+            </span>
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon_x-small slds-icon-text-default"
+            >
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+              />
+            </svg>
+          </button>
+        </li>
+        <li
+          className="slds-tabs-mobile__item"
+        >
+          <button
+            className="slds-button slds-button_full-width"
+            onClick={[Function]}
+          >
+            <span
+              className="slds-truncate"
+              title="Nested Item Five"
+            >
+              Nested Item Five
+            </span>
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon_x-small slds-icon-text-default"
+            >
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"
+              />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    aria-hidden={true}
+    className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-hidden"
+  >
+    <div
+      className="slds-panel__header slds-panel__header_align-center"
+    >
+      <button
+        className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+        title="Collapse Item 2 Panel"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          Collapse Item 2 Panel
+        </span>
+      </button>
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Item 2 Panel"
+      >
+        Item 2 Panel
+      </h2>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+  <div
+    aria-hidden={true}
+    className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-hidden"
+  >
+    <div
+      className="slds-panel__header slds-panel__header_align-center"
+    >
+      <button
+        className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+        title="Collapse Item 3 Panel"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          Collapse Item 3 Panel
+        </span>
+      </button>
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Item 3 Panel"
+      >
+        Item 3 Panel
+      </h2>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+  <div
+    aria-hidden={true}
+    className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-hidden"
+  >
+    <div
+      className="slds-panel__header slds-panel__header_align-center"
+    >
+      <button
+        className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+        title="Collapse Nested Item 1 Panel"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          Collapse Nested Item 1 Panel
+        </span>
+      </button>
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Nested Item 1 Panel"
+      >
+        Nested Item 1 Panel
+      </h2>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+  <div
+    aria-hidden={true}
+    className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-hidden"
+  >
+    <div
+      className="slds-panel__header slds-panel__header_align-center"
+    >
+      <button
+        className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+        title="Collapse Nested Item 2 Panel"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          Collapse Nested Item 2 Panel
+        </span>
+      </button>
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Nested Item 2 Panel"
+      >
+        Nested Item 2 Panel
+      </h2>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+  <div
+    aria-hidden={true}
+    className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-hidden"
+  >
+    <div
+      className="slds-panel__header slds-panel__header_align-center"
+    >
+      <button
+        className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+        title="Collapse Nested Item 3 Panel"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          Collapse Nested Item 3 Panel
+        </span>
+      </button>
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Nested Item 3 Panel"
+      >
+        Nested Item 3 Panel
+      </h2>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+  <div
+    aria-hidden={true}
+    className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-hidden"
+  >
+    <div
+      className="slds-panel__header slds-panel__header_align-center"
+    >
+      <button
+        className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+        title="Collapse Nested Item 4 Panel"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          Collapse Nested Item 4 Panel
+        </span>
+      </button>
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Nested Item 4 Panel"
+      >
+        Nested Item 4 Panel
+      </h2>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+  <div
+    aria-hidden={true}
+    className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-hidden"
+  >
+    <div
+      className="slds-panel__header slds-panel__header_align-center"
+    >
+      <button
+        className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+        title="Collapse Nested Item 5 Panel"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          Collapse Nested Item 5 Panel
+        </span>
+      </button>
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Nested Item 5 Panel"
+      >
+        Nested Item 5 Panel
+      </h2>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SubtabOverflow should render a SubtabOverflow 1`] = `
+<li
+  className="slds-tabs_default__item slds-sub-tabs__item slds-tabs_default__overflow-button"
+>
+  <div
+    className="slds-dropdown-trigger slds-dropdown-trigger_click"
+  >
+    <button
+      aria-haspopup="true"
+      className="slds-button"
+      onClick={[Function]}
+      title="More Tab Items"
+    >
+      <span
+        className="slds-indicator-container"
+      />
+      <span
+        className="slds-truncate"
+        title="More Tabs"
+      >
+        More 
+        <span
+          className="slds-assistive-text"
+        >
+          Tabs
+        </span>
+      </span>
+      <svg
+        aria-hidden={true}
+        className="slds-button__icon slds-button__icon_small slds-button__icon_right"
+      >
+        <use
+          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevrondown"
+        />
+      </svg>
+    </button>
+    <div
+      className="slds-dropdown slds-dropdown_right"
+    >
+      <ul
+        className="slds-dropdown__list"
+        role="menu"
+      >
+        <li
+          className="slds-dropdown__item slds-has-notification"
+          role="presentation"
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            <span
+              className="slds-truncate"
+              title="Chat - Customer"
+            >
+              <span
+                className="slds-indicator-container"
+              />
+              <span
+                className="slds-icon_container"
+                title="Live Chat"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="slds-icon slds-icon_small slds-icon-text-default"
+                >
+                  <use
+                    xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#live_chat"
+                  />
+                </svg>
+                <span
+                  className="slds-assistive-text"
+                >
+                  Live Chat
+                </span>
+              </span>
+              <span>
+                Chat - Customer
+              </span>
+            </span>
+          </a>
+        </li>
+        <li
+          className="slds-dropdown__item"
+          role="presentation"
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            <span
+              className="slds-truncate"
+              title="Overflow Tab Item"
+            >
+              <span
+                className="slds-indicator-container"
+              />
+              <span
+                className="slds-icon_container"
+                title="Case"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="slds-icon slds-icon_small slds-icon-text-default"
+                >
+                  <use
+                    xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+                  />
+                </svg>
+                <span
+                  className="slds-assistive-text"
+                >
+                  Case
+                </span>
+              </span>
+              <span>
+                Overflow Tab Item
+              </span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</li>
+`;
+
+exports[`SubtabOverflow should render a error SubtabOverflow 1`] = `
+<li
+  className="slds-tabs_default__item slds-sub-tabs__item slds-tabs_default__overflow-button slds-has-error"
+>
+  <div
+    className="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open"
+  >
+    <button
+      aria-haspopup="true"
+      className="slds-button"
+      onClick={[Function]}
+      title="More Tab Items"
+    >
+      <span
+        className="slds-indicator-container"
+      />
+      <span
+        className="slds-truncate"
+        title="More Tabs"
+      >
+        More 
+        <span
+          className="slds-assistive-text"
+        >
+          Tabs
+        </span>
+      </span>
+      <svg
+        aria-hidden={true}
+        className="slds-button__icon slds-button__icon_small slds-button__icon_right"
+      >
+        <use
+          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevrondown"
+        />
+      </svg>
+    </button>
+    <div
+      className="slds-dropdown slds-dropdown_right"
+    >
+      <ul
+        className="slds-dropdown__list"
+        role="menu"
+      >
+        <li
+          className="slds-dropdown__item slds-has-notification"
+          role="presentation"
+        >
+          <a
+            className="slds-has-error"
+            href="#"
+            onClick={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            <span
+              className="slds-truncate"
+              title="Chat - Customer"
+            >
+              <span
+                className="slds-indicator-container"
+              />
+              <span
+                className="slds-m-horizontal_xx-small"
+              >
+                <span
+                  className="slds-icon_container slds-icon-utility-error"
+                  title="error"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="slds-icon slds-icon_x-small"
+                  >
+                    <use
+                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#error"
+                    />
+                  </svg>
+                  <span
+                    className="slds-assistive-text"
+                  >
+                    error
+                  </span>
+                </span>
+              </span>
+              <span>
+                SLA Violation
+              </span>
+            </span>
+          </a>
+        </li>
+        <li
+          className="slds-dropdown__item"
+          role="presentation"
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            <span
+              className="slds-truncate"
+              title="Overflow Tab Item"
+            >
+              <span
+                className="slds-indicator-container"
+              />
+              <span
+                className="slds-icon_container"
+                title="Case"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="slds-icon slds-icon_small slds-icon-text-default"
+                >
+                  <use
+                    xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+                  />
+                </svg>
+                <span
+                  className="slds-assistive-text"
+                >
+                  Case
+                </span>
+              </span>
+              <span>
+                Overflow Tab Item
+              </span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</li>
+`;
+
+exports[`SubtabOverflow should render a success SubtabOverflow 1`] = `
+<li
+  className="slds-tabs_default__item slds-sub-tabs__item slds-tabs_default__overflow-button slds-has-success"
+>
+  <div
+    className="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open"
+  >
+    <button
+      aria-haspopup="true"
+      className="slds-button"
+      onClick={[Function]}
+      title="More Tab Items"
+    >
+      <span
+        className="slds-indicator-container"
+      />
+      <span
+        className="slds-truncate"
+        title="More Tabs"
+      >
+        More 
+        <span
+          className="slds-assistive-text"
+        >
+          Tabs
+        </span>
+      </span>
+      <svg
+        aria-hidden={true}
+        className="slds-button__icon slds-button__icon_small slds-button__icon_right"
+      >
+        <use
+          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevrondown"
+        />
+      </svg>
+    </button>
+    <div
+      className="slds-dropdown slds-dropdown_right"
+    >
+      <ul
+        className="slds-dropdown__list"
+        role="menu"
+      >
+        <li
+          className="slds-dropdown__item slds-has-notification"
+          role="presentation"
+        >
+          <a
+            className="slds-has-success"
+            href="#"
+            onClick={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            <span
+              className="slds-truncate"
+              title="Chat - Customer"
+            >
+              <span
+                className="slds-indicator-container"
+              />
+              <span
+                className="slds-m-horizontal_xx-small"
+              >
+                <span
+                  className="slds-icon_container slds-icon-utility-success"
+                  title="success"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="slds-icon slds-icon_x-small"
+                  >
+                    <use
+                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#success"
+                    />
+                  </svg>
+                  <span
+                    className="slds-assistive-text"
+                  >
+                    success
+                  </span>
+                </span>
+              </span>
+              <span>
+                Chat - Customer
+              </span>
+            </span>
+          </a>
+        </li>
+        <li
+          className="slds-dropdown__item"
+          role="presentation"
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            <span
+              className="slds-truncate"
+              title="Overflow Tab Item"
+            >
+              <span
+                className="slds-indicator-container"
+              />
+              <span
+                className="slds-icon_container"
+                title="Case"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="slds-icon slds-icon_small slds-icon-text-default"
+                >
+                  <use
+                    xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+                  />
+                </svg>
+                <span
+                  className="slds-assistive-text"
+                >
+                  Case
+                </span>
+              </span>
+              <span>
+                Overflow Tab Item
+              </span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</li>
+`;
+
+exports[`SubtabOverflow should render a warning SubtabOverflow 1`] = `
+<li
+  className="slds-tabs_default__item slds-sub-tabs__item slds-tabs_default__overflow-button slds-has-warning"
+>
+  <div
+    className="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open"
+  >
+    <button
+      aria-haspopup="true"
+      className="slds-button"
+      onClick={[Function]}
+      title="More Tab Items"
+    >
+      <span
+        className="slds-indicator-container"
+      />
+      <span
+        className="slds-truncate"
+        title="More Tabs"
+      >
+        More 
+        <span
+          className="slds-assistive-text"
+        >
+          Tabs
+        </span>
+      </span>
+      <svg
+        aria-hidden={true}
+        className="slds-button__icon slds-button__icon_small slds-button__icon_right"
+      >
+        <use
+          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevrondown"
+        />
+      </svg>
+    </button>
+    <div
+      className="slds-dropdown slds-dropdown_right"
+    >
+      <ul
+        className="slds-dropdown__list"
+        role="menu"
+      >
+        <li
+          className="slds-dropdown__item slds-has-notification"
+          role="presentation"
+        >
+          <a
+            className="slds-has-warning"
+            href="#"
+            onClick={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            <span
+              className="slds-truncate"
+              title="Chat - Customer"
+            >
+              <span
+                className="slds-indicator-container"
+              />
+              <span
+                className="slds-m-horizontal_xx-small"
+              >
+                <span
+                  className="slds-icon_container slds-icon-utility-warning slds-current-color"
+                  title="warning"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="slds-icon slds-icon_x-small"
+                  >
+                    <use
+                      xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#warning"
+                    />
+                  </svg>
+                  <span
+                    className="slds-assistive-text"
+                  >
+                    warning
+                  </span>
+                </span>
+              </span>
+              <span>
+                SLA 0.30
+              </span>
+            </span>
+          </a>
+        </li>
+        <li
+          className="slds-dropdown__item"
+          role="presentation"
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            <span
+              className="slds-truncate"
+              title="Overflow Tab Item"
+            >
+              <span
+                className="slds-indicator-container"
+              />
+              <span
+                className="slds-icon_container"
+                title="Case"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="slds-icon slds-icon_small slds-icon-text-default"
+                >
+                  <use
+                    xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+                  />
+                </svg>
+                <span
+                  className="slds-assistive-text"
+                >
+                  Case
+                </span>
+              </span>
+              <span>
+                Overflow Tab Item
+              </span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</li>
+`;
+
+exports[`SubtabOverflow should render an open SubtabOverflow 1`] = `
+<li
+  className="slds-tabs_default__item slds-sub-tabs__item slds-tabs_default__overflow-button"
+>
+  <div
+    className="slds-dropdown-trigger slds-dropdown-trigger_click"
+  >
+    <button
+      aria-haspopup="true"
+      className="slds-button"
+      onClick={[Function]}
+      title="More Tab Items"
+    >
+      <span
+        className="slds-indicator-container"
+      />
+      <span
+        className="slds-truncate"
+        title="More Tabs"
+      >
+        More 
+        <span
+          className="slds-assistive-text"
+        >
+          Tabs
+        </span>
+      </span>
+      <svg
+        aria-hidden={true}
+        className="slds-button__icon slds-button__icon_small slds-button__icon_right"
+      >
+        <use
+          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevrondown"
+        />
+      </svg>
+    </button>
+    <div
+      className="slds-dropdown slds-dropdown_right"
+    >
+      <ul
+        className="slds-dropdown__list"
+        role="menu"
+      >
+        <li
+          className="slds-dropdown__item slds-has-notification"
+          role="presentation"
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            <span
+              className="slds-truncate"
+              title="Chat - Customer"
+            >
+              <span
+                className="slds-indicator-container"
+              />
+              <span
+                className="slds-icon_container"
+                title="Live Chat"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="slds-icon slds-icon_small slds-icon-text-default"
+                >
+                  <use
+                    xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#live_chat"
+                  />
+                </svg>
+                <span
+                  className="slds-assistive-text"
+                >
+                  Live Chat
+                </span>
+              </span>
+              <span>
+                Chat - Customer
+              </span>
+            </span>
+          </a>
+        </li>
+        <li
+          className="slds-dropdown__item"
+          role="presentation"
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            <span
+              className="slds-truncate"
+              title="Overflow Tab Item"
+            >
+              <span
+                className="slds-indicator-container"
+              />
+              <span
+                className="slds-icon_container"
+                title="Case"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="slds-icon slds-icon_small slds-icon-text-default"
+                >
+                  <use
+                    xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+                  />
+                </svg>
+                <span
+                  className="slds-assistive-text"
+                >
+                  Case
+                </span>
+              </span>
+              <span>
+                Overflow Tab Item
+              </span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</li>
+`;
+
+exports[`SubtabOverflow should render an open SubtabOverflow with no icon on the first menu item 1`] = `
+<li
+  className="slds-tabs_default__item slds-sub-tabs__item slds-tabs_default__overflow-button"
+>
+  <div
+    className="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open"
+  >
+    <button
+      aria-haspopup="true"
+      className="slds-button"
+      onClick={[Function]}
+      title="More Tab Items"
+    >
+      <span
+        className="slds-indicator-container"
+      />
+      <span
+        className="slds-truncate"
+        title="More Tabs"
+      >
+        More 
+        <span
+          className="slds-assistive-text"
+        >
+          Tabs
+        </span>
+      </span>
+      <svg
+        aria-hidden={true}
+        className="slds-button__icon slds-button__icon_small slds-button__icon_right"
+      >
+        <use
+          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevrondown"
+        />
+      </svg>
+    </button>
+    <div
+      className="slds-dropdown slds-dropdown_right"
+    >
+      <ul
+        className="slds-dropdown__list"
+        role="menu"
+      >
+        <li
+          className="slds-dropdown__item slds-has-notification"
+          role="presentation"
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            <span
+              className="slds-truncate"
+              title="Chat - Customer"
+            >
+              <span
+                className="slds-indicator-container"
+              />
+              <span>
+                Chat - Customer
+              </span>
+            </span>
+          </a>
+        </li>
+        <li
+          className="slds-dropdown__item"
+          role="presentation"
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            <span
+              className="slds-truncate"
+              title="Overflow Tab Item"
+            >
+              <span
+                className="slds-indicator-container"
+              />
+              <span
+                className="slds-icon_container"
+                title="Case"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="slds-icon slds-icon_small slds-icon-text-default"
+                >
+                  <use
+                    xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+                  />
+                </svg>
+                <span
+                  className="slds-assistive-text"
+                >
+                  Case
+                </span>
+              </span>
+              <span>
+                Overflow Tab Item
+              </span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</li>
+`;
+
+exports[`Subtabs renders dirty overflowed subtab 1`] = `
+<div
+  className="demo-only"
+  style={
+    Object {
+      "height": "8rem",
+      "overflow": "visible",
+    }
+  }
+>
+  <div
+    className="slds-tabs_default slds-sub-tabs"
+  >
+    <ul
+      className="slds-tabs_default__nav"
+      role="tablist"
+    >
+      <li
+        className="slds-tabs_default__item slds-sub-tabs__item slds-grid slds-grid_vertical-align-center"
+        role="presentation"
+      >
+        <a
+          aria-controls="subtab-tabpanel-01"
+          aria-selected="false"
+          className="slds-tabs_default__link slds-p-horizontal_xx-small"
+          href="#"
+          id="subtab-tabitem-01"
+          onClick={[Function]}
+          role="tab"
+          tabIndex="-1"
+          title="00071938"
+        >
+          <span
+            className="slds-indicator-container"
+          />
+          <span
+            className="slds-icon_container"
+            title="Case"
+          >
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon_small slds-icon-text-default"
+            >
+              <use
+                xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+              />
+            </svg>
+            <span
+              className="slds-assistive-text"
+            >
+              Case
+            </span>
+          </span>
+          <span
+            className="slds-truncate"
+            title="00071938"
+          >
+            00071938
+          </span>
+        </a>
+        <div
+          className="slds-col_bump-left slds-p-left_none slds-p-right_none"
+        >
+          <button
+            className="slds-button slds-button_icon slds-button_icon-container slds-button_icon-x-small"
+            onClick={[Function]}
+            tabIndex="-1"
+            title="Close 00071938"
+          >
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon"
+            >
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+              />
+            </svg>
+            <span
+              className="slds-assistive-text"
+            >
+              Close 00071938
+            </span>
+          </button>
+        </div>
+      </li>
+      <li
+        className="slds-tabs_default__item slds-sub-tabs__item slds-grid slds-grid_vertical-align-center"
+        role="presentation"
+      >
+        <a
+          aria-controls="subtab-tabpanel-02"
+          aria-selected="false"
+          className="slds-tabs_default__link slds-p-horizontal_xx-small"
+          href="#"
+          id="subtab-tabitem-02"
+          onClick={[Function]}
+          role="tab"
+          tabIndex="-1"
+          title="00071939"
+        >
+          <span
+            className="slds-indicator-container"
+          />
+          <span
+            className="slds-icon_container"
+            title="Case"
+          >
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon_small slds-icon-text-default"
+            >
+              <use
+                xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+              />
+            </svg>
+            <span
+              className="slds-assistive-text"
+            >
+              Case
+            </span>
+          </span>
+          <span
+            className="slds-truncate"
+            title="00071939"
+          >
+            00071939
+          </span>
+        </a>
+        <div
+          className="slds-col_bump-left slds-p-left_none slds-p-right_none"
+        >
+          <button
+            className="slds-button slds-button_icon slds-button_icon-container slds-button_icon-x-small"
+            onClick={[Function]}
+            tabIndex="-1"
+            title="Close 00071939"
+          >
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon"
+            >
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+              />
+            </svg>
+            <span
+              className="slds-assistive-text"
+            >
+              Close 00071939
+            </span>
+          </button>
+        </div>
+      </li>
+      <li
+        className="slds-tabs_default__item slds-sub-tabs__item slds-tabs_default__overflow-button slds-is-unsaved"
+      >
+        <div
+          className="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open"
+        >
+          <button
+            aria-haspopup="true"
+            className="slds-button"
+            onClick={[Function]}
+            title="More Tab Items"
+          >
+            <span
+              className="slds-indicator-container"
+            >
+              <abbr
+                aria-label="Tab(s) within menu not saved"
+                className="slds-indicator_unsaved"
+                title="Tab(s) within menu not saved"
+              >
+                *
+              </abbr>
+            </span>
+            <span
+              className="slds-truncate"
+              title="More Tabs"
+            >
+              More 
+              <span
+                className="slds-assistive-text"
+              >
+                Tabs
+              </span>
+            </span>
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon slds-button__icon_small slds-button__icon_right"
+            >
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevrondown"
+              />
+            </svg>
+          </button>
+          <div
+            className="slds-dropdown slds-dropdown_right"
+          >
+            <ul
+              className="slds-dropdown__list"
+              role="menu"
+            >
+              <li
+                className="slds-dropdown__item slds-has-notification"
+                role="presentation"
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  <span
+                    className="slds-truncate"
+                    title="Chat - Customer"
+                  >
+                    <span
+                      className="slds-indicator-container"
+                    >
+                      <abbr
+                        aria-label="Tab Not Saved"
+                        className="slds-indicator_unsaved"
+                        title="Tab Not Saved"
+                      >
+                        *
+                      </abbr>
+                    </span>
+                    <span
+                      className="slds-icon_container"
+                      title="Live Chat"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon_small slds-icon-text-default"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#live_chat"
+                        />
+                      </svg>
+                      <span
+                        className="slds-assistive-text"
+                      >
+                        Live Chat
+                      </span>
+                    </span>
+                    <span>
+                      Chat - Customer
+                    </span>
+                  </span>
+                </a>
+              </li>
+              <li
+                className="slds-dropdown__item"
+                role="presentation"
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  <span
+                    className="slds-truncate"
+                    title="Overflow Tab Item"
+                  >
+                    <span
+                      className="slds-indicator-container"
+                    />
+                    <span
+                      className="slds-icon_container"
+                      title="Case"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon_small slds-icon-text-default"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+                        />
+                      </svg>
+                      <span
+                        className="slds-assistive-text"
+                      >
+                        Case
+                      </span>
+                    </span>
+                    <span>
+                      Overflow Tab Item
+                    </span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div
+      aria-labelledby="subtab-tabitem-01"
+      className="slds-tabs_default__content slds-show"
+      id="subtab-tabpanel-01"
+      role="tabpanel"
+    >
+      Item One Content
+    </div>
+    <div
+      aria-labelledby="subtab-tabitem-02"
+      className="slds-tabs_default__content slds-hide"
+      id="subtab-tabpanel-02"
+      role="tabpanel"
+    >
+      Item Two Content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Subtabs renders dirty overflowed subtab with notification 1`] = `
+<div
+  className="demo-only"
+  style={
+    Object {
+      "height": "8rem",
+      "overflow": "visible",
+    }
+  }
+>
+  <div
+    className="slds-tabs_default slds-sub-tabs"
+  >
+    <ul
+      className="slds-tabs_default__nav"
+      role="tablist"
+    >
+      <li
+        className="slds-tabs_default__item slds-sub-tabs__item slds-grid slds-grid_vertical-align-center"
+        role="presentation"
+      >
+        <a
+          aria-controls="subtab-tabpanel-01"
+          aria-selected="false"
+          className="slds-tabs_default__link slds-p-horizontal_xx-small"
+          href="#"
+          id="subtab-tabitem-01"
+          onClick={[Function]}
+          role="tab"
+          tabIndex="-1"
+          title="00071938"
+        >
+          <span
+            className="slds-indicator-container"
+          />
+          <span
+            className="slds-icon_container"
+            title="Case"
+          >
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon_small slds-icon-text-default"
+            >
+              <use
+                xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+              />
+            </svg>
+            <span
+              className="slds-assistive-text"
+            >
+              Case
+            </span>
+          </span>
+          <span
+            className="slds-truncate"
+            title="00071938"
+          >
+            00071938
+          </span>
+        </a>
+        <div
+          className="slds-col_bump-left slds-p-left_none slds-p-right_none"
+        >
+          <button
+            className="slds-button slds-button_icon slds-button_icon-container slds-button_icon-x-small"
+            onClick={[Function]}
+            tabIndex="-1"
+            title="Close 00071938"
+          >
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon"
+            >
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+              />
+            </svg>
+            <span
+              className="slds-assistive-text"
+            >
+              Close 00071938
+            </span>
+          </button>
+        </div>
+      </li>
+      <li
+        className="slds-tabs_default__item slds-sub-tabs__item slds-grid slds-grid_vertical-align-center"
+        role="presentation"
+      >
+        <a
+          aria-controls="subtab-tabpanel-02"
+          aria-selected="false"
+          className="slds-tabs_default__link slds-p-horizontal_xx-small"
+          href="#"
+          id="subtab-tabitem-02"
+          onClick={[Function]}
+          role="tab"
+          tabIndex="-1"
+          title="00071939"
+        >
+          <span
+            className="slds-indicator-container"
+          />
+          <span
+            className="slds-icon_container"
+            title="Case"
+          >
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon_small slds-icon-text-default"
+            >
+              <use
+                xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+              />
+            </svg>
+            <span
+              className="slds-assistive-text"
+            >
+              Case
+            </span>
+          </span>
+          <span
+            className="slds-truncate"
+            title="00071939"
+          >
+            00071939
+          </span>
+        </a>
+        <div
+          className="slds-col_bump-left slds-p-left_none slds-p-right_none"
+        >
+          <button
+            className="slds-button slds-button_icon slds-button_icon-container slds-button_icon-x-small"
+            onClick={[Function]}
+            tabIndex="-1"
+            title="Close 00071939"
+          >
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon"
+            >
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+              />
+            </svg>
+            <span
+              className="slds-assistive-text"
+            >
+              Close 00071939
+            </span>
+          </button>
+        </div>
+      </li>
+      <li
+        className="slds-tabs_default__item slds-sub-tabs__item slds-tabs_default__overflow-button slds-has-notification slds-is-unsaved"
+      >
+        <div
+          className="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open"
+        >
+          <button
+            aria-haspopup="true"
+            className="slds-button"
+            onClick={[Function]}
+            title="More Tab Items"
+          >
+            <span
+              className="slds-indicator-container"
+            >
+              <abbr
+                aria-label="Tab(s) within menu not saved"
+                className="slds-indicator_unsaved"
+                title="Tab(s) within menu not saved"
+              >
+                *
+              </abbr>
+              <span
+                aria-label="New Activity"
+                className="slds-indicator_unread"
+                title="New Activity"
+              />
+            </span>
+            <span
+              className="slds-truncate"
+              title="More Tabs"
+            >
+              More 
+              <span
+                className="slds-assistive-text"
+              >
+                Tabs
+              </span>
+            </span>
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon slds-button__icon_small slds-button__icon_right"
+            >
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevrondown"
+              />
+            </svg>
+          </button>
+          <div
+            className="slds-dropdown slds-dropdown_right"
+          >
+            <ul
+              className="slds-dropdown__list"
+              role="menu"
+            >
+              <li
+                className="slds-dropdown__item slds-has-notification"
+                role="presentation"
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  <span
+                    className="slds-truncate"
+                    title="Chat - Customer"
+                  >
+                    <span
+                      className="slds-indicator-container"
+                    >
+                      <abbr
+                        aria-label="Tab Not Saved"
+                        className="slds-indicator_unsaved"
+                        title="Tab Not Saved"
+                      >
+                        *
+                      </abbr>
+                      <span
+                        aria-label="New Activity"
+                        className="slds-indicator_unread"
+                        title="New Activity"
+                      />
+                    </span>
+                    <span
+                      className="slds-icon_container"
+                      title="Live Chat"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon_small slds-icon-text-default"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#live_chat"
+                        />
+                      </svg>
+                      <span
+                        className="slds-assistive-text"
+                      >
+                        Live Chat
+                      </span>
+                    </span>
+                    <span>
+                      Chat - Customer
+                    </span>
+                  </span>
+                </a>
+              </li>
+              <li
+                className="slds-dropdown__item"
+                role="presentation"
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  <span
+                    className="slds-truncate"
+                    title="Overflow Tab Item"
+                  >
+                    <span
+                      className="slds-indicator-container"
+                    />
+                    <span
+                      className="slds-icon_container"
+                      title="Case"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon_small slds-icon-text-default"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+                        />
+                      </svg>
+                      <span
+                        className="slds-assistive-text"
+                      >
+                        Case
+                      </span>
+                    </span>
+                    <span>
+                      Overflow Tab Item
+                    </span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div
+      aria-labelledby="subtab-tabitem-01"
+      className="slds-tabs_default__content slds-show"
+      id="subtab-tabpanel-01"
+      role="tabpanel"
+    >
+      Item One Content
+    </div>
+    <div
+      aria-labelledby="subtab-tabitem-02"
+      className="slds-tabs_default__content slds-hide"
+      id="subtab-tabpanel-02"
+      role="tabpanel"
+    >
+      Item Two Content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Subtabs renders overflowed subtab 1`] = `
+<div
+  className="demo-only"
+  style={
+    Object {
+      "height": "8rem",
+      "overflow": "visible",
+    }
+  }
+>
+  <div
+    className="slds-tabs_default slds-sub-tabs"
+  >
+    <ul
+      className="slds-tabs_default__nav"
+      role="tablist"
+    >
+      <li
+        className="slds-tabs_default__item slds-sub-tabs__item slds-grid slds-grid_vertical-align-center"
+        role="presentation"
+      >
+        <a
+          aria-controls="subtab-tabpanel-01"
+          aria-selected="false"
+          className="slds-tabs_default__link slds-p-horizontal_xx-small"
+          href="#"
+          id="subtab-tabitem-01"
+          onClick={[Function]}
+          role="tab"
+          tabIndex="-1"
+          title="00071938"
+        >
+          <span
+            className="slds-indicator-container"
+          />
+          <span
+            className="slds-icon_container"
+            title="Case"
+          >
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon_small slds-icon-text-default"
+            >
+              <use
+                xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+              />
+            </svg>
+            <span
+              className="slds-assistive-text"
+            >
+              Case
+            </span>
+          </span>
+          <span
+            className="slds-truncate"
+            title="00071938"
+          >
+            00071938
+          </span>
+        </a>
+        <div
+          className="slds-col_bump-left slds-p-left_none slds-p-right_none"
+        >
+          <button
+            className="slds-button slds-button_icon slds-button_icon-container slds-button_icon-x-small"
+            onClick={[Function]}
+            tabIndex="-1"
+            title="Close 00071938"
+          >
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon"
+            >
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+              />
+            </svg>
+            <span
+              className="slds-assistive-text"
+            >
+              Close 00071938
+            </span>
+          </button>
+        </div>
+      </li>
+      <li
+        className="slds-tabs_default__item slds-sub-tabs__item slds-grid slds-grid_vertical-align-center"
+        role="presentation"
+      >
+        <a
+          aria-controls="subtab-tabpanel-02"
+          aria-selected="false"
+          className="slds-tabs_default__link slds-p-horizontal_xx-small"
+          href="#"
+          id="subtab-tabitem-02"
+          onClick={[Function]}
+          role="tab"
+          tabIndex="-1"
+          title="00071939"
+        >
+          <span
+            className="slds-indicator-container"
+          />
+          <span
+            className="slds-icon_container"
+            title="Case"
+          >
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon_small slds-icon-text-default"
+            >
+              <use
+                xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+              />
+            </svg>
+            <span
+              className="slds-assistive-text"
+            >
+              Case
+            </span>
+          </span>
+          <span
+            className="slds-truncate"
+            title="00071939"
+          >
+            00071939
+          </span>
+        </a>
+        <div
+          className="slds-col_bump-left slds-p-left_none slds-p-right_none"
+        >
+          <button
+            className="slds-button slds-button_icon slds-button_icon-container slds-button_icon-x-small"
+            onClick={[Function]}
+            tabIndex="-1"
+            title="Close 00071939"
+          >
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon"
+            >
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+              />
+            </svg>
+            <span
+              className="slds-assistive-text"
+            >
+              Close 00071939
+            </span>
+          </button>
+        </div>
+      </li>
+      <li
+        className="slds-tabs_default__item slds-sub-tabs__item slds-tabs_default__overflow-button"
+      >
+        <div
+          className="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open"
+        >
+          <button
+            aria-haspopup="true"
+            className="slds-button"
+            onClick={[Function]}
+            title="More Tab Items"
+          >
+            <span
+              className="slds-indicator-container"
+            />
+            <span
+              className="slds-truncate"
+              title="More Tabs"
+            >
+              More 
+              <span
+                className="slds-assistive-text"
+              >
+                Tabs
+              </span>
+            </span>
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon slds-button__icon_small slds-button__icon_right"
+            >
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevrondown"
+              />
+            </svg>
+          </button>
+          <div
+            className="slds-dropdown slds-dropdown_right"
+          >
+            <ul
+              className="slds-dropdown__list"
+              role="menu"
+            >
+              <li
+                className="slds-dropdown__item slds-has-notification"
+                role="presentation"
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  <span
+                    className="slds-truncate"
+                    title="Chat - Customer"
+                  >
+                    <span
+                      className="slds-indicator-container"
+                    />
+                    <span
+                      className="slds-icon_container"
+                      title="Live Chat"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon_small slds-icon-text-default"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#live_chat"
+                        />
+                      </svg>
+                      <span
+                        className="slds-assistive-text"
+                      >
+                        Live Chat
+                      </span>
+                    </span>
+                    <span>
+                      Chat - Customer
+                    </span>
+                  </span>
+                </a>
+              </li>
+              <li
+                className="slds-dropdown__item"
+                role="presentation"
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  <span
+                    className="slds-truncate"
+                    title="Overflow Tab Item"
+                  >
+                    <span
+                      className="slds-indicator-container"
+                    />
+                    <span
+                      className="slds-icon_container"
+                      title="Case"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon_small slds-icon-text-default"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+                        />
+                      </svg>
+                      <span
+                        className="slds-assistive-text"
+                      >
+                        Case
+                      </span>
+                    </span>
+                    <span>
+                      Overflow Tab Item
+                    </span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div
+      aria-labelledby="subtab-tabitem-01"
+      className="slds-tabs_default__content slds-show"
+      id="subtab-tabpanel-01"
+      role="tabpanel"
+    >
+      Item One Content
+    </div>
+    <div
+      aria-labelledby="subtab-tabitem-02"
+      className="slds-tabs_default__content slds-hide"
+      id="subtab-tabpanel-02"
+      role="tabpanel"
+    >
+      Item Two Content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Subtabs renders overflowed subtab with notification 1`] = `
+<div
+  className="demo-only"
+  style={
+    Object {
+      "height": "8rem",
+      "overflow": "visible",
+    }
+  }
+>
+  <div
+    className="slds-tabs_default slds-sub-tabs"
+  >
+    <ul
+      className="slds-tabs_default__nav"
+      role="tablist"
+    >
+      <li
+        className="slds-tabs_default__item slds-sub-tabs__item slds-grid slds-grid_vertical-align-center"
+        role="presentation"
+      >
+        <a
+          aria-controls="subtab-tabpanel-01"
+          aria-selected="false"
+          className="slds-tabs_default__link slds-p-horizontal_xx-small"
+          href="#"
+          id="subtab-tabitem-01"
+          onClick={[Function]}
+          role="tab"
+          tabIndex="-1"
+          title="00071938"
+        >
+          <span
+            className="slds-indicator-container"
+          />
+          <span
+            className="slds-icon_container"
+            title="Case"
+          >
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon_small slds-icon-text-default"
+            >
+              <use
+                xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+              />
+            </svg>
+            <span
+              className="slds-assistive-text"
+            >
+              Case
+            </span>
+          </span>
+          <span
+            className="slds-truncate"
+            title="00071938"
+          >
+            00071938
+          </span>
+        </a>
+        <div
+          className="slds-col_bump-left slds-p-left_none slds-p-right_none"
+        >
+          <button
+            className="slds-button slds-button_icon slds-button_icon-container slds-button_icon-x-small"
+            onClick={[Function]}
+            tabIndex="-1"
+            title="Close 00071938"
+          >
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon"
+            >
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+              />
+            </svg>
+            <span
+              className="slds-assistive-text"
+            >
+              Close 00071938
+            </span>
+          </button>
+        </div>
+      </li>
+      <li
+        className="slds-tabs_default__item slds-sub-tabs__item slds-grid slds-grid_vertical-align-center"
+        role="presentation"
+      >
+        <a
+          aria-controls="subtab-tabpanel-02"
+          aria-selected="false"
+          className="slds-tabs_default__link slds-p-horizontal_xx-small"
+          href="#"
+          id="subtab-tabitem-02"
+          onClick={[Function]}
+          role="tab"
+          tabIndex="-1"
+          title="00071939"
+        >
+          <span
+            className="slds-indicator-container"
+          />
+          <span
+            className="slds-icon_container"
+            title="Case"
+          >
+            <svg
+              aria-hidden={true}
+              className="slds-icon slds-icon_small slds-icon-text-default"
+            >
+              <use
+                xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+              />
+            </svg>
+            <span
+              className="slds-assistive-text"
+            >
+              Case
+            </span>
+          </span>
+          <span
+            className="slds-truncate"
+            title="00071939"
+          >
+            00071939
+          </span>
+        </a>
+        <div
+          className="slds-col_bump-left slds-p-left_none slds-p-right_none"
+        >
+          <button
+            className="slds-button slds-button_icon slds-button_icon-container slds-button_icon-x-small"
+            onClick={[Function]}
+            tabIndex="-1"
+            title="Close 00071939"
+          >
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon"
+            >
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+              />
+            </svg>
+            <span
+              className="slds-assistive-text"
+            >
+              Close 00071939
+            </span>
+          </button>
+        </div>
+      </li>
+      <li
+        className="slds-tabs_default__item slds-sub-tabs__item slds-tabs_default__overflow-button slds-has-notification"
+      >
+        <div
+          className="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open"
+        >
+          <button
+            aria-haspopup="true"
+            className="slds-button"
+            onClick={[Function]}
+            title="More Tab Items"
+          >
+            <span
+              className="slds-indicator-container"
+            >
+              <span
+                aria-label="New Activity"
+                className="slds-indicator_unread"
+                title="New Activity"
+              />
+            </span>
+            <span
+              className="slds-truncate"
+              title="More Tabs"
+            >
+              More 
+              <span
+                className="slds-assistive-text"
+              >
+                Tabs
+              </span>
+            </span>
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon slds-button__icon_small slds-button__icon_right"
+            >
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevrondown"
+              />
+            </svg>
+          </button>
+          <div
+            className="slds-dropdown slds-dropdown_right"
+          >
+            <ul
+              className="slds-dropdown__list"
+              role="menu"
+            >
+              <li
+                className="slds-dropdown__item slds-has-notification"
+                role="presentation"
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  <span
+                    className="slds-truncate"
+                    title="Chat - Customer"
+                  >
+                    <span
+                      className="slds-indicator-container"
+                    >
+                      <span
+                        aria-label="New Activity"
+                        className="slds-indicator_unread"
+                        title="New Activity"
+                      />
+                    </span>
+                    <span
+                      className="slds-icon_container"
+                      title="Live Chat"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon_small slds-icon-text-default"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#live_chat"
+                        />
+                      </svg>
+                      <span
+                        className="slds-assistive-text"
+                      >
+                        Live Chat
+                      </span>
+                    </span>
+                    <span>
+                      Chat - Customer
+                    </span>
+                  </span>
+                </a>
+              </li>
+              <li
+                className="slds-dropdown__item"
+                role="presentation"
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  <span
+                    className="slds-truncate"
+                    title="Overflow Tab Item"
+                  >
+                    <span
+                      className="slds-indicator-container"
+                    />
+                    <span
+                      className="slds-icon_container"
+                      title="Case"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="slds-icon slds-icon_small slds-icon-text-default"
+                      >
+                        <use
+                          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+                        />
+                      </svg>
+                      <span
+                        className="slds-assistive-text"
+                      >
+                        Case
+                      </span>
+                    </span>
+                    <span>
+                      Overflow Tab Item
+                    </span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div
+      aria-labelledby="subtab-tabitem-01"
+      className="slds-tabs_default__content slds-show"
+      id="subtab-tabpanel-01"
+      role="tabpanel"
+    >
+      Item One Content
+    </div>
+    <div
+      aria-labelledby="subtab-tabitem-02"
+      className="slds-tabs_default__content slds-hide"
+      id="subtab-tabpanel-02"
+      role="tabpanel"
+    >
+      Item Two Content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Subtabs renders subtab with notification and dirty 1`] = `
+<div
+  className="slds-tabs_default slds-sub-tabs"
+>
+  <ul
+    className="slds-tabs_default__nav"
+    role="tablist"
+  >
+    <li
+      className="slds-tabs_default__item slds-sub-tabs__item slds-grid slds-grid_vertical-align-center slds-active"
+      role="presentation"
+    >
+      <a
+        aria-controls="subtab-tabpanel-01"
+        aria-selected="true"
+        className="slds-tabs_default__link slds-p-horizontal_xx-small"
+        href="#"
+        id="subtab-tabitem-01"
+        onClick={[Function]}
+        role="tab"
+        tabIndex="0"
+        title="00071938"
+      >
+        <span
+          className="slds-indicator-container"
+        />
+        <span
+          className="slds-icon_container"
+          title="Case"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-icon slds-icon_small slds-icon-text-default"
+          >
+            <use
+              xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+            />
+          </svg>
+          <span
+            className="slds-assistive-text"
+          >
+            Case
+          </span>
+        </span>
+        <span
+          className="slds-truncate"
+          title="00071938"
+        >
+          00071938
+        </span>
+      </a>
+      <div
+        className="slds-col_bump-left slds-p-left_none slds-p-right_none"
+      >
+        <button
+          className="slds-button slds-button_icon slds-button_icon-container slds-button_icon-x-small"
+          onClick={[Function]}
+          tabIndex="0"
+          title="Close 00071938"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+            />
+          </svg>
+          <span
+            className="slds-assistive-text"
+          >
+            Close 00071938
+          </span>
+        </button>
+      </div>
+    </li>
+    <li
+      className="slds-tabs_default__item slds-sub-tabs__item slds-grid slds-grid_vertical-align-center slds-has-notification slds-is-unsaved"
+      role="presentation"
+    >
+      <a
+        aria-controls="subtab-tabpanel-02"
+        aria-selected="false"
+        className="slds-tabs_default__link slds-p-horizontal_xx-small"
+        href="#"
+        id="subtab-tabitem-02"
+        onClick={[Function]}
+        role="tab"
+        tabIndex="-1"
+        title="Chat - Customer"
+      >
+        <span
+          className="slds-indicator-container"
+        >
+          <abbr
+            aria-label="Tab Not Saved"
+            className="slds-indicator_unsaved"
+            title="Tab Not Saved"
+          >
+            *
+          </abbr>
+          <span
+            aria-label="New Activity"
+            className="slds-indicator_unread"
+            title="New Activity"
+          />
+        </span>
+        <span
+          className="slds-icon_container"
+          title="Live Chat"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-icon slds-icon_small slds-icon-text-default"
+          >
+            <use
+              xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#live_chat"
+            />
+          </svg>
+          <span
+            className="slds-assistive-text"
+          >
+            Live Chat
+          </span>
+        </span>
+        <span
+          className="slds-truncate"
+          title="Chat - Customer"
+        >
+          Chat - Customer
+        </span>
+      </a>
+      <div
+        className="slds-col_bump-left slds-p-left_none slds-p-right_none"
+      >
+        <button
+          className="slds-button slds-button_icon slds-button_icon-container slds-button_icon-x-small"
+          onClick={[Function]}
+          tabIndex="-1"
+          title="Close Chat - Customer"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+            />
+          </svg>
+          <span
+            className="slds-assistive-text"
+          >
+            Close Chat - Customer
+          </span>
+        </button>
+      </div>
+    </li>
+  </ul>
+  <div
+    aria-labelledby="subtab-tabitem-01"
+    className="slds-tabs_default__content slds-show"
+    id="subtab-tabpanel-01"
+    role="tabpanel"
+  >
+    Item One Content
+  </div>
+  <div
+    aria-labelledby="subtab-tabitem-02"
+    className="slds-tabs_default__content slds-hide"
+    id="subtab-tabpanel-02"
+    role="tabpanel"
+  >
+    Item Two Content
+  </div>
+</div>
+`;
+
+exports[`Subtabs should render a subtab 1`] = `
+<li
+  className="slds-tabs_default__item slds-sub-tabs__item slds-grid slds-grid_vertical-align-center"
+  role="presentation"
+>
+  <a
+    aria-controls="tabpanel-id"
+    aria-selected="false"
+    className="slds-tabs_default__link slds-p-horizontal_xx-small"
+    href="#"
+    id="tab-id"
+    onClick={[Function]}
+    role="tab"
+    tabIndex="-1"
+    title="Subtab Name"
+  >
+    <span
+      className="slds-indicator-container"
+    />
+    <span
+      className="slds-icon_container"
+      title="Case"
+    >
+      <svg
+        aria-hidden={true}
+        className="slds-icon slds-icon_small slds-icon-text-default"
+      >
+        <use
+          xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case"
+        />
+      </svg>
+      <span
+        className="slds-assistive-text"
+      >
+        Case
+      </span>
+    </span>
+    <span
+      className="slds-truncate"
+      title="Subtab Name"
+    >
+      Subtab Name
+    </span>
+  </a>
+  <div
+    className="slds-col_bump-left slds-p-left_none slds-p-right_none"
+  >
+    <button
+      className="slds-button slds-button_icon slds-button_icon-container slds-button_icon-x-small"
+      onClick={[Function]}
+      tabIndex="-1"
+      title="Close Subtab Name"
+    >
+      <svg
+        aria-hidden={true}
+        className="slds-button__icon"
+      >
+        <use
+          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+        />
+      </svg>
+      <span
+        className="slds-assistive-text"
+      >
+        Close Subtab Name
+      </span>
+    </button>
+  </div>
+</li>
+`;
+
+exports[`Subtabs should render a success subtab 1`] = `
+<li
+  className="slds-tabs_default__item slds-sub-tabs__item slds-grid slds-grid_vertical-align-center slds-has-success"
+  role="presentation"
+>
+  <a
+    aria-controls="tabpanel-id"
+    aria-selected="false"
+    className="slds-tabs_default__link slds-p-horizontal_xx-small"
+    href="#"
+    id="tab-id"
+    onClick={[Function]}
+    role="tab"
+    tabIndex="-1"
+    title="Subtab Name"
+  >
+    <span
+      className="slds-indicator-container"
+    />
+    <span
+      className="slds-m-horizontal_xx-small"
+    >
+      <span
+        className="slds-icon_container slds-icon-utility-success"
+        title="success"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-icon slds-icon_x-small"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#success"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          success
+        </span>
+      </span>
+    </span>
+    <span
+      className="slds-truncate"
+      title="Subtab Name"
+    >
+      Subtab Name
+    </span>
+  </a>
+  <div
+    className="slds-col_bump-left slds-p-left_none slds-p-right_none"
+  >
+    <button
+      className="slds-button slds-button_icon slds-button_icon-inverse slds-button_icon-container slds-button_icon-x-small"
+      onClick={[Function]}
+      tabIndex="-1"
+      title="Close Subtab Name"
+    >
+      <svg
+        aria-hidden={true}
+        className="slds-button__icon"
+      >
+        <use
+          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+        />
+      </svg>
+      <span
+        className="slds-assistive-text"
+      >
+        Close Subtab Name
+      </span>
+    </button>
+  </div>
+</li>
+`;
+
+exports[`Subtabs should render a warning subtab 1`] = `
+<li
+  className="slds-tabs_default__item slds-sub-tabs__item slds-grid slds-grid_vertical-align-center slds-has-warning"
+  role="presentation"
+>
+  <a
+    aria-controls="tabpanel-id"
+    aria-selected="false"
+    className="slds-tabs_default__link slds-p-horizontal_xx-small"
+    href="#"
+    id="tab-id"
+    onClick={[Function]}
+    role="tab"
+    tabIndex="-1"
+    title="Subtab Name"
+  >
+    <span
+      className="slds-indicator-container"
+    />
+    <span
+      className="slds-m-horizontal_xx-small"
+    >
+      <span
+        className="slds-icon_container slds-icon-utility-warning slds-current-color"
+        title="warning"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-icon slds-icon_x-small"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#warning"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          warning
+        </span>
+      </span>
+    </span>
+    <span
+      className="slds-truncate"
+      title="Subtab Name"
+    >
+      Subtab Name
+    </span>
+  </a>
+  <div
+    className="slds-col_bump-left slds-p-left_none slds-p-right_none"
+  >
+    <button
+      className="slds-button slds-button_icon slds-button_icon-container slds-button_icon-x-small"
+      onClick={[Function]}
+      tabIndex="-1"
+      title="Close Subtab Name"
+    >
+      <svg
+        aria-hidden={true}
+        className="slds-button__icon"
+      >
+        <use
+          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+        />
+      </svg>
+      <span
+        className="slds-assistive-text"
+      >
+        Close Subtab Name
+      </span>
+    </button>
+  </div>
+</li>
+`;
+
+exports[`Subtabs should render an error subtab 1`] = `
+<li
+  className="slds-tabs_default__item slds-sub-tabs__item slds-grid slds-grid_vertical-align-center slds-has-error"
+  role="presentation"
+>
+  <a
+    aria-controls="tabpanel-id"
+    aria-selected="false"
+    className="slds-tabs_default__link slds-p-horizontal_xx-small"
+    href="#"
+    id="tab-id"
+    onClick={[Function]}
+    role="tab"
+    tabIndex="-1"
+    title="Subtab Name"
+  >
+    <span
+      className="slds-indicator-container"
+    />
+    <span
+      className="slds-m-horizontal_xx-small"
+    >
+      <span
+        className="slds-icon_container slds-icon-utility-error"
+        title="error"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-icon slds-icon_x-small"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#error"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          error
+        </span>
+      </span>
+    </span>
+    <span
+      className="slds-truncate"
+      title="Subtab Name"
+    >
+      Subtab Name
+    </span>
+  </a>
+  <div
+    className="slds-col_bump-left slds-p-left_none slds-p-right_none"
+  >
+    <button
+      className="slds-button slds-button_icon slds-button_icon-inverse slds-button_icon-container slds-button_icon-x-small"
+      onClick={[Function]}
+      tabIndex="-1"
+      title="Close Subtab Name"
+    >
+      <svg
+        aria-hidden={true}
+        className="slds-button__icon"
+      >
+        <use
+          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+        />
+      </svg>
+      <span
+        className="slds-assistive-text"
+      >
+        Close Subtab Name
+      </span>
+    </button>
+  </div>
+</li>
+`;

@@ -1,0 +1,72 @@
+import CodeView from '../../../shared/components/CodeView.jsx';
+import Blockquote from '../../../shared/components/Blockquote';
+import { getDisplayElementById, getDemoStylesById } from '../../shared/helpers';
+import * as Base from './example';
+
+<div className="doc lead">
+  Line Clamp allows for multi-line text truncation.
+</div>
+
+## About Line Clamp
+
+When applied to text-based elements, Line Clamp allows for configurable multi-line text truncation.
+
+SLDS supports four different line clamp limits:
+
+- `slds-line-clamp` - truncation is determined by a token, default will truncate at 3 lines of content
+- `slds-line-clamp_x-small` - truncates at 2 lines of content
+- `slds-line-clamp_small` - truncates at 3 lines of content
+- `slds-line-clamp_medium` - truncates at 5 lines of content
+- `slds-line-clamp_large` - truncates at 7 lines of content
+
+<Blockquote type="warning" header="IE11 Not Supported">
+  The use of the <code>line-clamp</code> css property is not supported in IE11.
+</Blockquote>
+
+<Blockquote type="warning" header="Not Supported on Container Elements">
+  <p>Note that this class should only be applied directly to the text element that needs truncation.</p>
+
+  <p>Applying this class to elements with html element children will produce unexpected results. This use case is not supported.</p>
+</Blockquote>
+
+## Examples
+
+### Default
+
+The `slds-line-clamp` class name will truncate text after three lines. The value can be changed by reassigning a value to the `line-clamp` token.
+
+<CodeView demoStyles={getDemoStylesById(Base.examples, 'default')}>
+  {getDisplayElementById(Base.examples, 'default')}
+</CodeView>
+
+### X-Small
+
+The `slds-line-clamp_x-small` class name will truncate text after two lines.
+
+<CodeView style={getDemoStylesById(Base.examples, 'x-small')}>
+  {getDisplayElementById(Base.examples, 'x-small')}
+</CodeView>
+
+### Small
+
+The `slds-line-clamp_small` class name will truncate text after three lines.
+
+<CodeView demoStyles={getDemoStylesById(Base.examples, 'small')}>
+  {getDisplayElementById(Base.examples, 'small')}
+</CodeView>
+
+### Medium
+
+The `slds-line-clamp_medium` class name will truncate text after five lines.
+
+<CodeView demoStyles={getDemoStylesById(Base.examples, 'medium')}>
+  {getDisplayElementById(Base.examples, 'medium')}
+</CodeView>
+
+### Large
+
+The `slds-line-clamp_large` class name will truncate text after seven lines.
+
+<CodeView demoStyles={getDemoStylesById(Base.examples, 'large')}>
+  {getDisplayElementById(Base.examples, 'large')}
+</CodeView>

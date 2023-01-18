@@ -1,0 +1,205 @@
+import CodeView from '../../../shared/components/CodeView';
+import CodeBlock from '../../../shared/components/CodeBlock';
+import Blockquote from '../../../shared/components/Blockquote';
+import StylingHooksTable from '../../../shared/components/StylingHooksTable';
+import { UtilityIcon } from './base/example';
+import { ActionIcon } from './action/example';
+import { CustomIcon } from './custom/example';
+import { DoctypeIcon } from './doctype/example';
+import { StandardIcon } from './standard/example';
+import * as UtilityIconExamples from '../icons/base/example';
+import { getDisplayElementById } from '../../shared/helpers';
+
+<div className="doc lead">
+  Icons provide visual context and enhance usability. Read more in the{' '}
+  <a href="/guidelines/iconography" title="Iconography Guidelines">
+    Iconography design guideline
+  </a>{' '}
+  and for a full list of icons available, visit the{' '}
+  <a href="/icons" title="Icons">
+    Icons page
+  </a>
+  .
+</div>
+
+<CodeView exampleOnly>
+  {getDisplayElementById(UtilityIconExamples.default, 'default')}
+</CodeView>
+
+## About Icons
+
+Five separate SVG sprites are used to create icons — [action](/icons/#action), [custom](/icons/#custom), [doctype](/icons/#doctype), [standard ](/icons/#standard) and [utility](/icons/#utility). Link to the icon SVG sprite by targeting the icon’s hash/ID value in the use href attribute. (You can find the values on the [icon page](/icons/).)
+
+## Accessibility
+
+Icons require a containing element for two reasons:
+
+- If assistive text is required, the containing element should contain both the icon and a `<span>` with hidden assistive text describing the icon using the `slds-assistive-text` class.
+- If the icon is used without a visible, descriptive label, a `title` attribute is needed on the containing element. The `title` should describe the icon.
+
+If an icon has a visible label that describes what the icon represents, no title or hidden assistive text is required.
+
+The containing element must have the `slds-icon_container` class.
+
+## Default
+
+<CodeView>
+  {getDisplayElementById(UtilityIconExamples.default, 'default')}
+</CodeView>
+
+### Structure and Implementation
+
+An icon must have a containing element with the class `slds-icon_container` for [accessibility support](#Accessibility). Inside the container, a `<svg>` with the class `slds-icon` contains the reference to your icon and a `<span>` with the class `slds-assistive-text` contains your hidden assistive text that describes the icon. Be sure to read the [accessibility section](#Accessibility) to know when to use assistive text, the `title` attribute, or when neither is needed.
+
+When placing the icon code into your page, customize the path in the `use` attribute of the `svg` to the proper path and icon name for your specific icon. For example, the _case_ icon in the _standard_ sprite would have a path like this:
+
+<CodeBlock toggleCode={false}>
+  <svg aria-hidden="true" className="slds-icon" title="when needed">
+    <use xlinkHref="/assets/icons/standard-sprite/svg/symbols.svg#case" />
+  </svg>
+</CodeBlock>
+
+If an icon has more than one word in the name, it should be included in the `use` attribute with the underscore separator as shown on the icon page. For example: log_a_call.
+
+You must require SLDS in your application for SVG sprites to work. If you’re using Visualforce, see <a href="/platforms/visualforce">the Visualforce tutorial</a>. If you’re using <a href="/platforms/lightning"> Lightning components, see this documentation</a>.
+
+- You can access the SVG sprites by downloading the entire [CSS Framework or just the icons](/resources/downloads). To include a sprite in your application, the recommended method is to place it into the page as the first element inside the `body` element. Alternatively, you can leave the sprite in the assets/icons directory and link to it from your page. To render a sprite icon, add the tiny [SVG for Everybody](https://github.com/jonathantneal/svg4everybody) script for Internet Explorer.
+- When placed into the `body`, the SVG sprite takes up space in the page. Use either `display:none` or `position:absolute` and set both the width and height to zero.
+
+## Types
+
+All available SVG sprites fall into one of these five main categories: action, custom, doctype, standard, and utility.
+
+### Action
+
+To view all available action icons, see [action icons](/icons/#action).
+
+<CodeView>
+  <ActionIcon />
+</CodeView>
+
+### Custom
+
+Custom icons have a rounded square shape and use a class on the container for the background color.
+
+To view all available custom icons, see [custom icons](/icons/#custom).
+
+<CodeView>
+  <CustomIcon />
+</CodeView>
+
+### Doctype
+
+To view all available doctype icons, see [doctype icons](/icons/#doctype).
+
+<CodeView>
+  <DoctypeIcon />
+</CodeView>
+
+### Standard
+
+Standard icons have a rounded square shape and use a class on the container for the background color.
+
+To view all available standard icons, see [standard icons](/icons/#standard).
+
+<CodeView>
+  <StandardIcon />
+</CodeView>
+
+## Color
+
+### Default
+
+To change the fill of an icon to the default text color, add the `slds-icon-text-default` class to the icon.
+
+<CodeView>
+  {getDisplayElementById(UtilityIconExamples.default, 'default')}
+</CodeView>
+
+### Current Color
+
+To change the fill of an icon to match the current color of its parent, add the `slds-current-color` class to the icon's container. This class utilizes the CSS `currentColor` value.
+
+<CodeView>
+  {getDisplayElementById(UtilityIconExamples.examples, 'currentColor')}
+</CodeView>
+
+### Success
+
+To change the fill of an icon to the success text color, add the `slds-icon-text-success` class to the icon.
+
+<CodeView>
+  {getDisplayElementById(UtilityIconExamples.examples, 'text-warning')}
+</CodeView>
+
+### Warning
+
+To change the fill of an icon to the warning text color, add the `slds-icon-text-warning` class to the icon.
+
+<CodeView>
+  {getDisplayElementById(UtilityIconExamples.examples, 'text-warning')}
+</CodeView>
+
+### Error
+
+To change the fill of an icon to the error text color, add the `slds-icon-text-error` class to the icon.
+
+<CodeView>
+  {getDisplayElementById(UtilityIconExamples.examples, 'text-error')}
+</CodeView>
+
+### Light
+
+To change the fill of an icon to the light text color, add the `slds-icon-text-light` class to the icon.
+
+<CodeView>
+  {getDisplayElementById(UtilityIconExamples.examples, 'light')}
+</CodeView>
+
+## Size
+
+Size modifiers can be added to the `slds-icon` element on all types of icons.
+
+### XX-Small
+
+To change the size of an icon to xx-small, add the `slds-icon_xx-small` class to the icon.
+
+<CodeView>
+  {getDisplayElementById(UtilityIconExamples.examples, 'size-xxsmall')}
+</CodeView>
+
+### X-Small
+
+To change the size of an icon to x-small, add the `slds-icon_x-small` class to the icon.
+
+<CodeView>
+  {getDisplayElementById(UtilityIconExamples.examples, 'size-xsmall')}
+</CodeView>
+
+### Small
+
+To change the size of an icon to small, add the `slds-icon_small` class to the icon.
+
+<CodeView>
+  {getDisplayElementById(UtilityIconExamples.examples, 'size-small')}
+</CodeView>
+
+### Large
+
+To change the size of an icon to large, add the `slds-icon_large` class to the icon.
+
+<CodeView>
+  {getDisplayElementById(UtilityIconExamples.examples, 'size-large')}
+</CodeView>
+
+## Right-to-Left Support
+
+To horizontally flip an icon to support bidirectionality (reading from right to left), use the `slds-icon_flip` class with the `slds-icon_container` class, and setting the `dir` attribute on any parent container, most often the parent component or on `html` itself.
+
+<CodeView>
+  {getDisplayElementById(UtilityIconExamples.examples, 'rtl-flipped')}
+</CodeView>
+
+## Styling Hooks Overview
+
+<StylingHooksTable name="icons" type="component" />

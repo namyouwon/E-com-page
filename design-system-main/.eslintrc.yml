@@ -1,0 +1,13 @@
+parser: 'babel-eslint'
+extends:
+  - standard
+  - standard-jsx
+  - prettier
+  - prettier/standard
+  - prettier/react
+rules:
+  react/jsx-key: ['error']
+  prefer-const: ['off']
+  react/jsx-fragments: ['off']
+  react/jsx-handler-names: ['off']
+  no-prototype-builtins: ['off']

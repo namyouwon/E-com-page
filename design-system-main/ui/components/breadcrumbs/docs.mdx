@@ -1,0 +1,38 @@
+import CodeView from '../../../shared/components/CodeView';
+import { getDisplayElementById } from '../../shared/helpers';
+import Blockquote from '../../../shared/components/Blockquote';
+import StylingHooksTable from '../../../shared/components/StylingHooksTable';
+import * as Breadcrumbs from './base/example';
+
+<div className="doc lead">
+  Use breadcrumbs to note the path of a record and help the user to navigate
+  back to the parent.
+</div>
+
+<CodeView exampleOnly>{getDisplayElementById(Breadcrumbs.default)}</CodeView>
+
+## About Breadcrumbs
+
+Breadcrumbs are typically constructed with an `ol` because their order matters. You mark up breadcrumbs with classes from the horizontal list utility. When you add the `slds-breadcrumb` class, the separators are automatically generated.
+
+### Accessibility
+
+Place the breadcrumb in a `nav` element with `role="navigation"`. The `nav` element is also marked-up with `aria-label="Breadcrumbs"` to describe the type of navigation.
+
+## Base
+
+<CodeView>{getDisplayElementById(Breadcrumbs.default)}</CodeView>
+
+## Variations
+
+### With Overflow
+
+The overflow menu breadcrumbs variant is a composition of the overflow menu with actions example of the menus component and breadcrumbs component. To implement this, include the overflow menu as the first `<li>` in the breadcrumb component. In order to vertically align all of the breadcrumb items to the center, add the `slds-grid_vertical-align-center` class to the `<ol>`.
+
+<CodeView demoStyles="height: 150px;">
+  {getDisplayElementById(Breadcrumbs.states, 'breadcrumbs-overflow')}
+</CodeView>
+
+## Styling Hooks Overview
+
+<StylingHooksTable name="breadcrumbs" type="component" />

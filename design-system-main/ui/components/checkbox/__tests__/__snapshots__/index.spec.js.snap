@@ -1,0 +1,592 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox Primitive renders primitive checkbox 1`] = `
+<input
+  name="label"
+  type="checkbox"
+  value="option"
+/>
+`;
+
+exports[`Checkbox Primitive renders primitive checkbox that is disabled 1`] = `
+<input
+  disabled={true}
+  name="label"
+  type="checkbox"
+  value="option"
+/>
+`;
+
+exports[`Checkbox Primitive renders primitive checkbox that is required 1`] = `
+<input
+  name="label"
+  required={true}
+  type="checkbox"
+  value="option"
+/>
+`;
+
+exports[`Checkbox Primitive renders primitive checkbox with a name 1`] = `
+<input
+  name="checkbox-name"
+  type="checkbox"
+  value="option"
+/>
+`;
+
+exports[`Checkbox Primitive renders primitive checkbox with a value 1`] = `
+<input
+  name="label"
+  type="checkbox"
+  value="checkbox-value"
+/>
+`;
+
+exports[`Checkbox Primitive renders primitive checkbox with an ID 1`] = `
+<input
+  id="checkbox-id"
+  name="label"
+  type="checkbox"
+  value="option"
+/>
+`;
+
+exports[`Checkbox Primitive renders primitive checkbox with an aria-describedby error ID 1`] = `
+<input
+  aria-describedby="error-id"
+  name="label"
+  type="checkbox"
+  value="option"
+/>
+`;
+
+exports[`Checkbox renders checkbox 1`] = `
+<div
+  className="slds-checkbox"
+>
+  <input
+    aria-labelledby={null}
+    id="checkbox-unique-id-1"
+    name="options"
+    type="checkbox"
+    value="checkbox-unique-id-1"
+  />
+  <label
+    className="slds-checkbox__label"
+    htmlFor="checkbox-unique-id-1"
+  >
+    <span
+      className="slds-checkbox_faux"
+    />
+  </label>
+</div>
+`;
+
+exports[`Checkbox renders checkbox that is disabled 1`] = `
+<div
+  className="slds-checkbox"
+>
+  <input
+    aria-labelledby={null}
+    disabled={true}
+    id="checkbox-unique-id-5"
+    name="options"
+    type="checkbox"
+    value="checkbox-unique-id-5"
+  />
+  <label
+    className="slds-checkbox__label"
+    htmlFor="checkbox-unique-id-5"
+  >
+    <span
+      className="slds-checkbox_faux"
+    />
+  </label>
+</div>
+`;
+
+exports[`Checkbox renders checkbox with a hidden label 1`] = `
+<div
+  className="slds-checkbox"
+>
+  <input
+    aria-labelledby={null}
+    id="checkbox-unique-id-3"
+    name="options"
+    type="checkbox"
+    value="checkbox-unique-id-3"
+  />
+  <label
+    className="slds-checkbox__label"
+    htmlFor="checkbox-unique-id-3"
+  >
+    <span
+      className="slds-checkbox_faux"
+    />
+    <span
+      className="slds-form-element__label slds-assistive-text"
+    >
+      label
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Checkbox renders checkbox with a label 1`] = `
+<div
+  className="slds-checkbox"
+>
+  <input
+    aria-labelledby={null}
+    id="checkbox-unique-id-2"
+    name="options"
+    type="checkbox"
+    value="checkbox-unique-id-2"
+  />
+  <label
+    className="slds-checkbox__label"
+    htmlFor="checkbox-unique-id-2"
+  >
+    <span
+      className="slds-checkbox_faux"
+    />
+    <span
+      className="slds-form-element__label"
+    >
+      label
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Checkbox renders checkbox with help text icon 1`] = `
+<div
+  className="slds-checkbox"
+>
+  <input
+    aria-labelledby={null}
+    id="checkbox-unique-id-6"
+    name="options"
+    type="checkbox"
+    value="checkbox-unique-id-6"
+  />
+  <label
+    className="slds-checkbox__label"
+    htmlFor="checkbox-unique-id-6"
+  >
+    <span
+      className="slds-checkbox_faux"
+    />
+  </label>
+  <div
+    className="slds-form-element__icon"
+  >
+    <button
+      className="slds-button slds-button_icon"
+      onClick={[Function]}
+    >
+      <svg
+        aria-hidden={true}
+        className="slds-button__icon"
+      >
+        <use
+          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#info"
+        />
+      </svg>
+      <span
+        className="slds-assistive-text"
+      >
+        Help
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Checkbox renders checkbox with required asterisk 1`] = `
+<div
+  className="slds-checkbox"
+>
+  <input
+    aria-labelledby={null}
+    id="checkbox-unique-id-4"
+    name="options"
+    type="checkbox"
+    value="checkbox-unique-id-4"
+  />
+  <label
+    className="slds-checkbox__label"
+    htmlFor="checkbox-unique-id-4"
+  >
+    <span
+      className="slds-checkbox_faux"
+    />
+  </label>
+</div>
+`;
+
+exports[`Form Element Standalone Checkbox renders = form element standalone checkbox with an aria-describedby error ID with label and error text 1`] = `
+<div
+  className="slds-form-element slds-has-error"
+>
+  <label
+    className="slds-form-element__label"
+    htmlFor="checkbox-unique-id-13"
+  >
+    Form Element Label
+  </label>
+  <div
+    className="slds-form-element__control"
+  >
+    <span
+      className="slds-checkbox slds-checkbox_standalone"
+    >
+      <input
+        aria-describedby="error-unique-id-7"
+        id="checkbox-unique-id-13"
+        name="label"
+        type="checkbox"
+        value="option"
+      />
+      <span
+        className="slds-checkbox_faux"
+      />
+    </span>
+  </div>
+  <div
+    className="slds-form-element__help"
+    id="error-unique-id-7"
+  >
+    Error message
+  </div>
+</div>
+`;
+
+exports[`Form Element Standalone Checkbox renders form element standalone checkbox that is checked with a label 1`] = `
+<div
+  className="slds-form-element"
+>
+  <label
+    className="slds-form-element__label"
+    htmlFor="checkbox-unique-id-14"
+  >
+    Form Element Label
+  </label>
+  <div
+    className="slds-form-element__control"
+  >
+    <span
+      className="slds-checkbox slds-checkbox_standalone"
+    >
+      <input
+        defaultChecked={true}
+        id="checkbox-unique-id-14"
+        name="label"
+        type="checkbox"
+        value="option"
+      />
+      <span
+        className="slds-checkbox_faux"
+      />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Form Element Standalone Checkbox renders form element standalone checkbox that is disabled with a label 1`] = `
+<div
+  className="slds-form-element"
+>
+  <label
+    className="slds-form-element__label"
+    htmlFor="checkbox-unique-id-11"
+  >
+    Form Element Label
+  </label>
+  <div
+    className="slds-form-element__control"
+  >
+    <span
+      className="slds-checkbox slds-checkbox_standalone"
+    >
+      <input
+        disabled={true}
+        id="checkbox-unique-id-11"
+        name="label"
+        type="checkbox"
+        value="option"
+      />
+      <span
+        className="slds-checkbox_faux"
+      />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Form Element Standalone Checkbox renders form element standalone checkbox that is required with a label 1`] = `
+<div
+  className="slds-form-element"
+>
+  <label
+    className="slds-form-element__label"
+    htmlFor="checkbox-unique-id-12"
+  >
+    <abbr
+      className="slds-required"
+      title="required"
+    >
+      *
+       
+    </abbr>
+    Form Element Label
+  </label>
+  <div
+    className="slds-form-element__control"
+  >
+    <span
+      className="slds-checkbox slds-checkbox_standalone"
+    >
+      <input
+        id="checkbox-unique-id-12"
+        name="label"
+        required={true}
+        type="checkbox"
+        value="option"
+      />
+      <span
+        className="slds-checkbox_faux"
+      />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Form Element Standalone Checkbox renders form element standalone checkbox with a label 1`] = `
+<div
+  className="slds-form-element"
+>
+  <label
+    className="slds-form-element__label"
+    htmlFor="checkbox-unique-id-7"
+  >
+    Form Element Label
+  </label>
+  <div
+    className="slds-form-element__control"
+  >
+    <span
+      className="slds-checkbox slds-checkbox_standalone"
+    >
+      <input
+        id="checkbox-unique-id-7"
+        name="label"
+        type="checkbox"
+        value="option"
+      />
+      <span
+        className="slds-checkbox_faux"
+      />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Form Element Standalone Checkbox renders form element standalone checkbox with a name and a label 1`] = `
+<div
+  className="slds-form-element"
+>
+  <label
+    className="slds-form-element__label"
+    htmlFor="checkbox-unique-id-9"
+  >
+    Form Element Label
+  </label>
+  <div
+    className="slds-form-element__control"
+  >
+    <span
+      className="slds-checkbox slds-checkbox_standalone"
+    >
+      <input
+        id="checkbox-unique-id-9"
+        name="checkbox-name"
+        type="checkbox"
+        value="option"
+      />
+      <span
+        className="slds-checkbox_faux"
+      />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Form Element Standalone Checkbox renders form element standalone checkbox with a value and a label 1`] = `
+<div
+  className="slds-form-element"
+>
+  <label
+    className="slds-form-element__label"
+    htmlFor="checkbox-unique-id-10"
+  >
+    Form Element Label
+  </label>
+  <div
+    className="slds-form-element__control"
+  >
+    <span
+      className="slds-checkbox slds-checkbox_standalone"
+    >
+      <input
+        id="checkbox-unique-id-10"
+        name="label"
+        type="checkbox"
+        value="checkbox-value"
+      />
+      <span
+        className="slds-checkbox_faux"
+      />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Form Element Standalone Checkbox renders form element standalone checkbox with an ID and a label 1`] = `
+<div
+  className="slds-form-element"
+>
+  <label
+    className="slds-form-element__label"
+    htmlFor="checkbox-unique-id-8"
+  >
+    Form Element Label
+  </label>
+  <div
+    className="slds-form-element__control"
+  >
+    <span
+      className="slds-checkbox slds-checkbox_standalone"
+    >
+      <input
+        id="checkbox-unique-id-8"
+        name="label"
+        type="checkbox"
+        value="option"
+      />
+      <span
+        className="slds-checkbox_faux"
+      />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Standalone Checkbox renders primitive checkbox that is disabled 1`] = `
+<span
+  className="slds-checkbox slds-checkbox_standalone"
+>
+  <input
+    disabled={true}
+    name="label"
+    type="checkbox"
+    value="option"
+  />
+  <span
+    className="slds-checkbox_faux"
+  />
+</span>
+`;
+
+exports[`Standalone Checkbox renders primitive checkbox that is required 1`] = `
+<span
+  className="slds-checkbox slds-checkbox_standalone"
+>
+  <input
+    name="label"
+    required={true}
+    type="checkbox"
+    value="option"
+  />
+  <span
+    className="slds-checkbox_faux"
+  />
+</span>
+`;
+
+exports[`Standalone Checkbox renders primitive checkbox with a name 1`] = `
+<span
+  className="slds-checkbox slds-checkbox_standalone"
+>
+  <input
+    name="checkbox-name"
+    type="checkbox"
+    value="option"
+  />
+  <span
+    className="slds-checkbox_faux"
+  />
+</span>
+`;
+
+exports[`Standalone Checkbox renders primitive checkbox with a value 1`] = `
+<span
+  className="slds-checkbox slds-checkbox_standalone"
+>
+  <input
+    name="label"
+    type="checkbox"
+    value="checkbox-value"
+  />
+  <span
+    className="slds-checkbox_faux"
+  />
+</span>
+`;
+
+exports[`Standalone Checkbox renders primitive checkbox with an ID 1`] = `
+<span
+  className="slds-checkbox slds-checkbox_standalone"
+>
+  <input
+    id="checkbox-id"
+    name="label"
+    type="checkbox"
+    value="option"
+  />
+  <span
+    className="slds-checkbox_faux"
+  />
+</span>
+`;
+
+exports[`Standalone Checkbox renders primitive checkbox with an aria-describedby error ID 1`] = `
+<span
+  className="slds-checkbox slds-checkbox_standalone"
+>
+  <input
+    aria-describedby="error-id"
+    name="label"
+    type="checkbox"
+    value="option"
+  />
+  <span
+    className="slds-checkbox_faux"
+  />
+</span>
+`;
+
+exports[`Standalone Checkbox renders standalone checkbox 1`] = `
+<span
+  className="slds-checkbox slds-checkbox_standalone"
+>
+  <input
+    name="label"
+    type="checkbox"
+    value="option"
+  />
+  <span
+    className="slds-checkbox_faux"
+  />
+</span>
+`;

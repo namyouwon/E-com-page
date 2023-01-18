@@ -1,0 +1,101 @@
+import { Fragment } from 'react';
+import Example from '../../../shared/components/Example';
+import CodeView from '../../../shared/components/CodeView';
+import DisplayColumn from '../../../shared/components/DisplayColumn';
+import DisplayGrid from '../../../shared/components/DisplayGrid';
+import { UtilityIcon } from '../icons/base/example';
+import StylingHooksTable from '../../../shared/components/StylingHooksTable';
+import * as Base from './base/example';
+import { InverseBadge, LightestBadge, Badge, BadgeIcon } from './index';
+import { getDisplayElementById } from '../../shared/helpers';
+
+<div className="doc lead">
+  Badges are labels which hold small amounts of information.
+</div>
+
+<CodeView exampleOnly>{getDisplayElementById(Base.default)}</CodeView>
+
+## About Badges
+
+Badges are composed of text inside a `span` element and may include inline/inline-block elements and/or icons.
+
+### Colors
+
+There are six different color badges you can use.
+
+| Badge                                                 | class                             | description                                                                                            |
+| ----------------------------------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| <Badge key="1">Default Badge</Badge>                  | `.slds-badge`                     | This is the default badge. You probably want to use this one unless you fall into a specific use-case. |
+| <InverseBadge key="2">Darker Badge</InverseBadge>     | `.slds-badge_inverse`             | This badge is used when you need higher contrast than our default badge.                               |
+| <LightestBadge key="3">Lightest Badge</LightestBadge> | `.slds-badge_lightest`            | This badge is used when you need higher contrast, such as on colored backgrounds.                      |
+| <Badge key="4" isSuccess>Success Badge</Badge>        | `.slds-badge .slds-theme_success` | This is a badge used to communicate success.                                                           |
+| <Badge key="5" isWarning>Warning Badge</Badge>        | `.slds-badge .slds-theme_warning` | This is a badge used to communicate a warning.                                                         |
+| <Badge key="6" isError>Error Badge</Badge>            | `.slds-badge .slds-theme_error`   | This is a badge used to communicate an error.                                                          |
+
+## Base
+
+<CodeView toggleCode={false}>{getDisplayElementById(Base.default)}</CodeView>
+
+## Badges with Icons
+
+You can include an icon in your badge. For maximum visual clarity, [Utility icons](/icons/#utility) are the suggested icon type inside badges. You may also choose to put an icon in a badge without text, but in that case, be sure to include assistive text.
+
+The icon can be aligned to the left or right side of the text. To use an icon, wrap the icon with `<span class="slds-badge__icon">`. Add the classes `slds-badge__icon_left` or `slds-badge__icon_right` to the wrapper for spacing the icon in relation to the text label.
+
+<DisplayGrid>
+  <DisplayColumn>
+    <strong>Base: Icon on the left</strong>
+    <CodeView>
+      {getDisplayElementById(Base.examples, 'with-left-icon')}
+    </CodeView>
+  </DisplayColumn>
+  <DisplayColumn>
+    <strong>Base: Icon on the right</strong>
+    <CodeView>
+      {getDisplayElementById(Base.examples, 'with-right-icon')}
+    </CodeView>
+  </DisplayColumn>
+  <DisplayColumn>
+    <CodeView>
+      {getDisplayElementById(Base.examples, 'light-with-left-icon')}
+    </CodeView>
+  </DisplayColumn>
+  <DisplayColumn>
+    <CodeView>
+      {getDisplayElementById(Base.examples, 'light-with-right-icon')}
+    </CodeView>
+  </DisplayColumn>
+</DisplayGrid>
+
+When using inverse themed badges, add the `slds-badge__icon_inverse` class to `slds-badge__icon` to inverse the icon.
+
+<DisplayGrid>
+  <DisplayColumn>
+    <strong>Icon on the left</strong>
+    <CodeView>
+      {getDisplayElementById(Base.examples, 'inverse-with-left-icon')}
+    </CodeView>
+  </DisplayColumn>
+  <DisplayColumn>
+    <strong>Icon on the right</strong>
+    <CodeView>
+      {getDisplayElementById(Base.examples, 'inverse-with-right-icon')}
+    </CodeView>
+  </DisplayColumn>
+</DisplayGrid>
+
+## Badges with Nested Elements
+
+Along with icons, you can have nested textual elements, such as `strong`, `em`, and `span` elements, within a badge. Only `inline` and `inline-block` elements are supported at this time.
+
+<Example title="Badge with nested element">
+  <CodeView toggleCode={false}>
+    <Badge>
+      Component In: <em>Lightning</em>
+    </Badge>
+  </CodeView>
+</Example>
+
+## Styling Hooks Overview
+
+<StylingHooksTable name="badges" type="component" />

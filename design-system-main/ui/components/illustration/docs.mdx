@@ -1,0 +1,373 @@
+import CodeView from '../../../shared/components/CodeView';
+import CodeBlock from '../../../shared/components/CodeBlock';
+import Example from '../../../shared/components/Example';
+import Blockquote from '../../../shared/components/Blockquote';
+import { LakeMountain, FishingDeals, NoEvents, NoTask, Setup } from '../illustration/custom';
+import { GoingCamping, Maintenance } from '../illustration/informational';
+import { Desert, OpenRoad } from '../illustration/nodata';
+import { NoAccess, NoConnection, NotAvailableInLightning, PageNotAvailable, WalkthroughNotAvailable } from '../illustration/error';
+import { GoneFishing, NoAccess2, NoContent, NoPreview, Preview, Research } from '../illustration/misc';
+import { Illustration, IllustrationText, IllustrationCTA } from '../illustration/base/example';
+
+<div className="doc lead">
+  An illustration is an image and inline text that work in tandem to communicate a state in a more friendly way.
+</div>
+
+<CodeView exampleOnly>
+  <Illustration>
+    <OpenRoad />
+    <IllustrationText heading="Lorem ipsum dolor" />
+  </Illustration>
+</CodeView>
+
+## About Illustration
+
+Illustrations should be used within other components, such as cards, to express the state of the component. An illustration image must be accompanied with heading text inline.
+
+### Accessibility
+
+Each SVG tag requires an `aria-hidden="true"` attribute.
+
+<CodeBlock toggleCode={false}>
+  <svg viewBox="0 0 483 218" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">...</svg>
+</CodeBlock>
+
+## Base
+
+<CodeView>
+  <Illustration>
+    <FishingDeals />
+    <IllustrationText heading="Lorem ipsum dolor" />
+  </Illustration>
+</CodeView>
+
+## Using Empty States
+
+Empty states are used when an element doesn’t have content to display to the user. An empty state is an opportunity to engage and delight users. The empty state should tell users what it’s for and why they’re seeing it. Effective empty states also tell users what they can do next.  Illustrations should show data or system state (empty for instance), but not user input validation messaging.
+
+Empty states have many causes, such as:
+- There’s **no data** the user can see.
+- A feature hasn’t been **configured yet**.
+- There’s been an **error**.
+- Empty area of the screen intentionally **left blank**.
+
+Use empty states to:
+- Prevent the application from feeling lifeless and empty.
+- Help users onboard an application and/or motivate them to interact with the application.
+- Warn the user when data is unavailable (because of a system error or otherwise).
+
+## With Message Body
+
+Illustrations can include message body text below the heading to further communicate the state of the component. However, illustrations cannot have a message body without heading text.
+
+<Blockquote type="note" header="Design Note">
+  <p>
+    To ensure the readability of your text, we recommend limiting each line to 66 characters.
+  </p>
+</Blockquote>
+
+<CodeView>
+  <Illustration>
+    <FishingDeals />
+    <IllustrationText heading="Lorem ipsum dolor" message="Lorem ipsum dolor sit amet, consectetur" />
+  </Illustration>
+</CodeView>
+
+## Large Illustrations
+
+The base illustration component is typically used within smaller components and has a `max-width` of `300px` and a `max-height` of `200px`. However, there are some cases where it can be used in a larger context.
+
+For these situations, utilize the modifier `.slds-illustration_large`. This will increase the `max-width` of the image to `600px` and the `max-height` to `400px`.
+
+<CodeView>
+  <Illustration large>
+    <FishingDeals />
+    <h3 className="slds-illustration__header slds-text-heading_medium">Lorem ipsum dolor</h3>
+    <p className="slds-text-body_regular">Lorem ipsum dolor sit amet, consectetur</p>
+  </Illustration>
+</CodeView>
+
+## Informational
+
+Common Scenarios:
+- Setup needed
+- Maintenance
+
+### Going Camping
+
+<CodeView>
+  <Illustration>
+    <GoingCamping />
+    <IllustrationText heading="Lorem ipsum dolor" />
+  </Illustration>
+</CodeView>
+
+### Maintenance
+
+<CodeView>
+  <Illustration>
+    <Maintenance />
+    <IllustrationText heading="Lorem ipsum dolor" />
+  </Illustration>
+</CodeView>
+
+## No Data
+
+Common Scenarios:
+- No data/information
+- No history/feeds
+
+### Desert
+
+<CodeView>
+  <Illustration>
+    <Desert />
+    <IllustrationText heading="Lorem ipsum dolor" />
+  </Illustration>
+</CodeView>
+
+### Open Road
+
+<CodeView>
+  <Illustration>
+    <OpenRoad />
+    <IllustrationText heading="Lorem ipsum dolor" />
+  </Illustration>
+</CodeView>
+
+## Error
+
+Common Scenarios:
+- No access to a page
+- No connection
+- Page not available in Lightning
+- Page not available
+- Walkthrough not available
+
+### No Access
+
+<CodeView>
+  <Illustration>
+    <NoAccess />
+    <IllustrationText heading="Lorem ipsum dolor" />
+  </Illustration>
+</CodeView>
+
+### No Connection
+
+<CodeView>
+  <Illustration>
+    <NoConnection />
+    <IllustrationText heading="Lorem ipsum dolor" />
+  </Illustration>
+</CodeView>
+
+### Not Available In Lightning
+
+<CodeView>
+  <Illustration>
+    <NotAvailableInLightning />
+    <IllustrationText heading="Lorem ipsum dolor" />
+  </Illustration>
+</CodeView>
+
+### Page Not Available
+
+<CodeView>
+  <Illustration>
+    <PageNotAvailable />
+    <IllustrationText heading="Lorem ipsum dolor" />
+  </Illustration>
+</CodeView>
+
+### Walkthrough Not Available
+
+<CodeView>
+  <Illustration>
+    <WalkthroughNotAvailable />
+    <IllustrationText heading="Lorem ipsum dolor" />
+  </Illustration>
+</CodeView>
+
+## Custom
+
+### Fishing Deals
+
+<CodeView>
+  <Illustration>
+    <FishingDeals />
+    <IllustrationText heading="Lorem ipsum dolor" />
+  </Illustration>
+</CodeView>
+
+### Lake Mountain
+
+<CodeView>
+  <Illustration>
+    <LakeMountain />
+    <IllustrationText heading="Lorem ipsum dolor" />
+  </Illustration>
+</CodeView>
+
+### No Events
+
+<CodeView>
+  <Illustration>
+    <NoEvents />
+    <IllustrationText heading="Lorem ipsum dolor" />
+  </Illustration>
+</CodeView>
+
+### No Task
+
+<CodeView>
+  <Illustration>
+    <NoTask />
+    <IllustrationText heading="Lorem ipsum dolor" />
+  </Illustration>
+</CodeView>
+
+### Setup
+
+<CodeView>
+  <Illustration>
+    <Setup />
+    <IllustrationText heading="Lorem ipsum dolor" />
+  </Illustration>
+</CodeView>
+
+## Miscellaneous
+
+### Gone Fishing
+
+<CodeView>
+  <Illustration>
+    <GoneFishing />
+    <IllustrationText heading="Lorem ipsum dolor" />
+  </Illustration>
+</CodeView>
+
+### No Access 2
+
+<CodeView>
+  <Illustration>
+    <NoAccess2 />
+    <IllustrationText heading="Lorem ipsum dolor" />
+  </Illustration>
+</CodeView>
+
+### No Content
+
+<CodeView>
+  <Illustration>
+    <NoContent />
+    <IllustrationText heading="Lorem ipsum dolor" />
+  </Illustration>
+</CodeView>
+
+### No Preview
+
+<CodeView>
+  <Illustration>
+    <NoPreview />
+    <IllustrationText heading="Lorem ipsum dolor" />
+  </Illustration>
+</CodeView>
+
+### Preview
+
+<CodeView>
+  <Illustration>
+    <Preview />
+    <IllustrationText heading="Lorem ipsum dolor" />
+  </Illustration>
+</CodeView>
+
+### Research
+
+<CodeView>
+  <Illustration>
+    <Research />
+    <IllustrationText heading="Lorem ipsum dolor" />
+  </Illustration>
+</CodeView>
+
+## With Call to Action
+
+A call to action may be used to help users move from an empty state to a situation where the page, component, or element is now useful to them.
+
+In most cases, one call to action will be enough. When using one call to action, place the call to action below the message text.
+
+### One Call to Action - Link
+
+<CodeView demoStyles="width: 400px;">
+  <IllustrationCTA link>
+    <Illustration>
+      <NoTask />
+      <IllustrationText heading="Lorem ipsum dolor" message="Lorem ipsum dolor sit amet, consectetur" />
+    </Illustration>
+  </IllustrationCTA>
+</CodeView>
+
+### One Call to Action - Button
+
+<CodeView demoStyles="width: 400px;">
+  <IllustrationCTA button="slds-button">
+    <Illustration>
+      <NoTask />
+      <IllustrationText heading="Lorem ipsum dolor" message="Lorem ipsum dolor sit amet, consectetur" />
+    </Illustration>
+  </IllustrationCTA>
+</CodeView>
+
+### One Call to Action - Button Brand
+
+<CodeView demoStyles="width: 400px;">
+  <IllustrationCTA button="slds-button slds-button_brand">
+    <Illustration>
+      <NoTask />
+      <IllustrationText heading="Lorem ipsum dolor" message="Lorem ipsum dolor sit amet, consectetur" />
+    </Illustration>
+  </IllustrationCTA>
+</CodeView>
+
+### Two Calls to Action
+
+<CodeView demoStyles="width: 400px;">
+  <IllustrationCTA link>
+    <Illustration>
+      <NoTask />
+      <IllustrationText heading="Lorem ipsum dolor" message="Lorem ipsum dolor sit amet, consectetur" secondaryCTA="Learn More"/>
+    </Illustration>
+  </IllustrationCTA>
+</CodeView>
+
+## Text Only
+
+In certain use cases, it may be appropriate to just use text to communicate states.
+
+### Heading and Message
+
+<CodeView>
+  <Illustration>
+    <IllustrationText heading="Lorem ipsum dolor" message="Lorem ipsum dolor sit amet, consectetur" />
+  </Illustration>
+</CodeView>
+
+### Heading Only
+
+<CodeView>
+  <Illustration>
+    <IllustrationText heading="Lorem ipsum dolor" />
+  </Illustration>
+</CodeView>
+
+### Message Only
+
+When an image is not present, a message only variant may be used.
+
+<CodeView>
+  <Illustration>
+    <IllustrationText message="Lorem ipsum dolor sit amet, consectetur" />
+  </Illustration>
+</CodeView>

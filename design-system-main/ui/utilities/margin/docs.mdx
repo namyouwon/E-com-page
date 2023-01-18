@@ -1,0 +1,177 @@
+import { Fragment } from 'react';
+import SpacingCodeView from '../../../shared/components/SpacingCodeView';
+import Example from '../../../shared/components/Example';
+
+<div className="doc lead">
+  Adjust whitespace by applying horizontal and vertical margin helpers
+</div>
+
+## About Margin
+The base unit of all of our spacing metrics is **4**.
+
+**Before using**
+
+- Most components already come with spacing included. These utility classes are for added convenience in laying out components.
+- Classes prefixed by `slds-m-` are used for adding **margins**. Classes prefixed in `slds-p-` are used for adding [padding](/utilities/padding)
+- The directions available for the spacing classes are `top`, `right`, `bottom`, and `left`.
+- You can use the `vertical` shortcut for both `top` and `bottom`, `horizontal` for both `right` and `left`, and `around` for all sides.
+- Use the `_xxx-small` through `_xx-large` scale to choose the size needed.
+- You can also use `none` as the size on any of the directions to enforce zero margin.
+- Where **vertical centering** is required, check out our [centered media object](/utilities/media-objects) instead of applying extra `margin` or `padding`.
+
+## Examples
+
+### Location - Top
+
+<Example title="top margins">
+  <Fragment>
+    <SpacingCodeView type="m" size="none" position="top" />
+    <SpacingCodeView type="m" size="xxx-small" position="top" />
+    <SpacingCodeView type="m" size="xx-small" position="top" />
+    <SpacingCodeView type="m" size="x-small" position="top" />
+    <SpacingCodeView type="m" size="small" position="top" />
+    <SpacingCodeView type="m" size="medium" position="top" />
+    <SpacingCodeView type="m" size="large" position="top" />
+    <SpacingCodeView type="m" size="x-large" position="top" />
+    <SpacingCodeView type="m" size="xx-large" position="top" />
+  </Fragment>
+</Example>
+
+### Location - Left
+
+<Example title="left margins">
+  <Fragment>
+    <SpacingCodeView type="m" size="none" position="left" />
+    <SpacingCodeView type="m" size="xxx-small" position="left" />
+    <SpacingCodeView type="m" size="xx-small" position="left" />
+    <SpacingCodeView type="m" size="x-small" position="left" />
+    <SpacingCodeView type="m" size="small" position="left" />
+    <SpacingCodeView type="m" size="medium" position="left" />
+    <SpacingCodeView type="m" size="large" position="left" />
+    <SpacingCodeView type="m" size="x-large" position="left" />
+    <SpacingCodeView type="m" size="xx-large" position="left" />
+  </Fragment>
+</Example>
+
+### Location - Bottom
+
+<Example title="bottom margins">
+  <Fragment>
+    <SpacingCodeView type="m" size="none" position="bottom" />
+    <SpacingCodeView type="m" size="xxx-small" position="bottom" />
+    <SpacingCodeView type="m" size="xx-small" position="bottom" />
+    <SpacingCodeView type="m" size="x-small" position="bottom" />
+    <SpacingCodeView type="m" size="small" position="bottom" />
+    <SpacingCodeView type="m" size="medium" position="bottom" />
+    <SpacingCodeView type="m" size="large" position="bottom" />
+    <SpacingCodeView type="m" size="x-large" position="bottom" />
+    <SpacingCodeView type="m" size="xx-large" position="bottom" />
+  </Fragment>
+</Example>
+
+### Location - Right
+
+<Example title="right margins">
+  <Fragment>
+    <SpacingCodeView type="m" size="none" position="right" />
+    <SpacingCodeView type="m" size="xxx-small" position="right" />
+    <SpacingCodeView type="m" size="xx-small" position="right" />
+    <SpacingCodeView type="m" size="x-small" position="right" />
+    <SpacingCodeView type="m" size="small" position="right" />
+    <SpacingCodeView type="m" size="medium" position="right" />
+    <SpacingCodeView type="m" size="large" position="right" />
+    <SpacingCodeView type="m" size="x-large" position="right" />
+    <SpacingCodeView type="m" size="xx-large" position="right" />
+  </Fragment>
+</Example>
+
+### Location - Horizontal
+
+<Example title="horizontal margins">
+  <Fragment>
+    <SpacingCodeView type="m" size="none" position="horizontal" />
+    <SpacingCodeView type="m" size="xxx-small" position="horizontal" />
+    <SpacingCodeView type="m" size="xx-small" position="horizontal" />
+    <SpacingCodeView type="m" size="x-small" position="horizontal" />
+    <SpacingCodeView type="m" size="small" position="horizontal" />
+    <SpacingCodeView type="m" size="medium" position="horizontal" />
+    <SpacingCodeView type="m" size="large" position="horizontal" />
+    <SpacingCodeView type="m" size="x-large" position="horizontal" />
+    <SpacingCodeView type="m" size="xx-large" position="horizontal" />
+  </Fragment>
+</Example>
+
+### Location - Vertical
+
+<Example title="vertical margins">
+  <Fragment>
+    <SpacingCodeView type="m" size="none" position="vertical" />
+    <SpacingCodeView type="m" size="xxx-small" position="vertical" />
+    <SpacingCodeView type="m" size="xx-small" position="vertical" />
+    <SpacingCodeView type="m" size="x-small" position="vertical" />
+    <SpacingCodeView type="m" size="small" position="vertical" />
+    <SpacingCodeView type="m" size="medium" position="vertical" />
+    <SpacingCodeView type="m" size="large" position="vertical" />
+    <SpacingCodeView type="m" size="x-large" position="vertical" />
+    <SpacingCodeView type="m" size="xx-large" position="vertical" />
+  </Fragment>
+</Example>
+
+### Location - Around
+
+<Example title="around margins">
+  <Fragment>
+    <SpacingCodeView type="m" size="none" position="around" />
+    <SpacingCodeView type="m" size="xxx-small" position="around" />
+    <SpacingCodeView type="m" size="xx-small" position="around" />
+    <SpacingCodeView type="m" size="x-small" position="around" />
+    <SpacingCodeView type="m" size="small" position="around" />
+    <SpacingCodeView type="m" size="medium" position="around" />
+    <SpacingCodeView type="m" size="large" position="around" />
+    <SpacingCodeView type="m" size="x-large" position="around" />
+    <SpacingCodeView type="m" size="xx-large" position="around" />
+  </Fragment>
+</Example>
+
+## Variable Density Classes
+
+In addition to the tokens we've created to support the [new density settings](https://developer.salesforce.com/blogs/2018/08/new-density-settings-for-the-lightning-experience-ui-in-winter-19.html), we have also created variable density classes for both margin and padding. The tables below show how the values change between the Comfy and Compact settings.
+
+### Around
+
+| Class Name | Comfy Value | Compact Value |
+| ----------- | ----------- | ------ |
+| `slds-var-m-around_xxx-small` | 0.125rem | 0.125rem |
+| `slds-var-m-around_xx-small`      | 0.25rem | 0.125rem |
+| `slds-var-m-around_x-small`      | 0.5rem | 0.125rem |
+| `slds-var-m-around_small`      | 0.75rem | 0.25rem |
+| `slds-var-m-around_medium`      | 1rem | 0.5rem |
+| `slds-var-m-around_large`    | 1.5rem | 0.75rem |
+| `slds-var-m-around_x-large`      | 2rem | 1rem |
+| `slds-var-m-around_xx-large`     | 3rem | 1.5rem |
+
+### Left, Right, Horizontal
+
+| Class Name | Comfy Value | Compact Value |
+| ----------- | ----------- | ------ |
+| `slds-var-m-*_xxx-small` | 0.125rem | 0.125rem |
+| `slds-var-m-*_xx-small`      | 0.25rem | 0.125rem |
+| `slds-var-m-*_x-small`      | 0.5rem | 0.25rem |
+| `slds-var-m-*_small`      | 0.75rem | 0.5rem |
+| `slds-var-m-*_medium`      | 1rem | 0.75rem |
+| `slds-var-m-*_large`    | 1.5rem | 0.75rem |
+| `slds-var-m-*_x-large`      | 2rem | 1rem |
+| `slds-var-m-*_xx-large`     | 3rem | 1.5rem |
+
+### Top, Bottom, Vertical
+
+| Class Name | Comfy Value | Compact Value |
+| ----------- | ----------- | ------ |
+| `slds-var-m-*_xxx-small` | 0.125rem | 0.125rem |
+| `slds-var-m-*_xx-small`      | 0.25rem | 0.125rem |
+| `slds-var-m-*_x-small`      | 0.5rem | 0.25rem |
+| `slds-var-m-*_small`      | 0.75rem | 0.5rem |
+| `slds-var-m-*_medium`      | 1rem | 0.5rem |
+| `slds-var-m-*_large`    | 1.5rem | 0.75rem |
+| `slds-var-m-*_x-large`      | 2rem | 1rem |
+| `slds-var-m-*_xx-large`     | 3rem | 1.5rem |

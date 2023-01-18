@@ -1,0 +1,75 @@
+# Ignore all hidden dotfiles
+.*
+
+# Whitelist useful dotfiles
+!/.scss-linters/
+!/.babelrc
+!/.editorconfig
+!/.eslintignore
+!/.eslintrc.yml
+!/.esmrc
+!/.gitattributes
+!/.gitignore
+!/.hound.yml
+!/.scss-lint.yml
+!/.stylelintrc.yml
+!/.sldsrc.defaults.yml
+!/.stylestatsrc
+!/.travis.yml
+!/.github
+!/.prettierignore
+!/.storybook
+!/.circleci
+!/.npmrc
+!/.nvmrc
+!/.snyk
+
+# Add a .gitkeep file in an empty
+# directory to check it in the repository
+!.gitkeep
+
+# for vrt
+*snap.json
+
+# Ignore generated styles
+/assets/styles
+
+# Ignore generated scripts
+/assets/scripts
+
+# Ignore generated tokens
+design-tokens/components.yml
+
+# Ignore modules
+/node_modules
+
+# Ignore assets
+/_slds/images/themes/oneSalesforce
+
+# Ignore logs
+*.log
+
+# Ignore code coverage reports
+coverage
+
+# Ignore tokens distribution
+/design-tokens/dist
+
+# Ignore test design-tokens + images
+/design-tokens/__themes__
+/assets/images/__local__
+
+# Legacy folders
+/git_modules
+
+# Local postcss packages
+install-postcss.sh
+applitools.*.local.js
+
+__release
+__crypt
+
+*.bak
+/__tests__/a11y/results
+/__tests__/a11y/axe-results.xml
+/__tests__/a11y/__testfiles__

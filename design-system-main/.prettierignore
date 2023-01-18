@@ -1,0 +1,11 @@
+package.json
+package-lock.json
+/node_modules
+/shared/vendor/scss-parser-aura/node_modules
+.dist/
+.reports/
+.www/
+.html/
+/assets
+/design-tokens
+scripts/snap.json

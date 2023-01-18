@@ -1,0 +1,476 @@
+import CodeView from '../../../shared/components/CodeView';
+import CodeBlock from '../../../shared/components/CodeBlock';
+import Example from '../../../shared/components/Example';
+import Blockquote from '../../../shared/components/Blockquote';
+import ButtonIcon from '../button-icons/';
+import { FormElement, FormElementStatic, Fieldset } from './';
+import Input from '../input/';
+import { Checkbox } from '../checkbox/base/example';
+import { Textarea } from '../textarea/base/example';
+import { Avatar } from '../avatar/base/example';
+import { Form } from '../form-layout/base/example';
+import { CompoundFormElement, CompoundFormRow } from './compound/';
+import { RecordDetailRow, RecordDetailItem } from './record-detail/';
+import RecordDetail from './record-detail/';
+import * as Snapshot from './record-detail/snapshots.data';
+import * as StackedExamples from './stacked/example';
+import * as HorizontalExamples from './horizontal/example';
+import * as CompoundExamples from './compound/example';
+import * as AddressExamples from './address/example';
+import { getDisplayElementById } from '../../shared/helpers';
+import { MobileNotice, MobileBlurb } from '../../shared/doc-text';
+
+<div className="doc lead">
+  A Form Element contains an HTML input element paired with a label.
+</div>
+
+<CodeView exampleOnly>
+  <FormElement
+    labelContent="Form Label"
+    inputId="form-element-showcase-01"
+    isRequired
+  >
+    <Input
+      id="form-element-showcase-01"
+      placeholder="Placeholder text…"
+      required
+    />
+  </FormElement>
+</CodeView>
+
+## About Form Elements
+
+The Form Element is initialized with `slds-form-element` and is made up of three primary pieces; a label (`slds-form-element__label`), a form control container (`slds-form-element__control`), and a form input element, i.e. `<input>`.
+
+### Form Label
+
+A form label should use either the `<label>` or `<legend>` elements with the class `slds-form-element__label`. Use `<legend>` when you have a [compound form](/components/form-element/#Compound).
+
+<CodeBlock toggleCode={false}>
+  <label className="slds-form-element__label" htmlFor="unique-id-of-input">
+    Form label
+  </label>
+</CodeBlock>
+
+### Form Control
+
+A form control is a `div` with the class `slds-form-element__control`. The control is required to maintain the structure of the Form Element.
+
+<CodeBlock toggleCode={false}>
+  <div className="slds-form-element__control">Any form type goes here</div>
+</CodeBlock>
+
+### Form Input Elements
+
+There are many types of input elements that can be used in the Form Element, including [inputs](/components/input), [text areas](/components/textarea), [checkboxes](/components/checkbox), and [radio buttons](/components/radio-group). Visit the individual component pages for in-depth details of their specific states and visuals.
+
+### Accessibility
+
+Labels must have the `for` attribute applied, and its value must match the ID of the associated form element, like `<input id="unique-id-of-input" />`. This association ensures that assistive technology informs users about what information to enter where.
+
+### Mobile
+
+<MobileBlurb patternSpecificText="form elements will have an increased size of label and info icon" />
+
+<CodeView frameOnly frameTitle="Example mobile styles for form elements">
+  <FormElement
+    labelContent="Form Label"
+    inputId="form-element-showcase-01"
+    isRequired
+  >
+    <Input
+      id="form-element-showcase-01"
+      placeholder="Placeholder text…"
+      required
+    />
+  </FormElement>
+</CodeView>
+
+## Base
+
+<Example title="Form Element - Base">
+  <CodeView>
+    <FormElement labelContent="Form Label" inputId="form-element-01">
+      <Input id="form-element-01" placeholder="Placeholder text…" />
+    </FormElement>
+  </CodeView>
+</Example>
+
+## States
+
+### View Mode/Static
+
+If a form element requires a view mode or static state, instead of `slds-form-element__label` being a `<label>` element, we want to change the element to a `<span>`. This is because the form is no longer a form but a statically read name and value pair.
+
+The string inside of `slds-form-element__control` needs to be wrapped in a `<div>` as well, with the class `slds-form-element__static` applied to it.
+
+In addition to the structural changes — if the form element is standalone, you can _optionally_ apply `slds-form-element__readonly`. The class will help spacing and separation between other form elements. This class is **_required_** if the form element is in the context of a larger form composition.
+
+<Example title="Form Element - Readonly">
+  <CodeView>
+    <FormElement labelContent="Status" isViewMode>
+      <FormElementStatic>In Progress</FormElementStatic>
+    </FormElement>
+  </CodeView>
+</Example>
+
+### Inline Edit
+
+If the form element has inline editable capabilities, the form element will **_require_** the class `slds-form-element_edit`. This will apply styles that help handle the structure of the additional elements, such as the button icon to switch the element out of view mode and into edit mode.
+
+In addition, we want to provide an interaction hint by increasing the contrast of the button icon on hover by adding `slds-hint-parent` to the form element. The button icon will also require the class `slds-button__icon_hint`. This will notify the form element that this is the element we want to provide an interaction hint for. For more implementation details, please refer to [Button icon with hint on hover](/components/button-icons/#Hint-on-hover)
+
+<Example title="Form Element - Inline Edit">
+
+<CodeView>
+  <FormElement labelContent="Status" isViewMode isEditable hasHint>
+    <FormElementStatic>In Progress</FormElementStatic>
+    <ButtonIcon
+      iconClassName="slds-button__icon_hint"
+      symbol="edit"
+      assistiveText="Edit: Status"
+      title="Edit: Status"
+    />
+  </FormElement>
+</CodeView>
+
+</Example>
+
+### Help Text Icon
+
+A form element can have help text that will display in a tooltip when hovering or focusing on an icon.
+
+The icon comes in the form of a button icon so it can receive focus when a user tabs through a form with multiple form elements.
+
+The button icon is **_required_** to be wrapped in a `<div>` with the class `slds-form-element__icon` and should be placed outside of the `<label>` element.
+
+<Example title="Form Element - Help Text Icon">
+
+<CodeView>
+  <FormElement labelContent="Status" inputId="form-element-help-01" hasTooltip>
+    <Input id="form-element-help-01" placeholder="Placeholder text…" />
+  </FormElement>
+</CodeView>
+
+</Example>
+
+<MobileNotice
+  docsLink="#Mobile"
+  header="Mobile context changes"
+  elementName="form elements with a help text icon"
+/>
+
+<CodeView frameOnly frameTitle="Example mobile styles for form elements with help text icon">
+  <FormElement labelContent="Status" inputId="form-element-help-01m" hasTooltip>
+    <Input id="form-element-help-01m" placeholder="Placeholder text…" />
+  </FormElement>
+</CodeView>
+
+#### Showing tooltip
+
+The help text icon uses a tooltip to show the help text information. Please see [Tooltips](/components/tooltips/) for implementation details.
+
+<Example title="Form Element - Help Text Icon - Showing tooltip">
+
+<CodeView demoStyles="padding-top: 4rem;">
+  <FormElement
+    labelContent="Status"
+    inputId="tooltip-showing-form-element-help-01"
+    hasTooltip
+    showTooltip
+  >
+    <Input
+      id="tooltip-showing-form-element-help-01"
+      placeholder="Placeholder text…"
+    />
+  </FormElement>
+</CodeView>
+
+</Example>
+
+### Feedback
+
+A form element can have various methods of feedback, such as a required denotation or an inline error message.
+
+#### Required
+
+When a form element is required, an `<abbr>` should be injected before the `<input>` and within the `<label>` and have the class `slds-required`.
+
+The `<input>` element should also have the HTML attribute `required` or `required=""`. Similarly, if it is disabled, it should have the `disabled` or `disabled=""` attribute. Do not use true/false values inside the `required` or `disabled` attributes because the mere presence of these attributes signifies the field is required or disabled.
+
+<Example title="Form Element - Required">
+
+<CodeView>
+  <FormElement labelContent="Form Label" inputId="form-element-03" isRequired>
+    <Input id="form-element-03" placeholder="Placeholder text…" required />
+  </FormElement>
+</CodeView>
+
+</Example>
+
+#### Error
+
+If an error has occurred while submitting a form, the form element with an error should provide feedback. The `slds-has-error` class is placed on the `<div class="slds-form-element">` element. Then, the error message for the user is placed in a `<div>` with the `slds-form-element__help` class.
+
+<Blockquote type="a11y" header="Accessibility requirement">
+  <p>
+    When a form element displays feedback notifying the user of an error, the
+    error string should be linked to the element by adding the{' '}
+    <code>aria-describedby</code> attribute to the <code>&lt;input&gt;</code>.
+    The `aria-describedby` attribute must reference the id of the error message.
+    This configuration allows screen readers to read the associated error
+    message when the invalid field is focused.
+  </p>
+</Blockquote>
+
+<Example title="Form Element - Error">
+
+<CodeView>
+  <FormElement
+    hasError
+    labelContent="Form Label"
+    inputId="form-element-05"
+    errorId="form-error-01"
+    isRequired
+    inlineMessage="Enter a value."
+  >
+    <Input
+      id="form-element-05"
+      placeholder="Placeholder text…"
+      required
+      aria-describedby="form-error-01"
+    />
+  </FormElement>
+</CodeView>
+
+</Example>
+
+## Layout Variations
+
+If your form has more than one form element, you can switch the direction of `slds-form-element__label` and `slds-form-element__control` by applying `slds-form-element_stacked` for stacked labels and `slds-form-element_horizontal` for left-aligned labels. For optimal spacing and layout, ensure the `slds-form-element` class is present on each element within the form.
+
+### Stacked
+
+To vertically stack <code>&lt;label&gt;</code> and <code>&lt;input&gt;</code> pairs, place `slds-form-element_stacked` on the `div` with the class of `slds-form-element` for optimal spacing.
+
+<Example title="Form Layout - Stacked">
+  <CodeView>
+    {getDisplayElementById(StackedExamples.examples, 'simple-stacked')}
+  </CodeView>
+</Example>
+
+### Horizontal
+
+To horizontally align a `<label>` and `<input>`, use the `slds-form-element_horizontal` class on the `div` with the class of `slds-form-element`. The `slds-form-element__label` takes up 33% of the width, and the `slds-form-element__control` uses the remaining 66%.
+
+<Example title="Form Layout - Horizontal">
+  <CodeView>
+    {getDisplayElementById(HorizontalExamples.examples, 'simple-horizontal')}
+  </CodeView>
+</Example>
+
+#### Single Column Support
+
+When using `slds-form-element_horizontal`, you might find that the 33/66% distribution of the label to control might be too much in a single column form when displayed in a larger region. Another scenario where single column support would be useful is when a form element spans 100% while the other form elements in your form are 50/50 split. To reduce the distribution and/or align with 50/50 split form elements, adding the class `slds-form-element_1-col` to `slds-form-element` will re-distribute the layout.
+
+##### Standalone
+
+<Example title="Form Layout - Horizontal - Single Column standalone">
+  <CodeView>
+    <FormElement
+      isHorizontal
+      labelContent="Description"
+      inputId="single-form-element-id-01"
+      isEditing
+      column={1}
+    >
+      <Textarea
+        id="single-form-element-id-01"
+        defaultValue="Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod."
+      />
+    </FormElement>
+  </CodeView>
+</Example>
+
+##### With 50/50 split
+
+<Example title="Form Layout - Horizontal - Single Column combo">
+  <CodeView>
+    <div className="slds-form" role="list">
+      <RecordDetailRow>
+        <RecordDetailItem>
+          <FormElement
+            isHorizontal
+            labelContent="Label"
+            inputId="single-form-element-id-02"
+            isEditing
+          >
+            <Input
+              id="single-form-element-id-02"
+              placeholder="Placeholder text…"
+            />
+          </FormElement>
+        </RecordDetailItem>
+        <RecordDetailItem>
+          <FormElement
+            isHorizontal
+            labelContent="Label"
+            inputId="single-form-element-id-03"
+            isEditing
+          >
+            <Input
+              id="single-form-element-id-03"
+              placeholder="Placeholder text…"
+            />
+          </FormElement>
+        </RecordDetailItem>
+      </RecordDetailRow>
+      <RecordDetailRow>
+        <RecordDetailItem>
+          <FormElement
+            isHorizontal
+            labelContent="Description"
+            inputId="single-form-element-id-04"
+            isEditing
+            column={1}
+          >
+            <Textarea
+              id="single-form-element-id-04"
+              placeholder="Placeholder text…"
+              defaultValue="Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod."
+            />
+          </FormElement>
+        </RecordDetailItem>
+      </RecordDetailRow>
+    </div>
+  </CodeView>
+</Example>
+
+#### Error state
+When in the horizontal layout, error messages will appear underneath the related input.
+
+<CodeView>
+  {getDisplayElementById(HorizontalExamples.states, 'form-element-horizontal-edit-error')}
+</CodeView>
+
+### Compound
+
+A compound form is a grouping of several form elements described by a label/title. The compound form should be implemented as a `<fieldset>`, where the label/title is implemented as a `<legend>` element.
+
+The `<fieldset>` **_requires_** the class `slds-form-element_compound`. This class handles the layout and wrapping of the form elements that are grouped together.
+
+The `<legend>` element **_requires_** the class `slds-form-element__legend`. Legend elements can only accept a limited amount of CSS properties so this class is there to help manage its layout.
+
+<CodeBlock toggleCode={false}>
+  <Fieldset hasCompoundFields label="Fieldset Label">
+    ...
+  </Fieldset>
+</CodeBlock>
+
+#### Rows
+
+Each row of a compound field should be wrapped in a `<div>` with the class `slds-form-element__row`.
+
+#### Fields
+
+Each field inside of a compound row can be explicitly sized by using a sizing class, e.g. `slds-size_1-of-2`.
+
+<CodeBlock toggleCode={false}>
+  <CompoundFormRow>
+    <div className="slds-size_1-of-2">...</div>
+  </CompoundFormRow>
+</CodeBlock>
+
+<Example title="Form Layout - Compound">
+  <CodeView demoStyles="max-width: 400px;">{getDisplayElementById(CompoundExamples.default)}</CodeView>
+</Example>
+
+#### Address
+
+Though an address form is utilizing the `slds-form-element_compound` class, we need to also add the `slds-form-element_address` class to the component. We modify some of the behavior of an address form with this class.
+
+<Example title="Form Layout - Compound - Address">
+  <CodeView demoStyles="max-width: 400px;">{getDisplayElementById(AddressExamples.default)}</CodeView>
+</Example>
+
+## Usage Examples
+
+### Record Form
+
+A record form is a series of rows created by `slds-form__row`. Inside of each row contains up to 2 inline-editable form element. Each item inside of `slds-form__row` is required to be wrapped in a `<div>` with the class `slds-form__item`.
+
+<Blockquote type="a11y" header="Accessibility Requirement">
+  <p>
+    Due to the nature of how the record form is composed, we need to notify
+    screen readers that this is a list by adding <code>role="list"</code> to the{' '}
+    <code>slds-form</code> element. Every column inside of each row should get{' '}
+    <code>role="listitem"</code> to identify itself as items of the list.
+  </p>
+</Blockquote>
+
+#### View Mode
+
+When in view/readonly mode, it is _required_ to have the class `slds-form-element_readonly` on the `slds-form-element` element. This class will provide styles for scanability and spacing.
+
+If inline-edit mode is enabled, you will also need to add `slds-form-element_edit` to the `slds-form-element` to accommodate the space for the edit button icon.
+
+##### Stacked Alignment
+
+When you want the form elements inside of your record form to be stacked. Each `slds-form-element` should also get the class `slds-form-element_stacked`.
+
+<Example title="Form Element - Record Detail - View Mode">
+  <CodeView>
+    <RecordDetail
+      snapshot={Snapshot.ObjectFieldTypes}
+      isViewMode
+      hasInlineEdit
+      direction="stacked"
+    />
+  </CodeView>
+</Example>
+
+##### Horizontal Alignment
+
+By adding the class `slds-form-element_horizontal` to every `slds-form-element`, your form can switch from stacked to left-aligned, horizontal labels in order to reduce vertical space.
+
+<Example title="Form Element - Record Detail - View Mode - Horizontal">
+  <CodeView>
+    <RecordDetail
+      snapshot={Snapshot.ObjectFieldTypesHorizontal}
+      isViewMode
+      hasInlineEdit
+      direction="horizontal"
+    />
+  </CodeView>
+</Example>
+
+#### Edit Mode
+
+When a form switches to edit mode, we need to replace all readonly form elements with their semantic field type form element. The structure remains the same:
+
+<CodeBlock toggleCode={false}>
+  <FormElement labelContent="My Label" inputId="unique-form-element-id">
+    ...
+  </FormElement>
+</CodeBlock>
+
+The form content found inside of `slds-form-element__control` should be replaced with the appropriate field type of the view/readonly state.
+
+##### Stacked Alignment
+
+<Example title="Form Element - Record Detail - Edit Mode">
+  <CodeView>
+    <RecordDetail snapshot={Snapshot.ObjectFieldTypes} direction="stacked" />
+  </CodeView>
+</Example>
+
+##### Horizontal Alignment
+
+<Example title="Form Element - Record Detail - Edit Mode - Horizontal">
+  <CodeView>
+    <RecordDetail
+      snapshot={Snapshot.ObjectFieldTypesHorizontal}
+      direction="horizontal"
+    />
+  </CodeView>
+</Example>

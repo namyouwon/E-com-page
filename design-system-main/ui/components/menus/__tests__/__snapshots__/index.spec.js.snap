@@ -1,0 +1,805 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Base Menu renders a base menu to the bottom 1`] = `
+<div
+  className="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open"
+>
+  <button
+    aria-expanded="true"
+    aria-haspopup="true"
+    className="slds-button slds-button_icon slds-button_icon-border-filled"
+    onClick={[Function]}
+    title="Show More"
+  >
+    <svg
+      aria-hidden={true}
+      className="slds-button__icon"
+    >
+      <use
+        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
+      />
+    </svg>
+    <span
+      className="slds-assistive-text"
+    >
+      Show More
+    </span>
+  </button>
+  <div
+    className="slds-dropdown slds-dropdown_bottom"
+  >
+    <ul
+      aria-label="Show More"
+      className="slds-dropdown__list"
+      role="menu"
+    >
+      <li
+        className="slds-dropdown__item"
+        role="presentation"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          role="menuitem"
+          tabIndex="0"
+        >
+          <span
+            className="slds-truncate"
+            title="Menu Item One"
+          >
+            Menu Item One
+          </span>
+        </a>
+      </li>
+      <li
+        className="slds-dropdown__item"
+        role="presentation"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          <span
+            className="slds-truncate"
+            title="Menu Item Two"
+          >
+            Menu Item Two
+          </span>
+        </a>
+      </li>
+      <li
+        className="slds-dropdown__item"
+        role="presentation"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          <span
+            className="slds-truncate"
+            title="Menu Item Three"
+          >
+            Menu Item Three
+          </span>
+        </a>
+      </li>
+      <li
+        className="slds-has-divider_top-space"
+        role="separator"
+      />
+      <li
+        className="slds-dropdown__item"
+        role="presentation"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          <span
+            className="slds-truncate"
+            title="Menu Item Four"
+          >
+            Menu Item Four
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Base Menu renders a base menu to the left 1`] = `
+<div
+  className="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open"
+>
+  <button
+    aria-expanded="true"
+    aria-haspopup="true"
+    className="slds-button slds-button_icon slds-button_icon-border-filled"
+    onClick={[Function]}
+    title="Show More"
+  >
+    <svg
+      aria-hidden={true}
+      className="slds-button__icon"
+    >
+      <use
+        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
+      />
+    </svg>
+    <span
+      className="slds-assistive-text"
+    >
+      Show More
+    </span>
+  </button>
+  <div
+    className="slds-dropdown slds-dropdown_left"
+  >
+    <ul
+      aria-label="Show More"
+      className="slds-dropdown__list"
+      role="menu"
+    >
+      <li
+        className="slds-dropdown__item"
+        role="presentation"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          role="menuitem"
+          tabIndex="0"
+        >
+          <span
+            className="slds-truncate"
+            title="Menu Item One"
+          >
+            Menu Item One
+          </span>
+        </a>
+      </li>
+      <li
+        className="slds-dropdown__item"
+        role="presentation"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          <span
+            className="slds-truncate"
+            title="Menu Item Two"
+          >
+            Menu Item Two
+          </span>
+        </a>
+      </li>
+      <li
+        className="slds-dropdown__item"
+        role="presentation"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          <span
+            className="slds-truncate"
+            title="Menu Item Three"
+          >
+            Menu Item Three
+          </span>
+        </a>
+      </li>
+      <li
+        className="slds-has-divider_top-space"
+        role="separator"
+      />
+      <li
+        className="slds-dropdown__item"
+        role="presentation"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          <span
+            className="slds-truncate"
+            title="Menu Item Four"
+          >
+            Menu Item Four
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Base Menu renders a base menu to the right 1`] = `
+<div
+  className="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open"
+>
+  <button
+    aria-expanded="true"
+    aria-haspopup="true"
+    className="slds-button slds-button_icon slds-button_icon-border-filled"
+    onClick={[Function]}
+    title="Show More"
+  >
+    <svg
+      aria-hidden={true}
+      className="slds-button__icon"
+    >
+      <use
+        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
+      />
+    </svg>
+    <span
+      className="slds-assistive-text"
+    >
+      Show More
+    </span>
+  </button>
+  <div
+    className="slds-dropdown slds-dropdown_right"
+  >
+    <ul
+      aria-label="Show More"
+      className="slds-dropdown__list"
+      role="menu"
+    >
+      <li
+        className="slds-dropdown__item"
+        role="presentation"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          role="menuitem"
+          tabIndex="0"
+        >
+          <span
+            className="slds-truncate"
+            title="Menu Item One"
+          >
+            Menu Item One
+          </span>
+        </a>
+      </li>
+      <li
+        className="slds-dropdown__item"
+        role="presentation"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          <span
+            className="slds-truncate"
+            title="Menu Item Two"
+          >
+            Menu Item Two
+          </span>
+        </a>
+      </li>
+      <li
+        className="slds-dropdown__item"
+        role="presentation"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          <span
+            className="slds-truncate"
+            title="Menu Item Three"
+          >
+            Menu Item Three
+          </span>
+        </a>
+      </li>
+      <li
+        className="slds-has-divider_top-space"
+        role="separator"
+      />
+      <li
+        className="slds-dropdown__item"
+        role="presentation"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          <span
+            className="slds-truncate"
+            title="Menu Item Four"
+          >
+            Menu Item Four
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Menu with submenu renders a closed submenu 1`] = `
+<div
+  className="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open"
+>
+  <button
+    aria-expanded="true"
+    aria-haspopup="true"
+    className="slds-button slds-button_icon slds-button_icon-border-filled"
+    onClick={[Function]}
+    title="Show More"
+  >
+    <svg
+      aria-hidden={true}
+      className="slds-button__icon"
+    >
+      <use
+        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
+      />
+    </svg>
+    <span
+      className="slds-assistive-text"
+    >
+      Show More
+    </span>
+  </button>
+  <div
+    className="slds-dropdown slds-dropdown_left"
+  >
+    <ul
+      aria-label="Show More"
+      className="slds-dropdown__list"
+      role="menu"
+    >
+      <li
+        className="slds-dropdown__item"
+        role="presentation"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          role="menuitem"
+          tabIndex="0"
+        >
+          <span
+            className="slds-truncate"
+            title="Menu Item One"
+          >
+            Menu Item One
+          </span>
+        </a>
+      </li>
+      <li
+        className="slds-dropdown__item"
+        role="presentation"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          <span
+            className="slds-truncate"
+            title="Menu Item Two"
+          >
+            Menu Item Two
+          </span>
+        </a>
+      </li>
+      <li
+        className="slds-dropdown__item slds-has-submenu"
+        role="presentation"
+      >
+        <a
+          aria-haspopup="true"
+          href="#"
+          onClick={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          <span
+            className="slds-truncate"
+            title="Menu Item Three"
+          >
+            Menu Item Three
+          </span>
+          <svg
+            aria-hidden={true}
+            className="slds-icon slds-icon_x-small slds-icon-text-default slds-m-left_small slds-shrink-none"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#right"
+            />
+          </svg>
+        </a>
+        <div
+          className="slds-dropdown slds-dropdown_submenu slds-dropdown_submenu-right"
+        >
+          <ul
+            aria-label="Menu Item Three"
+            className="slds-dropdown__list"
+            role="menu"
+          >
+            <li
+              className="slds-dropdown__item"
+              role="presentation"
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                role="menuitem"
+                tabIndex="0"
+              >
+                <span
+                  className="slds-truncate"
+                  title="Submenu Item One"
+                >
+                  Submenu Item One
+                </span>
+              </a>
+            </li>
+            <li
+              className="slds-dropdown__item"
+              role="presentation"
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                <span
+                  className="slds-truncate"
+                  title="Submenu Item Two"
+                >
+                  Submenu Item Two
+                </span>
+              </a>
+            </li>
+            <li
+              className="slds-dropdown__item"
+              role="presentation"
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                <span
+                  className="slds-truncate"
+                  title="Submenu Item Three"
+                >
+                  Submenu Item Three
+                </span>
+              </a>
+            </li>
+            <li
+              className="slds-has-divider_top-space"
+              role="separator"
+            />
+            <li
+              className="slds-dropdown__item"
+              role="presentation"
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                <span
+                  className="slds-truncate"
+                  title="Submenu Item Four"
+                >
+                  Submenu Item Four
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Menu with submenu renders an open submenu 1`] = `
+<div
+  className="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open"
+>
+  <button
+    aria-expanded="true"
+    aria-haspopup="true"
+    className="slds-button slds-button_icon slds-button_icon-border-filled"
+    onClick={[Function]}
+    title="Show More"
+  >
+    <svg
+      aria-hidden={true}
+      className="slds-button__icon"
+    >
+      <use
+        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
+      />
+    </svg>
+    <span
+      className="slds-assistive-text"
+    >
+      Show More
+    </span>
+  </button>
+  <div
+    className="slds-dropdown slds-dropdown_left"
+  >
+    <ul
+      aria-label="Show More"
+      className="slds-dropdown__list"
+      role="menu"
+    >
+      <li
+        className="slds-dropdown__item"
+        role="presentation"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          role="menuitem"
+          tabIndex="0"
+        >
+          <span
+            className="slds-truncate"
+            title="Menu Item One"
+          >
+            Menu Item One
+          </span>
+        </a>
+      </li>
+      <li
+        className="slds-dropdown__item"
+        role="presentation"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          <span
+            className="slds-truncate"
+            title="Menu Item Two"
+          >
+            Menu Item Two
+          </span>
+        </a>
+      </li>
+      <li
+        className="slds-dropdown__item slds-has-submenu"
+        role="presentation"
+      >
+        <a
+          aria-expanded={true}
+          aria-haspopup="true"
+          href="#"
+          onClick={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          <span
+            className="slds-truncate"
+            title="Menu Item Three"
+          >
+            Menu Item Three
+          </span>
+          <svg
+            aria-hidden={true}
+            className="slds-icon slds-icon_x-small slds-icon-text-default slds-m-left_small slds-shrink-none"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#right"
+            />
+          </svg>
+        </a>
+        <div
+          className="slds-dropdown slds-dropdown_submenu slds-dropdown_submenu-right"
+        >
+          <ul
+            aria-label="Menu Item Three"
+            className="slds-dropdown__list"
+            role="menu"
+          >
+            <li
+              className="slds-dropdown__item"
+              role="presentation"
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                role="menuitem"
+                tabIndex="0"
+              >
+                <span
+                  className="slds-truncate"
+                  title="Submenu Item One"
+                >
+                  Submenu Item One
+                </span>
+              </a>
+            </li>
+            <li
+              className="slds-dropdown__item"
+              role="presentation"
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                <span
+                  className="slds-truncate"
+                  title="Submenu Item Two"
+                >
+                  Submenu Item Two
+                </span>
+              </a>
+            </li>
+            <li
+              className="slds-dropdown__item"
+              role="presentation"
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                <span
+                  className="slds-truncate"
+                  title="Submenu Item Three"
+                >
+                  Submenu Item Three
+                </span>
+              </a>
+            </li>
+            <li
+              className="slds-has-divider_top-space"
+              role="separator"
+            />
+            <li
+              className="slds-dropdown__item"
+              role="presentation"
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                <span
+                  className="slds-truncate"
+                  title="Submenu Item Four"
+                >
+                  Submenu Item Four
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`MenuItem should render a menu item 1`] = `
+<li
+  className="slds-dropdown__item"
+  role="presentation"
+>
+  <a
+    href="#"
+    onClick={[Function]}
+    role="menuitem"
+    tabIndex="-1"
+  >
+    <span
+      className="slds-truncate"
+      title="menu item"
+    >
+      menu item
+    </span>
+  </a>
+</li>
+`;
+
+exports[`MenuItem should render an error menu item 1`] = `
+<li
+  className="slds-dropdown__item"
+  role="presentation"
+>
+  <a
+    className="slds-has-error"
+    href="#"
+    onClick={[Function]}
+    role="menuitem"
+    tabIndex="-1"
+  >
+    <span
+      className="slds-truncate"
+      title="menu item"
+    >
+      menu item
+    </span>
+  </a>
+</li>
+`;
+
+exports[`MenuItem should render an success menu item 1`] = `
+<li
+  className="slds-dropdown__item"
+  role="presentation"
+>
+  <a
+    className="slds-has-success"
+    href="#"
+    onClick={[Function]}
+    role="menuitem"
+    tabIndex="-1"
+  >
+    <span
+      className="slds-truncate"
+      title="menu item"
+    >
+      menu item
+    </span>
+  </a>
+</li>
+`;
+
+exports[`MenuItem should render an warning menu item 1`] = `
+<li
+  className="slds-dropdown__item"
+  role="presentation"
+>
+  <a
+    className="slds-has-warning"
+    href="#"
+    onClick={[Function]}
+    role="menuitem"
+    tabIndex="-1"
+  >
+    <span
+      className="slds-truncate"
+      title="menu item"
+    >
+      menu item
+    </span>
+  </a>
+</li>
+`;

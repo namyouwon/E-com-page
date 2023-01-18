@@ -1,3 +1,9 @@
+html{
+  height: 100%;
+}
+.fullWidth{
+  background-color: red;
+}
 .Cart{
   position: relative;
   /* width: 5%; */
@@ -20,8 +26,6 @@
   cursor: pointer;
 }
 .bubble{
-  position:absolute;
-  margin-left: 80%;
   background-color: rgb(27, 112, 239);
   font-size:0.8rem;
   color: white;
@@ -35,11 +39,9 @@
 .CartBox{
     position: absolute;
     width:100%;
-    border-radius: 15px;
     text-align: center;
     z-index: 3;
     background-color: rgb(251, 250, 250);
-    box-shadow: 1px 1px 2px rgb(249, 245, 245), 0 0 25px rgb(52, 221, 244), 0 0 5px rgb(57, 57, 232);
     overflow: auto;
     
 }
@@ -67,7 +69,6 @@
 }
 .DisableBox{
     pointer-events: none;
-    position: fixed;
     
     filter: brightness(70%);
 }
@@ -76,24 +77,10 @@
   position: fixed;
   filter: brightness(70%);
 }
-table, th, td {
-  border-collapse: collapse;
-}
-
-table{
-  width: 90%;
-  margin-left: 5%;
-  border-top: 5px solid rgb(187, 184, 184);
-  border-bottom: 5px solid rgb(187, 184, 184);
-}
 th{
   font-size:1.2rem;
 }
 
-td,th{
-  border-top: 2px solid black;
-  height: 45px;
-}
 .valuebutton {
   display: inline-block;
   border: 1px solid #ddd;
@@ -155,17 +142,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 .DelBut{
   background-color: rgb(177, 27, 27);
-  color:white;
-  height: 35px;
-  font-size: 1.2rem;
-  border-radius: 4px;
-  width: 80px;
-
-}
-
-.DelBut:hover{
-  background-color:rgb(225, 33, 33);
-  cursor: pointer;
 }
 
 #Cancel{
@@ -177,6 +153,7 @@ input[type=number]::-webkit-outer-spin-button {
   float: right;
   margin-top:10px;
   margin-right:0.25%;
+  
 }
 #Permit{
   height: 40px;

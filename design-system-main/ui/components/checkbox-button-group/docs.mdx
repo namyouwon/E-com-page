@@ -1,0 +1,36 @@
+import CodeView from '../../../shared/components/CodeView';
+import Blockquote from '../../../shared/components/Blockquote';
+import { getDisplayElementById } from '../../shared/helpers';
+import { MobileNotice, MobileBlurb } from '../../shared/doc-text';
+import * as Base from './base/example';
+
+<div className="doc lead">
+  A styled checkable input group that communicates if an option(s) are true,
+  false or indeterminate
+</div>
+
+<CodeView exampleOnly>{getDisplayElementById(Base.default)}</CodeView>
+
+## About Checkbox Button Group
+
+The checkbox-button-group is a set of [checkbox buttons](/components/checkbox-button) wrapped in a fieldset that is also a [form element](/components/form-element). It is described by a legend with the classes `slds-form-element__legend` and `slds-form-element__label` applied to it.
+
+### Mobile
+
+<MobileBlurb patternSpecificText="buttons in the checkbox button group will have an increased size to accommodate tapping with a finger instead of the more precise mouse cursor, as well as become stacked" />
+
+<CodeView frameOnly frameTitle="Example mobile styles for checkbox button groups">{getDisplayElementById(Base.default)}</CodeView>
+
+## Base
+
+<CodeView>{getDisplayElementById(Base.default)}</CodeView>
+
+## States
+
+### Has Error
+
+<CodeView>{getDisplayElementById(Base.states, 'has-error')}</CodeView>
+
+### Disabled
+
+<CodeView>{getDisplayElementById(Base.states, 'disabled')}</CodeView>

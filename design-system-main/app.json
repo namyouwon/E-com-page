@@ -1,0 +1,23 @@
+{
+  "name": "design-system-internal",
+  "description": "Storybook site on design-system-framework.herokuapp.com",
+  "scripts": {},
+  "env": {},
+  "formation": {},
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "https://github.com/salesforce-ux/heroku-buildpack-nginx.git#dse"
+    }
+  ],
+  "stack": "heroku-20",
+  "environments": {
+    "review": {
+      "buildpacks": [
+        {
+          "url": "https://github.com/salesforce-ux/heroku-buildpack-nginx.git#dse"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,295 @@
+import CodeView from '../../../shared/components/CodeView';
+import CodeBlock from '../../../shared/components/CodeBlock';
+import { getDemoStylesById, getDisplayElementById } from '../../shared/helpers';
+import Example from '../../../shared/components/Example';
+import Blockquote from '../../../shared/components/Blockquote';
+import Panel, { PanelPlayground, Container, Header } from './';
+import { Filters, FiltersFooter, FilterObject } from './filtering/example';
+import SvgIcon from '../../shared/svg-icon';
+import * as Base from './base/example';
+
+<div className="doc lead">
+  A panel is typically used to provide supplemental information or form inputs
+  that relate to your primary canvas.
+</div>
+
+<CodeView
+  exampleOnly
+  demoStyles="
+    background-color: #fafaf9;
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  "
+>
+  <Panel size="medium" title="Panel Header" docked="left" invoke="toggle">
+    A panel body accepts any layout or component
+  </Panel>
+</CodeView>
+
+## About Panel
+
+A panel is docked to the left/right side of a viewport and is in the document flow of the canvas or main content.
+
+**Use this component when:**
+
+1.  The canvas content extends beyond the boundaries of the viewport, while panning and zooming is supported
+2.  It is not important to see canvas content while completing the task in a Panel
+3.  The task performed in a Panel is momentary
+
+Toggling visibility of a Panel will re-flow the main content.
+
+The panel should take up 100% of the height of its parent container. In most cases, that would be the viewport or main stage of your application.
+
+<Blockquote type="note" header="Implementation Note">
+  <p>
+    The panel blueprint does not have an opinion about your app's layout. It is
+    up to you to add the panel to your project's structure while adhering to our
+    guidelines. For example, the{' '}
+    <a href="#Panel-Visibility">visibility section</a> showcases a panel
+    implemented within a demo container using a <code>flex</code> layout.
+  </p>
+</Blockquote>
+
+### Accessibility
+
+When managing the visibility of the panel, there are a few essential accessibility elements to make sure are in place:
+
+- When the panel is not visible, set its `aria-hidden` attribute to `true`, and when visible, set `aria-hidden` to `false`.
+- If the panel's visibility is triggered by an element, the triggering element must be focusable with `aria-controls` set to the unique ID of the panel and `aria-expanded` set to either `true` or `false` depending on the visibility of the panel.
+- When toggling a panel open, place the user's focus inside the first focusable element within the panel that isn't the close button. If the close button is the only focusable element, place focus there. Return focus to the triggering element when the panel closes.
+
+## Base
+
+<Example title="Panel base">
+  <CodeView
+    demoStyles="
+      background-color: #fafaf9;
+      position: relative;
+      height: 600px;
+      overflow: hidden;
+  "
+  >
+    <Panel size="medium" title="Panel Header" docked="left" invoke="toggle">
+      A panel body accepts any layout or component
+    </Panel>
+  </CodeView>
+</Example>
+
+## Header
+
+The header is docked to the top of its panel. When the content of the panel body becomes overflowed, the body will provide scrolling while the header remains visible in place.
+
+The header of a left/right docked panel has left-aligned text by default and one icon that dismisses the panel. The header title should truncate when it becomes too long for the panel width by using the `slds-truncate` class on the title.
+
+<Example title="Panel base - header">
+  <CodeView
+    demoStyles="
+      background-color: #fafaf9;
+      position: relative;
+      height: 50px;
+      overflow: hidden;
+  "
+  >
+    <Panel size="medium" title="Panel Header" docked="left" invoke="toggle" />
+  </CodeView>
+</Example>
+
+### Centered Text
+
+To center the header title, add the class `slds-panel__header_align-center` to the `<div>` with class `slds-panel__header`.
+
+<Example title="Panel base - header">
+  <CodeView
+    demoStyles="
+      background-color: #fafaf9;
+      position: relative;
+      height: 50px;
+      overflow: hidden;
+  "
+  >
+    <Panel
+      size="medium"
+      title="Panel Header"
+      docked="left"
+      invoke="toggle"
+      hasCenterTitle
+    />
+  </CodeView>
+</Example>
+
+### Secondary Actions
+
+Secondary actions provide a compact way to offer additional actions without the need for a dedicated action toolbar. Actions in the menu apply to the entire component.
+
+<Blockquote type="a11y" header="Accessibility Requirement">
+  <p>
+    Secondary actions use the <a href="/components/menus/#Accessibility">menu component</a>. All of the <a href="/components/menus/#Accessibility">accessibility guidelines</a> for the menu component are pertinent within the context of secondary actions.
+  </p>
+</Blockquote>
+
+<CodeView
+  demoStyles={getDemoStylesById(Base.examples, 'with-secondary-actions')}
+>
+  {getDisplayElementById(Base.examples, 'with-secondary-actions')}
+</CodeView>
+
+### Custom Header
+
+If a panel header requires additional elements outside of a title and close button, The panel header needs to have the class `slds-panel__header_custom` added to `slds-panel__header`. This notifies the component that it has a custom layout in the header.
+
+<CodeBlock toggleCode={false}>
+  <div className="slds-panel__header slds-panel__header_custom">...</div>
+</CodeBlock>
+
+The `h2` which contains the title of the panel requires the class `slds-panel__header-title`.
+
+## Invoked via Toggle
+
+<Blockquote type="a11y" header="Accessibility Requirement">
+  <p>
+    When toggling the visibility, author must manage user focus by placing the
+    user inside the panel when it opens and returning them to the trigger when
+    it closes.
+  </p>
+</Blockquote>
+
+### Positioning
+
+The `slds-panel_docked` element can be positioned on the left or right side of a viewport by adding the class `slds-panel_docked-left` or `slds-panel_docked-right`.
+
+#### Left side
+
+<Example title="Panel base - left dock toggle">
+  <CodeView
+    demoStyles="
+      background-color: #fafaf9;
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+  "
+  >
+    <Panel size="medium" title="Panel Header" docked="left" invoke="toggle">
+      A panel body accepts any layout or component
+    </Panel>
+  </CodeView>
+</Example>
+
+#### Right side
+
+<Example title="Panel base - right dock toggle">
+  <CodeView
+    demoStyles="
+      background-color: #fafaf9;
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+  "
+  >
+    <Panel size="medium" title="Panel Header" docked="right" invoke="toggle">
+      A panel body accepts any layout or component
+    </Panel>
+  </CodeView>
+</Example>
+
+## Drilled-In State
+
+<Blockquote type="note" header="Design Note">
+  <p>
+    If the panel has been drilled into, then the panel displays an arrow facing
+    to the left to indicate the direction the user drilled in from.
+  </p>
+</Blockquote>
+
+<Blockquote type="a11y" header="Accessibility Requirement">
+  <p>
+    When the user drills in, the author must manage user focus by keeping the
+    user inside the panel when it drills in and returning them to the drill-in
+    trigger when it the user presses the back arrow.
+  </p>
+</Blockquote>
+
+### Positioning
+
+#### Left side
+
+<CodeView demoStyles={getDemoStylesById(Base.examples, 'with-drilled-in-left')}>
+  {getDisplayElementById(Base.examples, 'with-drilled-in-left')}
+</CodeView>
+
+#### Right side
+
+<CodeView
+  demoStyles={getDemoStylesById(Base.examples, 'with-drilled-in-right')}
+>
+  {getDisplayElementById(Base.examples, 'with-drilled-in-right')}
+</CodeView>
+
+## Sizing
+
+The panel width can be modified by applying a sizing class to the `slds-panel` element.
+
+The panels come in 5 different sizes:
+
+| Width | SLDS Class          |
+| ----- | ------------------- |
+| 240px | `slds-size_small`   |
+| 320px | `slds-size_medium`  |
+| 400px | `slds-size_large`   |
+| 640px | `slds-size_x-large` |
+| 100%  | `slds-size_full`    |
+
+## Panel Visibility
+
+### Open as a drawer
+
+A panel causes reflow by being in the flow of the layout rather than overlaid on top of the content. To achieve this, simply toggle the class `slds-is-open` to the `slds-panel_docked` element.
+
+<CodeView>
+  <PanelPlayground drawer />
+</CodeView>
+
+## Panels for Filtering
+
+Filtering lists or reports can be done by using a Filtering expressions inside of a Panel. Check out the [Filtering expression](/components/expression/#filtering) component for different states and accessibility requirements.
+
+<Blockquote type="a11y" header="Accessibility Requirement">
+  <p>
+    Make sure to use assistive text to improve the clarity of what you might be
+    editing, for example, add{' '}
+    <code>
+      &lt;span className="slds-assistive-text"&gt;Edit filter:&lt;/span&gt;
+    </code>{' '}
+    to the button element inside each filterable object.
+  </p>
+</Blockquote>
+
+<CodeView>
+  <PanelPlayground
+    size="medium"
+    title="Filter"
+    docked="right"
+    invoke="toggle"
+    icon="filterList"
+    iconTitle="Toggle filter panel"
+    drawer
+  >
+    <Filters>
+      <ol className="slds-list_vertical slds-list_vertical-space">
+        <FilterObject type="Show Me">All Products</FilterObject>
+      </ol>
+      <h3 className="slds-text-body_small slds-m-vertical_x-small">
+        Matching all these filters
+      </h3>
+      <ol className="slds-list_vertical slds-list_vertical-space">
+        <FilterObject type="Created Date" removable>
+          equals THIS WEEK
+        </FilterObject>
+        <FilterObject type="List Price" removable>
+          greater than "500"
+        </FilterObject>
+      </ol>
+      <FiltersFooter />
+    </Filters>
+  </PanelPlayground>
+</CodeView>

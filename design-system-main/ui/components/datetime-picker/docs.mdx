@@ -1,0 +1,64 @@
+import CodeView from '../../../shared/components/CodeView';
+import Blockquote from '../../../shared/components/Blockquote';
+import * as DateTimeExamples from './base/example';
+import { getDisplayElementById } from '../../shared/helpers';
+
+<div className="doc lead">
+  A datetime picker is used to select a day and a time.
+</div>
+
+<CodeView exampleOnly demoStyles="height: 28rem;">
+  {getDisplayElementById(DateTimeExamples.default)}
+</CodeView>
+
+## About datetime picker
+
+### Implementation
+
+The datetime is two [form elements](/components/form-element), each containing a label and text [input](/components/input), and a dropdown [menu](/components/menus), containing a grid-based calendar and filters. The date form element acts as a trigger for the dropdown.
+
+<Blockquote type="warning">
+  <p>
+    Placement of inline form elements inside a data table cell is not supported. Instead, use a button to invoke a popover, which does support form elements.
+  </p>
+</Blockquote>
+
+The datetime picker has the following markup requirements:
+
+**All**
+
+- Follow all accessibility requirements mentioned in the [Datepicker](/components/datepickers) and [Timepicker](/components/timepicker) blueprints.
+
+**Desktop**
+- Add `.slds-is-open` to the element with `.slds-dropdown-trigger` to invoke the dropdown that contains the datepicker and the list of time options.
+- On the timepicker, the `.slds-has-focus` modifier class is required on the `.slds-listbox__option` element that has focus.
+- On the timepicker, the `.slds-is-selected` modifier class is required on the `.slds-listbox__option` element that has been selected.
+- On the datepicker, the `.slds-is-selected` modifier class is required on the `td` element that has the selected day.
+- On the datepicker, the `.slds-is-today` modifier class is required on the `td` element that is the current day.
+
+**Mobile**
+- When on mobile, we want to leverage the native datetime picker by changing the `input` type from `text` to `datetime-local`
+- The `input type="datetime-local"` will create an input field allowing a date and time to be easily entered — this includes year, month, day, hours, and minutes.
+- When switching `input type="text"` to `input type="datetime-local"` for mobile, we need to remove the ARIA attributes. The native rendering doesn't require these.
+  - On the element with the class `slds-combobox`, please remove `role="combobox"`, `aria-expanded`, and `aria-haspopup`.
+  - On the `input` that we just added `type="datetime-local"` to, please remove `aria-controls`, `aria-autocomplete`, and `role="textbox"`.
+
+## Base
+
+<CodeView demoStyles="height: 28rem;">
+  {getDisplayElementById(DateTimeExamples.default)}
+</CodeView>
+
+## States
+
+### Date selection
+
+<CodeView demoStyles="height: 28rem;">
+  {getDisplayElementById(DateTimeExamples.states, 'date-selection')}
+</CodeView>
+
+### Time selection
+
+<CodeView demoStyles="height: 28rem;">
+  {getDisplayElementById(DateTimeExamples.states, 'time-selection')}
+</CodeView>

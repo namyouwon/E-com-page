@@ -1,0 +1,25 @@
+ignoreFiles:
+  - node_modules
+  - app_modules
+  - ui/vendor/**
+  - site/assets/styles/_vendor/**
+
+# Default rules based on
+# https://github.com/salesforce-ux/stylelint-config-slds
+extends: "stylelint-config-slds"
+
+defaultSeverity: "error"
+
+# Overrides
+rules:
+  "selector-class-pattern":
+    - "^(slds|site|demo)(-[a-z0-9_-]+|)$"
+    -
+      severity: error
+      resolveNestedSelectors: true
+  "custom-property-pattern":
+    # "-g-" left out specifically to ensure 228 is component-level only, we can updated
+    # to ^sds|slds-c|kx|g-([a-z][a-z0-9]*)(-[a-z0-9]+)*$ when theming gets added to Styling Hooks
+    - "^sds|slds-c|kx-([a-z][a-z0-9]*)(-[a-z0-9]+)*$"
+    -
+      message: "All component custom properties must begin with '--sds-c-', or '--slds-kx-' in the case of kinetics, and be kebab-case"

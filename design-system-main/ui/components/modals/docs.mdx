@@ -1,0 +1,125 @@
+import * as Base from './base/example.jsx';
+import CodeView from '../../../shared/components/CodeView';
+import StylingHooksTable from '../../../shared/components/StylingHooksTable';
+import { getDisplayElementById, getDemoStylesById } from '../../shared/helpers';
+import { MobileNotice, MobileBlurb } from '../../shared/doc-text';
+
+<div className="doc lead">
+  Modals are used to display content in a layer above the app. This paradigm is
+  used in cases such as the creation or editing of a record, as well as various
+  types of messaging and wizards.
+</div>
+
+<CodeView exampleOnly isViewport demoStyles={getDemoStylesById(Base.default)}>
+  {getDisplayElementById(Base.default)}
+</CodeView>
+
+## About Modals
+
+Default modals are used in the vast majority of cases. They are as wide as 50% of the viewport, but include a minimum and maximum width to avoid going too narrow or too wide.
+
+Modals always have an equal amount of space at the top and bottom to account for the height of the close button.
+
+Modals grow according to how much content is within, but once the modal full height (including the previously mentioned space on top and bottom), the content area will begin to scroll. (This scrolling is currently not available in Salesforce1 Mobile.)
+
+Modals can have a tagline in the header, simply by adding a paragraph after the heading.
+
+By default, the content area of the modal does not have spacing. This allows for content such as Tables to be full-width to the modal. To get spacing when you need it, apply a padding utility (`.slds-p-around_medium`).
+
+Modal headers can also have taglines, if you need to provide additional context. This tagline can also contain links, or the whole thing could be a link in and of itself.
+
+Large modals call for large amounts of content. The height follows the same behavior and styles of other modals. The width changes to 90% of the viewport, and uses a wider minimum width and no maximum width.
+
+These are modals that require a linearly directional paradigm of navigation (“Next” and “Back”, etc.) — the actionable buttons in the modal footer live on the left and right, rather than all on the right. These can either be within a large or default modal, depending on the use case.
+
+If you're using a Modal for a system alert that the user must acknowledge, consider using a [Prompt](/components/prompt).
+
+### Accessibility
+
+Modals, by definition, trap focus. This means that if a user presses Tab or Shift+Tab while their keyboard focus is in the modal, their focus should stay in and cycle through the modal’s content. Focus shouldn’t return to the underlying page until the user presses the Esc key, presses an explicit “Cancel” or “Close” button in the modal, or performs another action that closes the modal.
+
+#### Expected markup
+
+- Modal has `role="dialog"`
+- When the modal is open, everything behind it has HTML attribute `aria-hidden="true"`, so assistive technology won't read out the underlying page. The best way to do this is to give the modal and the page separate wrapper elements and toggle `aria-hidden="true"`/`aria-hidden="false"` on the main page's wrapper depending on whether or not the modal is open.
+- Modal contains an HTML heading. This is an `h1` tag by default but should update according to the surrounding DOM structure. While a semantic heading tag is preferable, if necessary applying `role=”heading”` and `aria-level` to a more generic element is acceptable.
+- Modal has an `aria-labelledby` attribute whose value is the id of the modal’s heading
+- Modal has an optional `aria-describedby` attribute whose value is the id of the modal's content. This should not be used for all modals, but in instances where the modal is being used as an analog to a javascript `confirm()` or `alert()` dialog to deliver a short prompt that can be responded to with a confirm/cancel button set (eg: [Prompt](/components/prompt/)).
+- Buttons which close the modal should have the same accessible text per [WCAG guidelines](https://www.w3.org/WAI/WCAG21/Understanding/consistent-identification.html).
+
+#### Expected keyboard interactions
+
+- Esc key closes the modal and moves focus to whatever triggered the modal to open
+- Tab key at bottom of modal cycles focus back to first focusable element at top of modal
+- Shift+Tab keys at top of modal cycle focus back to last focusable element at bottom of modal
+- Enter key submits modal’s form data, if applicable
+
+#### Focus guidelines
+
+- Focus for modals must follow the guidelines described in the [Accessibility Guidelines for Dialogs](/accessibility/guidelines/global-focus/#dialogs). Pay special attention to where focus is set when the modal opens.
+- If no interactive element exists to set focus when the modal opens, add the appropriate `tabindex` attribute to the header to allow for programmatic focus (see "Footless" example, below).
+
+### Mobile
+
+<MobileBlurb patternSpecificText="modals will have buttons of increased size to accommodate tapping with a finger instead of the more precise mouse cursor" />
+
+<CodeView frameOnly frameStyles={{ height: '640px' }} frameTitle="Example mobile styles for modals">
+  {getDisplayElementById(Base.default)}
+</CodeView>
+
+## Base
+
+<CodeView isViewport demoStyles={getDemoStylesById(Base.default)}>
+  {getDisplayElementById(Base.default)}
+</CodeView>
+
+## Examples
+
+### Taglines
+
+<CodeView isViewport demoStyles={getDemoStylesById(Base.examples, 'taglines')}>
+  {getDisplayElementById(Base.examples, 'taglines')}
+</CodeView>
+
+### Headless
+
+<CodeView isViewport demoStyles={getDemoStylesById(Base.examples, 'headless')}>
+  {getDisplayElementById(Base.examples, 'headless')}
+</CodeView>
+
+### Footless
+
+<CodeView isViewport demoStyles={getDemoStylesById(Base.examples, 'footless')}>
+  {getDisplayElementById(Base.examples, 'footless')}
+</CodeView>
+
+### Directional
+
+<CodeView
+  isViewport
+  demoStyles={getDemoStylesById(Base.examples, 'directional')}
+>
+  {getDisplayElementById(Base.examples, 'directional')}
+</CodeView>
+
+### Small Modal
+
+<CodeView isViewport demoStyles={getDemoStylesById(Base.examples, 'small')}>
+  {getDisplayElementById(Base.examples, 'small')}
+</CodeView>
+
+### Medium Modal
+
+<CodeView isViewport demoStyles={getDemoStylesById(Base.examples, 'medium')}>
+  {getDisplayElementById(Base.examples, 'medium')}
+</CodeView>
+
+### Large Modal
+
+<CodeView isViewport demoStyles={getDemoStylesById(Base.examples, 'large')}>
+  {getDisplayElementById(Base.examples, 'large')}
+</CodeView>
+
+## Styling Hooks Overview
+
+<StylingHooksTable name="modals" type="component" />

@@ -1,0 +1,373 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button  renders a base button 1`] = `
+<button
+  className="slds-button"
+  onClick={[Function]}
+>
+  Button
+</button>
+`;
+
+exports[`Button  renders a brand button 1`] = `
+<button
+  className="slds-button slds-button_brand"
+  onClick={[Function]}
+>
+  Button
+</button>
+`;
+
+exports[`Button  renders a desctructive button 1`] = `
+<button
+  className="slds-button slds-button_destructive"
+  onClick={[Function]}
+>
+  Button
+</button>
+`;
+
+exports[`Button  renders a disabled base button 1`] = `
+<button
+  className="slds-button"
+  disabled={true}
+  onClick={[Function]}
+>
+  Button
+</button>
+`;
+
+exports[`Button  renders a full width, reset button 1`] = `
+<button
+  className="slds-button slds-button_full-width"
+  onClick={[Function]}
+>
+  Button
+</button>
+`;
+
+exports[`Button  renders a link that looks like a button 1`] = `
+<a
+  className="slds-button slds-button_success"
+  href="#"
+  onClick={[Function]}
+>
+  Link as a Button
+</a>
+`;
+
+exports[`Button  renders a neutral button 1`] = `
+<button
+  className="slds-button slds-button_neutral"
+  onClick={[Function]}
+>
+  Button
+</button>
+`;
+
+exports[`Button  renders a stretched button 1`] = `
+<button
+  className="slds-button slds-button_success slds-button_stretch"
+  onClick={[Function]}
+>
+  Button
+</button>
+`;
+
+exports[`Button  renders a success button 1`] = `
+<button
+  className="slds-button slds-button_success"
+  onClick={[Function]}
+>
+  Button
+</button>
+`;
+
+exports[`Button  renders a text destructive button 1`] = `
+<button
+  className="slds-button slds-button_text-destructive"
+  onClick={[Function]}
+>
+  Button
+</button>
+`;
+
+exports[`Button  renders an inverse button 1`] = `
+<button
+  className="slds-button slds-button_inverse"
+  onClick={[Function]}
+>
+  Button
+</button>
+`;
+
+exports[`Button  renders an outline brand button 1`] = `
+<button
+  className="slds-button slds-button_outline-brand"
+  onClick={[Function]}
+>
+  Button
+</button>
+`;
+
+exports[`Dual Stateful Button renders a disabled dual stateful button 1`] = `
+<button
+  aria-live="assertive"
+  aria-pressed="false"
+  className="slds-button slds-button_neutral slds-button_dual-stateful"
+  disabled={true}
+  onClick={[Function]}
+>
+  <span
+    className="slds-text-not-pressed"
+  >
+    <svg
+      aria-hidden={true}
+      className="slds-button__icon slds-button__icon_small slds-button__icon_left"
+    >
+      <use
+        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#add"
+      />
+    </svg>
+    Follow
+  </span>
+  <span
+    className="slds-text-pressed"
+  >
+    <svg
+      aria-hidden={true}
+      className="slds-button__icon slds-button__icon_small slds-button__icon_left"
+    >
+      <use
+        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#check"
+      />
+    </svg>
+    Following
+  </span>
+</button>
+`;
+
+exports[`Dual Stateful Button renders a not-pressed dual stateful button 1`] = `
+<button
+  aria-live="assertive"
+  aria-pressed="false"
+  className="slds-button slds-button_neutral slds-button_dual-stateful"
+  onClick={[Function]}
+>
+  <span
+    className="slds-text-not-pressed"
+  >
+    <svg
+      aria-hidden={true}
+      className="slds-button__icon slds-button__icon_small slds-button__icon_left"
+    >
+      <use
+        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#add"
+      />
+    </svg>
+    Follow
+  </span>
+  <span
+    className="slds-text-pressed"
+  >
+    <svg
+      aria-hidden={true}
+      className="slds-button__icon slds-button__icon_small slds-button__icon_left"
+    >
+      <use
+        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#check"
+      />
+    </svg>
+    Following
+  </span>
+</button>
+`;
+
+exports[`Dual Stateful Button renders a pressed dual stateful button 1`] = `
+<button
+  aria-live="assertive"
+  aria-pressed="true"
+  className="slds-button slds-button_neutral slds-button_dual-stateful slds-is-pressed"
+  onClick={[Function]}
+>
+  <span
+    className="slds-text-not-pressed"
+  >
+    <svg
+      aria-hidden={true}
+      className="slds-button__icon slds-button__icon_small slds-button__icon_left"
+    >
+      <use
+        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#add"
+      />
+    </svg>
+    Follow
+  </span>
+  <span
+    className="slds-text-pressed"
+  >
+    <svg
+      aria-hidden={true}
+      className="slds-button__icon slds-button__icon_small slds-button__icon_left"
+    >
+      <use
+        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#check"
+      />
+    </svg>
+    Following
+  </span>
+</button>
+`;
+
+exports[`Stateful Button  renders a not-selected stateful button 1`] = `
+<button
+  aria-live="assertive"
+  aria-pressed="false"
+  className="slds-button slds-button_neutral slds-button_stateful slds-not-selected"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+>
+  <span
+    className="slds-text-not-selected"
+  >
+    <svg
+      aria-hidden={true}
+      className="slds-button__icon slds-button__icon_small slds-button__icon_left"
+    >
+      <use
+        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#add"
+      />
+    </svg>
+    Follow
+  </span>
+  <span
+    className="slds-text-selected"
+  >
+    <svg
+      aria-hidden={true}
+      className="slds-button__icon slds-button__icon_small slds-button__icon_left"
+    >
+      <use
+        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#check"
+      />
+    </svg>
+    Following
+  </span>
+  <span
+    className="slds-text-selected-focus"
+  >
+    <svg
+      aria-hidden={true}
+      className="slds-button__icon slds-button__icon_small slds-button__icon_left"
+    >
+      <use
+        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+      />
+    </svg>
+    Unfollow
+  </span>
+</button>
+`;
+
+exports[`Stateful Button  renders a selected and focused stateful button 1`] = `
+<button
+  aria-live="assertive"
+  aria-pressed="true"
+  className="slds-button slds-button_neutral slds-button_stateful slds-is-selected-clicked"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+>
+  <span
+    className="slds-text-not-selected"
+  >
+    <svg
+      aria-hidden={true}
+      className="slds-button__icon slds-button__icon_small slds-button__icon_left"
+    >
+      <use
+        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#add"
+      />
+    </svg>
+    Follow
+  </span>
+  <span
+    className="slds-text-selected"
+  >
+    <svg
+      aria-hidden={true}
+      className="slds-button__icon slds-button__icon_small slds-button__icon_left"
+    >
+      <use
+        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#check"
+      />
+    </svg>
+    Following
+  </span>
+  <span
+    className="slds-text-selected-focus"
+  >
+    <svg
+      aria-hidden={true}
+      className="slds-button__icon slds-button__icon_small slds-button__icon_left"
+    >
+      <use
+        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+      />
+    </svg>
+    Unfollow
+  </span>
+</button>
+`;
+
+exports[`Stateful Button  renders a selected stateful button 1`] = `
+<button
+  aria-live="assertive"
+  aria-pressed="true"
+  className="slds-button slds-button_neutral slds-button_stateful slds-is-selected"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+>
+  <span
+    className="slds-text-not-selected"
+  >
+    <svg
+      aria-hidden={true}
+      className="slds-button__icon slds-button__icon_small slds-button__icon_left"
+    >
+      <use
+        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#add"
+      />
+    </svg>
+    Follow
+  </span>
+  <span
+    className="slds-text-selected"
+  >
+    <svg
+      aria-hidden={true}
+      className="slds-button__icon slds-button__icon_small slds-button__icon_left"
+    >
+      <use
+        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#check"
+      />
+    </svg>
+    Following
+  </span>
+  <span
+    className="slds-text-selected-focus"
+  >
+    <svg
+      aria-hidden={true}
+      className="slds-button__icon slds-button__icon_small slds-button__icon_left"
+    >
+      <use
+        xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+      />
+    </svg>
+    Unfollow
+  </span>
+</button>
+`;

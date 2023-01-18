@@ -1,0 +1,57 @@
+import CodeView from '../../../shared/components/CodeView';
+import * as Base from './base/example';
+import { getDisplayElementById, getDemoStylesById } from '../../shared/helpers';
+
+<div className="doc lead">
+  Split view is used to navigate between records in a list while staying on the
+  same screen.
+</div>
+
+<CodeView
+  exampleOnly
+  demoStyles={getDemoStylesById(Base.states, 'selected-item')}
+>
+  {getDisplayElementById(Base.states, 'selected-item')}
+</CodeView>
+
+## About Split View
+
+### Accessibility
+
+The list component of the Split View consists of an ARIA Listbox, and as such must abide by the following rules:
+
+- Each option can only be a single actionable element. No child actions are allowed
+- **Must** implement the keyboard interaction as described by the [ARIA Authoring Practices](https://www.w3.org/TR/wai-aria-practices/#Listbox)
+- For each open workspace tab, the corresponding option _should_ be set to `aria-selected="true"`
+
+## Base
+
+<CodeView demoStyles={getDemoStylesById(Base.default)}>
+  {getDisplayElementById(Base.default)}
+</CodeView>
+
+## States
+
+### Selected Item
+
+<CodeView demoStyles={getDemoStylesById(Base.states, 'selected-item')}>
+  {getDisplayElementById(Base.states, 'selected-item')}
+</CodeView>
+
+### Overflow
+
+<CodeView demoStyles={getDemoStylesById(Base.states, 'overflow')}>
+  {getDisplayElementById(Base.states, 'overflow')}
+</CodeView>
+
+### Unread Items
+
+<CodeView demoStyles={getDemoStylesById(Base.states, 'unread')}>
+  {getDisplayElementById(Base.states, 'unread')}
+</CodeView>
+
+### Collapsed Panel
+
+<CodeView demoStyles={getDemoStylesById(Base.states, 'panel-collapsed')}>
+  {getDisplayElementById(Base.states, 'panel-collapsed')}
+</CodeView>

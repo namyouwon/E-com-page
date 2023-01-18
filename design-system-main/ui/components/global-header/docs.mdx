@@ -1,0 +1,543 @@
+import CodeView from '../../../shared/components/CodeView';
+import CodeBlock from '../../../shared/components/CodeBlock';
+import Example from '../../../shared/components/Example';
+import Blockquote from '../../../shared/components/Blockquote';
+import GlobalHeader, { Logo } from './';
+import GlobalActions, { Favorites, Task, Help, Setup, Notifications, Avatar } from './global-actions/';
+import GlobalNotifications from './notifications/';
+import GlobalFavorites from './favorites/';
+import { ComboboxGroup } from '../combobox/';
+import ObjectSwitcher from '../combobox/object-switcher/';
+import Listbox from '../combobox/listbox/';
+import { UtilityIcon } from '../icons/base/example';
+import * as Snapshot from './search/data';
+import _ from '../../shared/helpers';
+
+<div className="lead doc">
+  The global header is the anchor for the Salesforce platform and spans all
+  other parts of the UI. The functionality in the header is applicable across
+  all contexts in the Salesforce ecosystem (internal or 3rd party).
+</div>
+
+<CodeView isViewport exampleOnly demoStyles="position: relative; height: 20.25rem;">
+  <GlobalHeader
+    globalSearch={
+      <ComboboxGroup
+        id={_.uniqueId('combobox-id-')}
+        aria-controls="search-listbox-id-1"
+        comboboxID="primary-search-combobox-id-1"
+        autocomplete
+        inputContainerClassName="slds-global-search__form-element"
+        label="Search Salesforce"
+        hideLabel
+        placeholder="Search Salesforce"
+        results={
+          <Listbox
+            id="search-listbox-id-1"
+            aria-label="Recent Items"
+            snapshot={Snapshot.SearchResults}
+            type="entity"
+            count={6}
+          />
+        }
+        resultsType="listbox"
+        addon={
+          <ObjectSwitcher
+            id={_.uniqueId('objectswitcher-combobox-id-')}
+            value="Accounts"
+            addonPosition="start"
+            hasInteractions
+            comboboxAriaControls="primary-search-combobox-id-1"
+            listboxId={_.uniqueId('objectswitcher-listbox-id-')}
+          />
+        }
+        addonPosition="start"
+        comboboxPosition="end"
+        inputIconPosition="left"
+        leftInputIcon={
+          <UtilityIcon
+            symbol="search"
+            className="slds-icon slds-icon_xx-small slds-icon-text-default"
+            containerClassName="slds-input__icon slds-input__icon_left"
+            title={false}
+            assistiveText={false}
+          />
+        }
+        hasInteractions
+      />
+    }
+  />
+</CodeView>
+
+## About Global Header
+
+### Structure
+
+The global header is made up of 3 distinct sections, the logo, the global search, and the global actions. Each section is wrapped in a `<div>` with the class name `slds-global-header__item`. The search region gets the modifier class `slds-global-header__item_search`. This class provides particular styling to handle the search box.
+
+<Example title="global header layout">
+  <CodeBlock>
+    <header className="slds-global-header_container">
+      <div className="slds-global-header">
+        <div className="slds-global-header__item">...</div>
+        <div className="slds-global-header__item slds-global-header__item_search">
+          ...
+        </div>
+        <div className="slds-global-header__item">...</div>
+      </div>
+    </header>
+  </CodeBlock>
+</Example>
+
+In most scenarios, you will want to fix the global header to the top of the viewport. To achieve this, wrap the global header component in a `<div>` with the class name `slds-global-header_container`.
+
+<Example title="global header container">
+  <CodeBlock toggleCode={false}>
+    <header className="slds-global-header_container">
+      <div className="slds-global-header">...</div>
+    </header>
+  </CodeBlock>
+</Example>
+
+### Accessibility
+
+For screen reading users, we need to provide a way to navigate over the global header and directly to content regions. For this scenario, we provide two links above the global header that provides navigation to landmarks within the app. These links are visually hidden by default but become visible when focused.
+
+<Example title="global header jump links">
+  <CodeBlock>
+    <header className="slds-global-header_container">
+      <a
+        href="#"
+        onClick={e => e.preventDefault()}
+        className="slds-assistive-text slds-assistive-text_focus"
+      >
+        Skip to Navigation
+      </a>
+      <a
+        href="#"
+        onClick={e => e.preventDefault()}
+        className="slds-assistive-text slds-assistive-text_focus"
+      >
+        Skip to Main Content
+      </a>
+      <div className="slds-global-header">...</div>
+    </header>
+  </CodeBlock>
+</Example>
+
+## Base
+
+<Example title="base global header">
+  <CodeView isViewport demoStyles="position: relative; height: 21.25rem;">
+    <GlobalHeader
+      globalSearch={
+        <ComboboxGroup
+          id={_.uniqueId('combobox-id-')}
+          aria-controls="search-listbox-id-1"
+          comboboxID="primary-search-combobox-id-1"
+          autocomplete
+          inputContainerClassName="slds-global-search__form-element"
+          label="Search Salesforce"
+          hideLabel
+          placeholder="Search Salesforce"
+          results={
+            <Listbox
+              id="search-listbox-id-1"
+              aria-label="Recent Items"
+              snapshot={Snapshot.SearchResults}
+              type="entity"
+              count={6}
+            />
+          }
+          resultsType="listbox"
+          addon={
+            <ObjectSwitcher
+              id={_.uniqueId('objectswitcher-combobox-id-')}
+              value="Accounts"
+              addonPosition="start"
+              hasInteractions
+              comboboxAriaControls="primary-search-combobox-id-1"
+              listboxId={_.uniqueId('objectswitcher-listbox-id-')}
+            />
+          }
+          addonPosition="start"
+          comboboxPosition="end"
+          inputIconPosition="left"
+          leftInputIcon={
+            <UtilityIcon
+              symbol="search"
+              className="slds-icon slds-icon_xx-small slds-icon-text-default"
+              containerClassName="slds-input__icon slds-input__icon_left"
+              title={false}
+              assistiveText={false}
+            />
+          }
+          hasInteractions
+        />
+      }
+    />
+  </CodeView>
+</Example>
+
+## Logo
+
+The logo region is a `<div>` with the class name `slds-global-header__logo` wrapped around a span with assistive text for the logo. This inner span has the class name `slds-assistive-text` and is required to meet accessibility guidelines. The logo is applied as a background image to the div with CSS. This allows us to constrain the dimensions of the logo by a max-height of 40px and a max-width of 200px.
+
+<CodeView isViewport toggleCode={false} demoStyles="padding: 0.5rem 0; min-height: 3.5rem;">
+  <div className="slds-global-header__item">
+    <Logo />
+  </div>
+</CodeView>
+
+## Global Search
+
+The global search component is used for application wide search. The form element is implemented as a [Combobox](/components/combobox), please refer to the accessibility guidelines on the Combobox component page for implementation guidance.
+
+### Default
+
+<Example title="Global Header Search Default State">
+  <CodeView isViewport demoStyles="position: relative; height: 5.5rem;">
+    <GlobalHeader
+      globalSearch={
+        <ComboboxGroup
+          id={_.uniqueId('combobox-id-')}
+          aria-controls="search-listbox-id-2"
+          comboboxID="primary-search-combobox-id-2"
+          autocomplete
+          inputContainerClassName="slds-global-search__form-element"
+          label="Search Salesforce"
+          hideLabel
+          placeholder="Search Salesforce"
+          results={
+            <Listbox
+              id="search-listbox-id-2"
+              aria-label="Recent Items"
+              snapshot={Snapshot.SearchResults}
+              type="entity"
+              count={6}
+            />
+          }
+          resultsType="listbox"
+          addon={
+            <ObjectSwitcher
+              id={_.uniqueId('objectswitcher-combobox-id-')}
+              value="Accounts"
+              addonPosition="start"
+              comboboxAriaControls="primary-search-combobox-id-2"
+              listboxId={_.uniqueId('objectswitcher-listbox-id-')}
+            />
+          }
+          addonPosition="start"
+          comboboxPosition="end"
+          inputIconPosition="left"
+          leftInputIcon={
+            <UtilityIcon
+              symbol="search"
+              className="slds-icon slds-icon_xx-small slds-icon-text-default"
+              containerClassName="slds-input__icon slds-input__icon_left"
+              title={false}
+              assistiveText={false}
+            />
+          }
+        />
+      }
+    />
+  </CodeView>
+</Example>
+
+### Focused and expanded
+
+<Example title="Global Header Search Expanded State">
+  <CodeView isViewport demoStyles="position: relative; height: 21rem;">
+    <GlobalHeader
+      globalSearch={
+        <ComboboxGroup
+          id={_.uniqueId('combobox-id-')}
+          aria-controls="search-listbox-id-3"
+          comboboxID="primary-search-combobox-id-3"
+          autocomplete
+          inputContainerClassName="slds-global-search__form-element"
+          label="Search Salesforce"
+          hideLabel
+          placeholder="Search Salesforce"
+          results={
+            <Listbox
+              id="search-listbox-id-3"
+              aria-label="Recent Items"
+              snapshot={Snapshot.SearchResults}
+              type="entity"
+              count={6}
+            />
+          }
+          resultsType="listbox"
+          addon={
+            <ObjectSwitcher
+              id={_.uniqueId('objectswitcher-combobox-id-')}
+              value="Accounts"
+              addonPosition="start"
+              comboboxAriaControls="primary-search-combobox-id-3"
+              listboxId={_.uniqueId('objectswitcher-listbox-id-')}
+            />
+          }
+          addonPosition="start"
+          comboboxPosition="end"
+          inputIconPosition="left"
+          leftInputIcon={
+            <UtilityIcon
+              symbol="search"
+              className="slds-icon slds-icon_xx-small slds-icon-text-default"
+              containerClassName="slds-input__icon slds-input__icon_left"
+              title={false}
+              assistiveText={false}
+            />
+          }
+          hasFocus
+          isOpen
+        />
+      }
+    />
+  </CodeView>
+</Example>
+
+### Active and typing
+
+<Example title="Global Header Search Active State">
+  <CodeView isViewport demoStyles="position: relative; height: 21rem;">
+    <GlobalHeader
+      globalSearch={
+        <ComboboxGroup
+          id={_.uniqueId('combobox-id-')}
+          aria-controls="search-listbox-id-4"
+          comboboxID="primary-search-combobox-id-4"
+          autocomplete
+          inputContainerClassName="slds-global-search__form-element"
+          label="Search Salesforce"
+          hideLabel
+          placeholder="Search Salesforce"
+          value="salesforce"
+          results={
+            <Listbox
+              id="search-listbox-id-4"
+              term="salesforce"
+              snapshot={Snapshot.SearchResultsTypeahead}
+              type="entity"
+              count={6}
+            />
+          }
+          resultsType="listbox"
+          aria-activedescendant="option0"
+          addon={
+            <ObjectSwitcher
+              id={_.uniqueId('objectswitcher-combobox-id-')}
+              value="Accounts"
+              addonPosition="start"
+              comboboxAriaControls="primary-search-combobox-id-4"
+              listboxId={_.uniqueId('objectswitcher-listbox-id-')}
+            />
+          }
+          addonPosition="start"
+          comboboxPosition="end"
+          inputIconPosition="left"
+          leftInputIcon={
+            <UtilityIcon
+              symbol="search"
+              className="slds-icon slds-icon_xx-small slds-icon-text-default"
+              containerClassName="slds-input__icon slds-input__icon_left"
+              title={false}
+              assistiveText={false}
+            />
+          }
+          hasFocus
+          isOpen
+        />
+      }
+    />
+  </CodeView>
+</Example>
+
+## Global Actions Bar
+
+The global actions bar holds application wide task actions that will persist with the user through their experience.
+
+The global actions bar is located in the right region of the global header.
+
+<CodeView isViewport exampleOnly demoStyles="position: relative; height: 3.125rem;">
+  <GlobalHeader />
+</CodeView>
+
+### Favorites
+
+The favorites action is used to "favorite" a commonly used page within a user's experience. When a user "favorites" a page by pressing the favorites action, the button icon changes color with a small animation to confirm your selection.
+
+#### Not pressed
+
+<CodeView>
+  <ul className="slds-global-actions">
+    <li className="slds-global-actions__item">
+      <Favorites />
+    </li>
+  </ul>
+</CodeView>
+
+#### Pressed
+
+When pressed, apply the class `slds-is-selected` to the `slds-global-actions__favorites-action` button element.
+
+<Blockquote type="a11y" header="Accessibility Requirement">
+  <p>
+    When the favorites action is pressed, we need to toggle the{' '}
+    <code>aria-pressed</code> attribute to{' '}
+    <code>true</code>. This will inform a screen reader that the
+    button has been pressed.
+  </p>
+</Blockquote>
+
+<CodeView>
+  <ul className="slds-global-actions">
+    <li className="slds-global-actions__item">
+      <Favorites favoritesClicked />
+    </li>
+  </ul>
+</CodeView>
+
+#### Disabled
+
+If the favorites action needs to become disabled, apply the `disabled` attribute and the class `slds-is-disabled` to the button with `class="slds-global-actions_favorites-action"`.
+
+<CodeView>
+  <ul className="slds-global-actions">
+    <li className="slds-global-actions__item">
+      <Favorites favoritesDisabled />
+    </li>
+  </ul>
+</CodeView>
+
+#### Favorites popover
+
+The favorites popover is invoked when a user clicks on the dropdown arrow action icon inside of the favorites button group. The favorites popover is implemented as a [Popover - Dynamic Menu Variant](/components/dynamic-menu/) component, please refer to the accessibility guidelines on the Popover component page for implementation guidance.
+
+<CodeView
+  demoStyles="
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 16rem;
+    min-width: 400px;
+  "
+>
+  <GlobalActions showFavoritesPopup />
+</CodeView>
+
+### Task
+
+<CodeView>
+  <ul className="slds-global-actions">
+    <li className="slds-global-actions__item">
+      <Task />
+    </li>
+  </ul>
+</CodeView>
+
+#### Task menu
+
+When the global task action is invoked, a menu inside of a dropdown becomes visible. Please refer to the accessibility section of the [Menus component](/components/menus) for implementation guidelines.
+
+<CodeView
+  demoStyles="
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 16rem;
+    min-width: 400px;
+  "
+>
+  <GlobalActions showTaskMenu />
+</CodeView>
+
+### Help
+
+<CodeView>
+  <ul className="slds-global-actions">
+    <li className="slds-global-actions__item">
+      <Help />
+    </li>
+  </ul>
+</CodeView>
+
+### Setup
+
+<CodeView>
+  <ul className="slds-global-actions">
+    <li className="slds-global-actions__item">
+      <Setup />
+    </li>
+  </ul>
+</CodeView>
+
+### Notifications
+
+Notifications are a way to notify a user about a global change within the application. This is commonly used to communicate a Chatter mention/reply or a status update on an opportunity pipeline.
+
+<CodeView isViewport exampleOnly demoStyles="position: relative; height: 7.5rem;">
+    <GlobalHeader playground />
+</CodeView>
+
+#### No notifications
+
+<CodeView>
+  <ul className="slds-global-actions">
+    <li className="slds-global-actions__item">
+      <Notifications />
+    </li>
+  </ul>
+</CodeView>
+
+#### New notifications
+
+When a notification is coming through, we want to apply the `slds-incoming-notification` class to both the `slds-global-actions__notifications` button, as well as the `slds-notification-badge`. This will initiate the animation that there is a new incoming notification. A notification badge will also need to receive the `slds-show-notification` class, this ensures the badge becomes visible for the incoming animation to work. The `slds-show-notification` class should also be applied if a user has unread notifications upon their return to their application.
+
+<Blockquote type="a11y" header="Accessibility Note">
+  <p>
+    The notification badge is hidden from screen readers by add the attribute{' '}
+    <code>aria-hidden="true"</code> so the badge doesn't have to
+    be inside the button itself. Since the badge count is hidden, we need to add
+    the count number to the button text via some hidden assistive text. The
+    assistive text string should be updated with number of new notifications, such
+    as "3 new notification". If there are no notifications, the assistive text
+    should read "No notifications". The button element also requires{' '}
+    <code>aria-live="assertive"</code> to announce any count
+    updates.
+  </p>
+</Blockquote>
+
+<CodeView>
+  <ul className="slds-global-actions">
+    <li className="slds-global-actions__item">
+      <Notifications showNotification notificationCount="1" />
+    </li>
+  </ul>
+</CodeView>
+
+#### Notification Popover
+
+The notification popover is invoked when a user clicks on the notification action icon. The notification popover is implemented as a [Popover component](/components/popovers), please refer to the accessibility guidelines on the Popover component page for implementation guidance.
+
+<CodeView exampleOnly
+  demoStyles="
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 25rem;
+    min-width: 400px;
+    "
+  >
+    <GlobalActions showNotification notificationCount="3" showNotificationPopup />
+</CodeView>
+
+<CodeBlock>
+  <GlobalNotifications />
+</CodeBlock>
+
+#### Unread notifications
+
+When a notification item is unread, add the class `slds-global-header__notification_unread` to the `slds-global-header__notification` list item. This will provide the unread styles. In addition to adding the class name, please add a dot indicator, `<abbr class="slds-text-link slds-m-horizontal_xxx-small" title="unread">●</abbr>`, to provide visual affordance that the item is unread.

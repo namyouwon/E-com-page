@@ -1,0 +1,983 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render Panel component render Base Panel 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#fafaf9",
+      "height": "600px",
+      "overflow": "hidden",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    aria-hidden={false}
+    className="slds-panel slds-size_medium slds-panel_docked slds-panel_docked-left slds-is-open"
+  >
+    <div
+      className="slds-panel__header"
+    >
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Panel Header"
+      >
+        Panel Header
+      </h2>
+      <div
+        className="slds-panel__header-actions"
+      >
+        <button
+          className="slds-button slds-button_icon slds-button_icon-small slds-panel__close"
+          title="Collapse Panel Header"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+            />
+          </svg>
+          <span
+            className="slds-assistive-text"
+          >
+            Collapse Panel Header
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+</div>
+`;
+
+exports[`render Panel component render Base Panel animated 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#fafaf9",
+      "height": "600px",
+      "overflow": "hidden",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    aria-hidden={false}
+    className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-is-open"
+  >
+    <div
+      className="slds-panel__header"
+    >
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Panel Header"
+      >
+        Panel Header
+      </h2>
+      <div
+        className="slds-panel__header-actions"
+      >
+        <button
+          className="slds-button slds-button_icon slds-button_icon-small slds-panel__close"
+          title="Collapse Panel Header"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+            />
+          </svg>
+          <span
+            className="slds-assistive-text"
+          >
+            Collapse Panel Header
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+</div>
+`;
+
+exports[`render Panel component render Base Panel drawer 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#fafaf9",
+      "height": "600px",
+      "overflow": "hidden",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    aria-hidden={false}
+    className="slds-panel slds-size_medium slds-panel_docked slds-panel_docked-left slds-is-open"
+  >
+    <div
+      className="slds-panel__header"
+    >
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Panel Header"
+      >
+        Panel Header
+      </h2>
+      <div
+        className="slds-panel__header-actions"
+      >
+        <button
+          className="slds-button slds-button_icon slds-button_icon-small slds-panel__close"
+          title="Collapse Panel Header"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+            />
+          </svg>
+          <span
+            className="slds-assistive-text"
+          >
+            Collapse Panel Header
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+</div>
+`;
+
+exports[`render Panel component render Base Panel full size 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#fafaf9",
+      "height": "600px",
+      "overflow": "hidden",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    aria-hidden={false}
+    className="slds-panel slds-size_full slds-panel_docked slds-panel_docked-left slds-is-open"
+  >
+    <div
+      className="slds-panel__header"
+    >
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Panel Header"
+      >
+        Panel Header
+      </h2>
+      <div
+        className="slds-panel__header-actions"
+      >
+        <button
+          className="slds-button slds-button_icon slds-button_icon-small slds-panel__close"
+          title="Collapse Panel Header"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+            />
+          </svg>
+          <span
+            className="slds-assistive-text"
+          >
+            Collapse Panel Header
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+</div>
+`;
+
+exports[`render Panel component render Base Panel large size 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#fafaf9",
+      "height": "600px",
+      "overflow": "hidden",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    aria-hidden={false}
+    className="slds-panel slds-size_large slds-panel_docked slds-panel_docked-left slds-is-open"
+  >
+    <div
+      className="slds-panel__header"
+    >
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Panel Header"
+      >
+        Panel Header
+      </h2>
+      <div
+        className="slds-panel__header-actions"
+      >
+        <button
+          className="slds-button slds-button_icon slds-button_icon-small slds-panel__close"
+          title="Collapse Panel Header"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+            />
+          </svg>
+          <span
+            className="slds-assistive-text"
+          >
+            Collapse Panel Header
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+</div>
+`;
+
+exports[`render Panel component render Base Panel medium size 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#fafaf9",
+      "height": "600px",
+      "overflow": "hidden",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    aria-hidden={false}
+    className="slds-panel slds-size_medium slds-panel_docked slds-panel_docked-left slds-is-open"
+  >
+    <div
+      className="slds-panel__header"
+    >
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Panel Header"
+      >
+        Panel Header
+      </h2>
+      <div
+        className="slds-panel__header-actions"
+      >
+        <button
+          className="slds-button slds-button_icon slds-button_icon-small slds-panel__close"
+          title="Collapse Panel Header"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+            />
+          </svg>
+          <span
+            className="slds-assistive-text"
+          >
+            Collapse Panel Header
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+</div>
+`;
+
+exports[`render Panel component render Base Panel small size 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#fafaf9",
+      "height": "600px",
+      "overflow": "hidden",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    aria-hidden={false}
+    className="slds-panel slds-size_small slds-panel_docked slds-panel_docked-left slds-is-open"
+  >
+    <div
+      className="slds-panel__header"
+    >
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Panel Header"
+      >
+        Panel Header
+      </h2>
+      <div
+        className="slds-panel__header-actions"
+      >
+        <button
+          className="slds-button slds-button_icon slds-button_icon-small slds-panel__close"
+          title="Collapse Panel Header"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+            />
+          </svg>
+          <span
+            className="slds-assistive-text"
+          >
+            Collapse Panel Header
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+</div>
+`;
+
+exports[`render Panel component render Base Panel with left position drill in 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#fafaf9",
+      "height": "600px",
+      "overflow": "hidden",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    aria-hidden={false}
+    className="slds-panel slds-size_medium slds-panel_docked slds-panel_docked-left slds-is-open"
+  >
+    <div
+      className="slds-panel__header"
+    >
+      <button
+        className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+        title="Collapse Panel Header"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          Collapse Panel Header
+        </span>
+      </button>
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Panel Header"
+      >
+        Panel Header
+      </h2>
+      <div
+        className="slds-panel__header-actions"
+      >
+        <button
+          className="slds-button slds-button_icon slds-button_icon-small slds-panel__close"
+          title="Collapse Panel Header"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+            />
+          </svg>
+          <span
+            className="slds-assistive-text"
+          >
+            Collapse Panel Header
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+</div>
+`;
+
+exports[`render Panel component render Base Panel with right position drill in 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#fafaf9",
+      "height": "600px",
+      "overflow": "hidden",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    aria-hidden={false}
+    className="slds-panel slds-size_medium slds-panel_docked slds-panel_docked-right slds-is-open"
+  >
+    <div
+      className="slds-panel__header"
+    >
+      <button
+        className="slds-button slds-button_icon slds-button_icon-small slds-panel__back"
+        title="Collapse Panel Header"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#chevronleft"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          Collapse Panel Header
+        </span>
+      </button>
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Panel Header"
+      >
+        Panel Header
+      </h2>
+      <div
+        className="slds-panel__header-actions"
+      >
+        <button
+          className="slds-button slds-button_icon slds-button_icon-small slds-panel__close"
+          title="Collapse Panel Header"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+            />
+          </svg>
+          <span
+            className="slds-assistive-text"
+          >
+            Collapse Panel Header
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+</div>
+`;
+
+exports[`render Panel component render Base Panel x-large size 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#fafaf9",
+      "height": "600px",
+      "overflow": "hidden",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    aria-hidden={false}
+    className="slds-panel slds-size_x-large slds-panel_docked slds-panel_docked-left slds-is-open"
+  >
+    <div
+      className="slds-panel__header"
+    >
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Panel Header"
+      >
+        Panel Header
+      </h2>
+      <div
+        className="slds-panel__header-actions"
+      >
+        <button
+          className="slds-button slds-button_icon slds-button_icon-small slds-panel__close"
+          title="Collapse Panel Header"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+            />
+          </svg>
+          <span
+            className="slds-assistive-text"
+          >
+            Collapse Panel Header
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+</div>
+`;
+
+exports[`render Panel component renders Base Panel open as a drawer 1`] = `
+Array [
+  <header
+    className="demo-only-element slds-theme_default slds-border_bottom slds-p-around_small"
+    style={
+      Object {
+        "zIndex": "1",
+      }
+    }
+  >
+    <button
+      aria-controls="example-unique-id-1"
+      aria-expanded={true}
+      aria-pressed={true}
+      className="slds-button slds-button_icon slds-is-selected slds-button_icon-border-filled slds-button_icon-border"
+      onClick={[Function]}
+      title="Toggle panel"
+    >
+      <svg
+        aria-hidden={true}
+        className="slds-button__icon"
+      >
+        <use
+          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#toggle_panel_left"
+        />
+      </svg>
+      <span
+        className="slds-assistive-text"
+      >
+        Provide description of action
+      </span>
+    </button>
+  </header>,
+  <div
+    className="demo-only-element"
+    style={
+      Object {
+        "backgroundColor": "#fafaf9",
+        "display": "flex",
+        "flexDirection": false,
+        "height": "600px",
+        "overflow": "hidden",
+        "position": "relative",
+      }
+    }
+  >
+    <div
+      aria-hidden={false}
+      className="slds-panel slds-size_medium slds-panel_docked slds-panel_docked-left slds-panel_drawer slds-is-open"
+      id="example-unique-id-1"
+    >
+      <div
+        className="slds-panel__header"
+      >
+        <h2
+          className="slds-panel__header-title slds-text-heading_small slds-truncate"
+          title="Panel Header"
+        >
+          Panel Header
+        </h2>
+        <div
+          className="slds-panel__header-actions"
+        >
+          <button
+            className="slds-button slds-button_icon slds-button_icon-small slds-panel__close"
+            onClick={[Function]}
+            title="Collapse Panel Header"
+          >
+            <svg
+              aria-hidden={true}
+              className="slds-button__icon"
+            >
+              <use
+                xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+              />
+            </svg>
+            <span
+              className="slds-assistive-text"
+            >
+              Collapse Panel Header
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        className="slds-panel__body"
+      >
+        A panel body accepts any layout or component
+      </div>
+    </div>
+    <div
+      className="demo-only-content slds-col slds-p-around_medium"
+    >
+      This section is demo-only content representing a custom layout in conjunction with the panel. It is not a part of the blueprint.
+    </div>
+  </div>,
+]
+`;
+
+exports[`render Panel component renders Base Panel with centered title text 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#fafaf9",
+      "height": "600px",
+      "overflow": "hidden",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    aria-hidden={false}
+    className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-is-open"
+  >
+    <div
+      className="slds-panel__header slds-panel__header_align-center"
+    >
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Panel Header"
+      >
+        Panel Header
+      </h2>
+      <div
+        className="slds-panel__header-actions"
+      >
+        <button
+          className="slds-button slds-button_icon slds-button_icon-small slds-panel__close"
+          title="Collapse Panel Header"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+            />
+          </svg>
+          <span
+            className="slds-assistive-text"
+          >
+            Collapse Panel Header
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+</div>
+`;
+
+exports[`render Panel component renders Base Panel with long header title 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#fafaf9",
+      "height": "600px",
+      "overflow": "hidden",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    aria-hidden={false}
+    className="slds-panel slds-panel_docked slds-panel_docked-left slds-panel_animated slds-is-open"
+  >
+    <div
+      className="slds-panel__header"
+    >
+      <h2
+        className="slds-panel__header-title slds-text-heading_small slds-truncate"
+        title="Panel Header with a really, really long title name"
+      >
+        Panel Header with a really, really long title name
+      </h2>
+      <div
+        className="slds-panel__header-actions"
+      >
+        <button
+          className="slds-button slds-button_icon slds-button_icon-small slds-panel__close"
+          title="Collapse Panel Header with a really, really long title name"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+            />
+          </svg>
+          <span
+            className="slds-assistive-text"
+          >
+            Collapse Panel Header with a really, really long title name
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      className="slds-panel__body"
+    >
+      A panel body accepts any layout or component
+    </div>
+  </div>
+</div>
+`;
+
+exports[`render Panel component renders Base Panel with secondary actions 1`] = `
+<div
+  aria-hidden={false}
+  className="slds-panel slds-size_medium slds-panel_docked slds-panel_docked-left slds-is-open"
+>
+  <div
+    className="slds-panel__header"
+  >
+    <h2
+      className="slds-panel__header-title slds-text-heading_small slds-truncate"
+      title="Panel Header"
+    >
+      Panel Header
+    </h2>
+    <div
+      className="slds-panel__header-actions"
+    >
+      <div
+        className="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open"
+      >
+        <button
+          aria-expanded="true"
+          aria-haspopup="true"
+          className="slds-button slds-button_icon slds-button_icon-small slds-button_icon-border-filled"
+          onClick={[Function]}
+          title="Show More"
+        >
+          <svg
+            aria-hidden={true}
+            className="slds-button__icon"
+          >
+            <use
+              xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#down"
+            />
+          </svg>
+          <span
+            className="slds-assistive-text"
+          >
+            Show More
+          </span>
+        </button>
+        <div
+          className="slds-dropdown slds-dropdown_right slds-dropdown_actions"
+        >
+          <ul
+            aria-label="Show More"
+            className="slds-dropdown__list"
+            role="menu"
+          >
+            <li
+              className="slds-dropdown__item"
+              role="presentation"
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                role="menuitem"
+                tabIndex="0"
+              >
+                <span
+                  className="slds-truncate"
+                  title="Action One"
+                >
+                  Action One
+                </span>
+              </a>
+            </li>
+            <li
+              className="slds-dropdown__item"
+              role="presentation"
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                <span
+                  className="slds-truncate"
+                  title="Action Two"
+                >
+                  Action Two
+                </span>
+              </a>
+            </li>
+            <li
+              className="slds-dropdown__item"
+              role="presentation"
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                <span
+                  className="slds-truncate"
+                  title="Action Three"
+                >
+                  Action Three
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button
+        className="slds-button slds-button_icon slds-button_icon-small slds-panel__close"
+        title="Collapse Panel Header"
+      >
+        <svg
+          aria-hidden={true}
+          className="slds-button__icon"
+        >
+          <use
+            xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+          />
+        </svg>
+        <span
+          className="slds-assistive-text"
+        >
+          Collapse Panel Header
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    className="slds-panel__body"
+  >
+    A panel body accepts any layout or component
+  </div>
+</div>
+`;
+
+exports[`render Panel component renders Base Panel with the deprecated header 1`] = `
+<div
+  aria-hidden={false}
+  className="slds-panel slds-size_medium slds-panel_docked slds-panel_docked-left slds-is-open"
+>
+  <div
+    className="slds-panel__header"
+  >
+    <h2
+      className="slds-panel__header-title slds-text-heading_small slds-truncate"
+      title="Deprecated Panel Header"
+    >
+      Deprecated Panel Header
+    </h2>
+    <button
+      className="slds-button slds-button_icon slds-button_icon-small slds-panel__close"
+      title="Collapse Deprecated Panel Header"
+    >
+      <svg
+        aria-hidden={true}
+        className="slds-button__icon"
+      >
+        <use
+          xlinkHref="/assets/icons/utility-sprite/svg/symbols.svg#close"
+        />
+      </svg>
+      <span
+        className="slds-assistive-text"
+      >
+        Collapse Deprecated Panel Header
+      </span>
+    </button>
+  </div>
+  <div
+    className="slds-panel__body"
+  >
+    A panel body accepts any layout or component
+  </div>
+</div>
+`;

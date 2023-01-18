@@ -1,0 +1,318 @@
+import CodeView from '../../../shared/components/CodeView';
+import CodeBlock from '../../../shared/components/CodeBlock';
+import Blockquote from '../../../shared/components/Blockquote';
+import StylingHooksTable from '../../../shared/components/StylingHooksTable';
+import * as ButtonExamples from './base/example';
+import * as IconExamples from './with-icon/example';
+import * as StatefulExamples from './stateful/example';
+import * as DualStatefulExamples from './dual-stateful/example';
+import { getDisplayElementById } from '../../shared/helpers';
+import SvgIcon from '../../shared/svg-icon';
+import { MobileNotice, MobileBlurb } from '../../shared/doc-text';
+
+<div className="doc lead">
+  Buttons are clickable items used to perform an action.
+</div>
+
+<CodeView>
+  <React.Fragment>
+    {getDisplayElementById(ButtonExamples.default)}
+    {getDisplayElementById(ButtonExamples.examples, 'neutral')}
+    {getDisplayElementById(ButtonExamples.examples, 'brand')}
+    {getDisplayElementById(ButtonExamples.examples, 'outline-brand')}
+    {getDisplayElementById(ButtonExamples.examples, 'destructive')}
+    {getDisplayElementById(ButtonExamples.examples, 'text-destructive')}
+    {getDisplayElementById(ButtonExamples.examples, 'success')}
+  </React.Fragment>
+</CodeView>
+
+## About Buttons
+
+Buttons should be used in situations where users might need to:
+
+- submit a form
+- begin a new task
+- trigger a new UI element to appear on the page
+- specify a new or next step in a process
+
+### Button vs. Link
+
+The HTML elements for buttons and links describe a very specific type of action that is going to be taken when they are used. It is important you know when to use which, as the distinction matters:
+
+- Use a **link** when you’re **navigating to another place**, such as: a "view all" page, "Jane Chen" profile, a page "skip link" etc.
+- Use **buttons** when you are **performing an action**, such as: "submit," "merge," "create new," "upload," etc.
+- An action is almost **always** on the same page
+
+### Accessibility
+
+If pressing a Button results in a new URL, or the resultant UI makes sense as "a new browser tab", that is a link `<a>`. Everything else is a `<button>`.
+
+The distinction is important to screen reader users to know what's going to happen next. Will I navigate somewhere or will something happen on the page? So it's important to choose the right HTML element for the job.
+
+If you absolutely cannot use a `<button />` element for an action and instead need to use an `<a />`, you are required to do 2 things:
+
+- Add `role="button"` attribute to the `<a />` to make the element announce itself as a `button` element.
+- Add a JavaScript event handler for when the user presses the space key. This is because a `button` element will respond by default to both the enter and space keys being pressed, but an `<a />` element will not.
+
+Finally, color alone does not suffice when conveying the meaning of buttons. Ensure that the text you use in the button matches the meaning you are trying to convey via color. For example, if you use the destructive button to point out a potential warning, make sure the text communicates the same message.
+
+<CodeView>
+  <React.Fragment>
+    {getDisplayElementById(ButtonExamples.examples, 'base-link')}
+    {getDisplayElementById(ButtonExamples.examples, 'neutral-link')}
+    {getDisplayElementById(ButtonExamples.examples, 'brand-link')}
+    {getDisplayElementById(ButtonExamples.examples, 'outline-brand-link')}
+    {getDisplayElementById(ButtonExamples.examples, 'destructive-link')}
+    {getDisplayElementById(ButtonExamples.examples, 'text-destructive-link')}
+    {getDisplayElementById(ButtonExamples.examples, 'success-link')}
+  </React.Fragment>
+</CodeView>
+
+### Links that look like Buttons
+
+Use these with caution - dictation software users may not be able to properly identify these actions, as they can say "show buttons" and these won't highlight since they are semantically links, even though they may look like buttons.
+
+### Mobile
+
+<MobileBlurb patternSpecificText="buttons will have an increased size to accommodate tapping with a finger instead of the more precise mouse cursor" />
+
+<CodeView frameOnly frameTitle="Example mobile styles for buttons">
+  <React.Fragment>
+    {getDisplayElementById(ButtonExamples.examples, 'base-link')}
+    {getDisplayElementById(ButtonExamples.examples, 'neutral-link')}
+    {getDisplayElementById(ButtonExamples.examples, 'brand-link')}
+    {getDisplayElementById(ButtonExamples.examples, 'outline-brand-link')}
+    {getDisplayElementById(ButtonExamples.examples, 'destructive-link')}
+    {getDisplayElementById(ButtonExamples.examples, 'text-destructive-link')}
+    {getDisplayElementById(ButtonExamples.examples, 'success-link')}
+  </React.Fragment>
+</CodeView>
+
+## Base
+
+The base `slds-button` looks like a plain text link. It removes all the styling of the native button.
+
+The base and neutral buttons are used most frequently and can be used multiple times per feature. Use these buttons when the actions are of secondary importance to the content surrounding it, such as in the actions ribbon in a page header.
+
+<CodeView toggleCode={false}>{getDisplayElementById(ButtonExamples.default)}</CodeView>
+
+## Variations
+
+### Neutral
+
+Add the `slds-button_neutral` class to create a neutral button.
+
+<CodeView toggleCode={false}>
+  {getDisplayElementById(ButtonExamples.examples, 'neutral')}
+</CodeView>
+
+### Brand
+
+To create the brand button, add the `slds-button_brand` class to the `slds-button` class. The brand color tokens can be overridden for theme specific usage.
+
+The Brand button generally should only be used once per component screen at any one time. It is used for when there is an action that is clearly more important than the other actions and you need to draw attention to it. An example is when you have a “Save” and “Cancel” button. The “Save” is the primary action.
+
+Not all features need to have primary actions, sometimes the actions are secondary to the content and are all of equal importance.
+
+<CodeView toggleCode={false}>
+  {getDisplayElementById(ButtonExamples.examples, 'brand')}
+</CodeView>
+
+### Outline Brand
+
+To create the outline brand button, add the `slds-button_outline-brand` class to the `slds-button` class. The brand color tokens can be overridden for theme specific usage.
+
+<CodeView toggleCode={false}>
+  {getDisplayElementById(ButtonExamples.examples, 'outline-brand')}
+</CodeView>
+
+### Inverse
+
+Use the inverse button on dark backgrounds. Add the `slds-button_inverse` class to the `slds-button` class.
+
+<CodeView toggleCode={false}>
+  {getDisplayElementById(ButtonExamples.examples, 'inverse')}
+</CodeView>
+
+### Destructive
+
+To create the destructive button, add the `slds-button_destructive` class to the `slds-button` class.
+
+This button is used to indicate a destructive action to the user, like permanently erasing data.
+
+<CodeView toggleCode={false}>
+  {getDisplayElementById(ButtonExamples.examples, 'destructive')}
+</CodeView>
+
+### Text Destructive
+
+To create the text destructive button, add the `slds-button_text-destructive` class to the `slds-button` class.
+
+This button is used to indicate a destructive action to the user, like permanently erasing data. Use this version when the [Destructive](#Destructive) button would be too distracting to the experience.
+
+<CodeView toggleCode={false}>
+  {getDisplayElementById(ButtonExamples.examples, 'text-destructive')}
+</CodeView>
+
+### Success
+
+To create the success button, add the `slds-button_success` class to the `slds-button` class.
+
+<CodeView toggleCode={false}>
+  {getDisplayElementById(ButtonExamples.examples, 'success')}
+</CodeView>
+
+## Disabled
+
+Use a disabled attribute when a button can’t be clicked. To create a disabled button, append the `disabled` attribute to the button.
+
+<CodeView>
+  <React.Fragment>
+    {getDisplayElementById(ButtonExamples.states, 'disabled')}
+    {getDisplayElementById(ButtonExamples.states, 'neutral-disabled')}
+    {getDisplayElementById(ButtonExamples.states, 'brand-disabled')}
+    {getDisplayElementById(ButtonExamples.states, 'outline-brand-disabled')}
+    {getDisplayElementById(ButtonExamples.states, 'destructive-disabled')}
+    {getDisplayElementById(ButtonExamples.states, 'text-destructive-disabled')}
+    {getDisplayElementById(ButtonExamples.states, 'success-disabled')}
+  </React.Fragment>
+</CodeView>
+
+## With Icons
+
+The SVG, element, or icon inside the button receives the `slds-button__icon` class. You can position the icon on the left or the right using `slds-button__icon_left` or `slds-button__icon_right`, which applies the correct amount of space between the icon and the text.
+
+### Left Icon
+
+<CodeView>{getDisplayElementById(IconExamples.default)}</CodeView>
+
+<MobileNotice
+  docsLink="#Mobile"
+  header="Mobile context changes"
+  elementName="button icons"
+/>
+
+<CodeView frameOnly frameTitle="Example mobile styles for buttons with left icon">{getDisplayElementById(IconExamples.default)}</CodeView>
+
+### Right Icon
+
+<CodeView>
+  {getDisplayElementById(IconExamples.examples, 'with-icon-right')}
+</CodeView>
+
+## Stateful
+
+Stateful buttons have three states: not selected (default), selected and focused, and selected with hover state.
+
+The stateful button requires the `slds-button_stateful` class and the `slds-button_neutral` class in addition to the `slds-button` class. Stateful buttons are only used with the neutral variation.
+
+The button contains three spans with classes that hide or show the content of the spans based on the class on the button. Each span contains text and a corresponding icon. The SVG will have the `slds-button__icon_left` class setting the icon on the left.
+
+<Blockquote type="a11y" header="Accessibility Requirement">
+  <p>
+    The stateful button should have <code>aria-pressed="true"</code> or <code>"false"</code> and the accessible label
+    should be static and describe the pressed state, so for example a "follow" button
+    would always say "follow" and the sense that you are "following" is actually derived
+    from <code>aria-pressed</code> being true.
+
+    Also, be sure to include the attribute <code>aria-live="assertive"</code> on the
+    button. The <code>aria-live="assertive"</code> attribute means the value of
+    the <code>&lt;span&gt;</code> inside the button will be spoken whenever it
+    changes.
+  </p>
+</Blockquote>
+
+<Blockquote type="note" header="JavaScript Requirement">
+  <p>
+    When the user clicks the button, use JavaScript to toggle the class from{' '}
+    <code>slds-not-selected</code> to <code>slds-is-selected-clicked</code>. As
+    soon as focus leaves the button, use JavaScript to toggle the class from{' '}
+    <code>slds-is-selected-clicked</code> to <code>slds-is-selected</code>.
+  </p>
+</Blockquote>
+
+### Not Selected
+
+Stateful button uses the class `slds-not-selected` in its initial state.
+
+<CodeView>{getDisplayElementById(StatefulExamples.default)}</CodeView>
+
+### Selected and Focused
+
+When selected and still focused, stateful button uses the class `slds-is-selected-clicked`.
+
+<CodeView>
+  {getDisplayElementById(StatefulExamples.states, 'selected-clicked')}
+</CodeView>
+
+### Selected with Hover State
+
+Once selected and blurred (user moved focus away from the button), stateful button uses the class `slds-is-selected`.
+
+<CodeView>
+  {getDisplayElementById(StatefulExamples.states, 'selected')}
+</CodeView>
+
+## Dual Stateful Button
+
+Dual Stateful buttons have two states, similar to a [Toggle Button](/accessibility/patterns/togglebutton/#site-main-content): not pressed (default), and pressed.
+
+The Dual Stateful button requires the `slds-button_dual-stateful` class, along with a combination of the `slds-button` and `slds-button_neutral` classes. While Dual Stateful buttons are only used with the neutral Button variation, the pressed state changes the button _style_ to that of the Brand variation.
+
+The button contains two spans. Each span contains display text and a corresponding SVG icon with the class `slds-button__icon-left` and has classes that hide or show the contents. By default, the first span with the class `slds-text-is-not-pressed` is displayed; when the class `slds-is-pressed` is applied to the parent button, the span with the class `slds-text-is-pressed` is displayed.
+
+<Blockquote type="a11y" header="Accessibility Requirement">
+  <p>
+    The stateful button should have <code>aria-pressed="true"</code> or <code>"false"</code> and the accessible label
+    should be static and describe the pressed state, so for example a "follow" button
+    would always say "follow" and the sense that you are "following" is actually derived
+    from <code>aria-pressed</code> being true.
+
+    Also, be sure to include the attribute <code>aria-live="assertive"</code> on the
+    button. The <code>aria-live="assertive"</code> attribute means the value of
+    the <code>&lt;span&gt;</code> inside the button will be spoken whenever it
+    changes.
+  </p>
+</Blockquote>
+
+<Blockquote type="note" header="JavaScript Requirement">
+  <p>
+    When the user clicks the button, use JavaScript to toggle the{' '}
+    <code>slds-is-pressed</code> class on or off, depending on the previous
+    state. Remember, only the pressed state requires this class.
+  </p>
+</Blockquote>
+
+### Not Pressed
+
+<CodeView>{getDisplayElementById(DualStatefulExamples.default)}</CodeView>
+
+### Pressed
+
+To display the pressed state, use the class `slds-is-pressed` on the `<button>` element.
+
+<CodeView>
+  {getDisplayElementById(DualStatefulExamples.examples, 'pressed')}
+</CodeView>
+
+## Sizing
+
+### Stretch
+
+To allow the button's width to take up the entire width available, apply the `slds-button_stretch` class to the button.
+
+<CodeView toggleCode={false}>
+  {getDisplayElementById(ButtonExamples.examples, 'stretch')}
+</CodeView>
+
+### Full Width
+
+Creates a full width button with styling resets
+
+<CodeView toggleCode={false}>
+  {getDisplayElementById(ButtonExamples.examples, 'full-width')}
+</CodeView>
+
+## Styling Hooks Overview
+
+<StylingHooksTable name="buttons" type="component" />

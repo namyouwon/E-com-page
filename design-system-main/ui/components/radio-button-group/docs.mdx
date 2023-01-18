@@ -1,0 +1,42 @@
+import CodeView from '../../../shared/components/CodeView';
+import CodeBlock from '../../../shared/components/CodeBlock';
+import Blockquote from '../../../shared/components/Blockquote';
+import { getDisplayElementById } from '../../shared/helpers';
+import { MobileNotice, MobileBlurb } from '../../shared/doc-text';
+import * as RadioButtonGroupExamples from './base/example';
+
+<div className="lead doc">
+  A styled select list that can have a single entry checked at any one time.
+</div>
+
+## About Radio Button Group
+
+## Default
+
+<CodeView>{getDisplayElementById(RadioButtonGroupExamples.default)}</CodeView>
+
+### Mobile
+
+<MobileBlurb patternSpecificText="radio button groups will have an increased size to accommodate tapping with a finger instead of the more precise mouse cursor, and also become stacked" />
+
+<CodeView frameOnly frameTitle="Example mobile styles for radio button groups">{getDisplayElementById(RadioButtonGroupExamples.default)}</CodeView>
+
+## States
+
+### Disabled
+
+<CodeView>
+  {getDisplayElementById(RadioButtonGroupExamples.states, 'disabled')}
+</CodeView>
+
+### Required
+
+<CodeView>
+  {getDisplayElementById(RadioButtonGroupExamples.states, 'required')}
+</CodeView>
+
+### Has Error
+
+<CodeView>
+  {getDisplayElementById(RadioButtonGroupExamples.states, 'error')}
+</CodeView>

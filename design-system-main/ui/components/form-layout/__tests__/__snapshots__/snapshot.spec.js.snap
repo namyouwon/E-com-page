@@ -1,0 +1,882 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form Layout renders a base form layout 1`] = `
+<div
+  className="slds-form"
+>
+  <div
+    className="slds-form-element"
+  >
+    <label
+      className="slds-form-element__label"
+      htmlFor="input-id-01"
+    >
+      Text Input
+    </label>
+    <div
+      className="slds-form-element__control"
+    >
+      <input
+        className="slds-input"
+        id="input-id-01"
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    className="slds-form-element"
+  >
+    <label
+      className="slds-form-element__label"
+      htmlFor="input-id-02"
+    >
+      Textarea Label
+    </label>
+    <div
+      className="slds-form-element__control"
+    >
+      <textarea
+        className="slds-textarea"
+        id="input-id-02"
+        placeholder="Placeholder text…"
+      />
+    </div>
+  </div>
+  <fieldset
+    className="slds-form-element"
+  >
+    <legend
+      className="slds-form-element__legend slds-form-element__label"
+    >
+      Checkbox Group Label
+    </legend>
+    <div
+      className="slds-form-element__control"
+    >
+      <div
+        className="slds-checkbox"
+      >
+        <input
+          aria-labelledby={null}
+          id="checkbox-unique-id-1"
+          name="default"
+          type="checkbox"
+          value="checkbox-unique-id-1"
+        />
+        <label
+          className="slds-checkbox__label"
+          htmlFor="checkbox-unique-id-1"
+        >
+          <span
+            className="slds-checkbox_faux"
+          />
+          <span
+            className="slds-form-element__label"
+          >
+            All opportunities owned by you
+          </span>
+        </label>
+      </div>
+      <div
+        className="slds-checkbox"
+      >
+        <input
+          aria-labelledby={null}
+          id="checkbox-unique-id-2"
+          name="default"
+          type="checkbox"
+          value="checkbox-unique-id-2"
+        />
+        <label
+          className="slds-checkbox__label"
+          htmlFor="checkbox-unique-id-2"
+        >
+          <span
+            className="slds-checkbox_faux"
+          />
+          <span
+            className="slds-form-element__label"
+          >
+            All contacts in the account owned by you
+          </span>
+        </label>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset
+    className="slds-form-element"
+  >
+    <legend
+      className="slds-form-element__legend slds-form-element__label"
+    >
+      Radio Group Label
+    </legend>
+    <div
+      className="slds-form-element__control"
+    >
+      <span
+        className="slds-radio"
+      >
+        <input
+          aria-labelledby={null}
+          id="radio-1"
+          name="options"
+          type="radio"
+          value="radio-1"
+        />
+        <label
+          className="slds-radio__label"
+          htmlFor="radio-1"
+        >
+          <span
+            className="slds-radio_faux"
+          />
+          <span
+            className="slds-form-element__label"
+          >
+            Lead generation
+          </span>
+        </label>
+      </span>
+      <span
+        className="slds-radio"
+      >
+        <input
+          aria-labelledby={null}
+          id="radio-2"
+          name="options"
+          type="radio"
+          value="radio-2"
+        />
+        <label
+          className="slds-radio__label"
+          htmlFor="radio-2"
+        >
+          <span
+            className="slds-radio_faux"
+          />
+          <span
+            className="slds-form-element__label"
+          >
+            Education leads
+          </span>
+        </label>
+      </span>
+    </div>
+  </fieldset>
+</div>
+`;
+
+exports[`Form Layout renders a base form layout horizontally 1`] = `
+<div
+  className="slds-form slds-form_horizontal"
+>
+  <div
+    className="slds-form-element"
+  >
+    <label
+      className="slds-form-element__label"
+      htmlFor="input-id-01"
+    >
+      Text Input
+    </label>
+    <div
+      className="slds-form-element__control"
+    >
+      <input
+        className="slds-input"
+        id="input-id-01"
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    className="slds-form-element"
+  >
+    <label
+      className="slds-form-element__label"
+      htmlFor="input-id-02"
+    >
+      Textarea Label
+    </label>
+    <div
+      className="slds-form-element__control"
+    >
+      <textarea
+        className="slds-textarea"
+        id="input-id-02"
+        placeholder="Placeholder text…"
+      />
+    </div>
+  </div>
+  <fieldset
+    className="slds-form-element"
+  >
+    <legend
+      className="slds-form-element__legend slds-form-element__label"
+    >
+      Checkbox Group Label
+    </legend>
+    <div
+      className="slds-form-element__control"
+    >
+      <div
+        className="slds-checkbox"
+      >
+        <input
+          aria-labelledby={null}
+          id="checkbox-unique-id-5"
+          name="default"
+          type="checkbox"
+          value="checkbox-unique-id-5"
+        />
+        <label
+          className="slds-checkbox__label"
+          htmlFor="checkbox-unique-id-5"
+        >
+          <span
+            className="slds-checkbox_faux"
+          />
+          <span
+            className="slds-form-element__label"
+          >
+            All opportunities owned by you
+          </span>
+        </label>
+      </div>
+      <div
+        className="slds-checkbox"
+      >
+        <input
+          aria-labelledby={null}
+          id="checkbox-unique-id-6"
+          name="default"
+          type="checkbox"
+          value="checkbox-unique-id-6"
+        />
+        <label
+          className="slds-checkbox__label"
+          htmlFor="checkbox-unique-id-6"
+        >
+          <span
+            className="slds-checkbox_faux"
+          />
+          <span
+            className="slds-form-element__label"
+          >
+            All contacts in the account owned by you
+          </span>
+        </label>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset
+    className="slds-form-element"
+  >
+    <legend
+      className="slds-form-element__legend slds-form-element__label"
+    >
+      Radio Group Label
+    </legend>
+    <div
+      className="slds-form-element__control"
+    >
+      <span
+        className="slds-radio"
+      >
+        <input
+          aria-labelledby={null}
+          id="radio-5"
+          name="options"
+          type="radio"
+          value="radio-5"
+        />
+        <label
+          className="slds-radio__label"
+          htmlFor="radio-5"
+        >
+          <span
+            className="slds-radio_faux"
+          />
+          <span
+            className="slds-form-element__label"
+          >
+            Lead generation
+          </span>
+        </label>
+      </span>
+      <span
+        className="slds-radio"
+      >
+        <input
+          aria-labelledby={null}
+          id="radio-6"
+          name="options"
+          type="radio"
+          value="radio-6"
+        />
+        <label
+          className="slds-radio__label"
+          htmlFor="radio-6"
+        >
+          <span
+            className="slds-radio_faux"
+          />
+          <span
+            className="slds-form-element__label"
+          >
+            Education leads
+          </span>
+        </label>
+      </span>
+    </div>
+  </fieldset>
+</div>
+`;
+
+exports[`Form Layout renders a base form layout stacked 1`] = `
+<div
+  className="slds-form slds-form_stacked"
+>
+  <div
+    className="slds-form-element"
+  >
+    <label
+      className="slds-form-element__label"
+      htmlFor="input-id-01"
+    >
+      Text Input
+    </label>
+    <div
+      className="slds-form-element__control"
+    >
+      <input
+        className="slds-input"
+        id="input-id-01"
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    className="slds-form-element"
+  >
+    <label
+      className="slds-form-element__label"
+      htmlFor="input-id-02"
+    >
+      Textarea Label
+    </label>
+    <div
+      className="slds-form-element__control"
+    >
+      <textarea
+        className="slds-textarea"
+        id="input-id-02"
+        placeholder="Placeholder text…"
+      />
+    </div>
+  </div>
+  <fieldset
+    className="slds-form-element"
+  >
+    <legend
+      className="slds-form-element__legend slds-form-element__label"
+    >
+      Checkbox Group Label
+    </legend>
+    <div
+      className="slds-form-element__control"
+    >
+      <div
+        className="slds-checkbox"
+      >
+        <input
+          aria-labelledby={null}
+          id="checkbox-unique-id-3"
+          name="default"
+          type="checkbox"
+          value="checkbox-unique-id-3"
+        />
+        <label
+          className="slds-checkbox__label"
+          htmlFor="checkbox-unique-id-3"
+        >
+          <span
+            className="slds-checkbox_faux"
+          />
+          <span
+            className="slds-form-element__label"
+          >
+            All opportunities owned by you
+          </span>
+        </label>
+      </div>
+      <div
+        className="slds-checkbox"
+      >
+        <input
+          aria-labelledby={null}
+          id="checkbox-unique-id-4"
+          name="default"
+          type="checkbox"
+          value="checkbox-unique-id-4"
+        />
+        <label
+          className="slds-checkbox__label"
+          htmlFor="checkbox-unique-id-4"
+        >
+          <span
+            className="slds-checkbox_faux"
+          />
+          <span
+            className="slds-form-element__label"
+          >
+            All contacts in the account owned by you
+          </span>
+        </label>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset
+    className="slds-form-element"
+  >
+    <legend
+      className="slds-form-element__legend slds-form-element__label"
+    >
+      Radio Group Label
+    </legend>
+    <div
+      className="slds-form-element__control"
+    >
+      <span
+        className="slds-radio"
+      >
+        <input
+          aria-labelledby={null}
+          id="radio-3"
+          name="options"
+          type="radio"
+          value="radio-3"
+        />
+        <label
+          className="slds-radio__label"
+          htmlFor="radio-3"
+        >
+          <span
+            className="slds-radio_faux"
+          />
+          <span
+            className="slds-form-element__label"
+          >
+            Lead generation
+          </span>
+        </label>
+      </span>
+      <span
+        className="slds-radio"
+      >
+        <input
+          aria-labelledby={null}
+          id="radio-4"
+          name="options"
+          type="radio"
+          value="radio-4"
+        />
+        <label
+          className="slds-radio__label"
+          htmlFor="radio-4"
+        >
+          <span
+            className="slds-radio_faux"
+          />
+          <span
+            className="slds-form-element__label"
+          >
+            Education leads
+          </span>
+        </label>
+      </span>
+    </div>
+  </fieldset>
+</div>
+`;
+
+exports[`Form Layout renders a compound form layout 1`] = `
+Array [
+  <fieldset
+    className="slds-form-element slds-form_compound"
+  >
+    <legend
+      className="slds-form-element__legend slds-form-element__label"
+    >
+      Location
+    </legend>
+    <div
+      className="slds-form-element__control"
+    >
+      <div
+        className="slds-form-element__group"
+      >
+        <div
+          className="slds-form-element__row"
+        >
+          <div
+            className="slds-form-element slds-size_1-of-2"
+          >
+            <label
+              className="slds-form-element__label"
+              htmlFor="input-10"
+            >
+              Latitude
+            </label>
+            <div
+              className="slds-form-element__control"
+            >
+              <input
+                className="slds-input"
+                id="input-10"
+                type="text"
+              />
+            </div>
+          </div>
+          <div
+            className="slds-form-element slds-size_1-of-2"
+          >
+            <label
+              className="slds-form-element__label"
+              htmlFor="input-11"
+            >
+              Longitude
+            </label>
+            <div
+              className="slds-form-element__control"
+            >
+              <input
+                className="slds-input"
+                id="input-11"
+                type="text"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </fieldset>,
+  <fieldset
+    className="slds-form-element slds-form_compound slds-form-element_address"
+  >
+    <legend
+      className="slds-form-element__legend slds-form-element__label"
+    >
+      Shipping Address
+    </legend>
+    <div
+      className="slds-form-element__control"
+    >
+      <div
+        className="slds-form-element__group"
+      >
+        <div
+          className="slds-form-element__row"
+        >
+          <div
+            className="slds-form-element slds-size_1-of-1"
+          >
+            <label
+              className="slds-form-element__label"
+              htmlFor="input-12"
+            >
+              Shipping Street
+            </label>
+            <div
+              className="slds-form-element__control"
+            >
+              <input
+                className="slds-input"
+                id="input-12"
+                type="text"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="slds-form-element__row"
+        >
+          <div
+            className="slds-form-element slds-size_4-of-6"
+          >
+            <label
+              className="slds-form-element__label"
+              htmlFor="input-13"
+            >
+              Shipping City
+            </label>
+            <div
+              className="slds-form-element__control"
+            >
+              <input
+                className="slds-input"
+                id="input-13"
+                type="text"
+              />
+            </div>
+          </div>
+          <div
+            className="slds-form-element slds-size_2-of-6"
+          >
+            <label
+              className="slds-form-element__label"
+              htmlFor="input-14"
+            >
+              Shipping State/Province
+            </label>
+            <div
+              className="slds-form-element__control"
+            >
+              <input
+                className="slds-input"
+                defaultValue="MT"
+                id="input-14"
+                type="text"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="slds-form-element__row"
+        >
+          <div
+            className="slds-form-element slds-size_4-of-6"
+          >
+            <label
+              className="slds-form-element__label"
+              htmlFor="input-15"
+            >
+              Shipping Zip/Postal Code
+            </label>
+            <div
+              className="slds-form-element__control"
+            >
+              <input
+                className="slds-input"
+                id="input-15"
+                type="text"
+              />
+            </div>
+          </div>
+          <div
+            className="slds-form-element slds-size_2-of-6"
+          >
+            <label
+              className="slds-form-element__label"
+              htmlFor="input-16"
+            >
+              Shipping Country
+            </label>
+            <div
+              className="slds-form-element__control"
+            >
+              <input
+                className="slds-input"
+                defaultValue="Canada"
+                id="input-16"
+                type="text"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </fieldset>,
+]
+`;
+
+exports[`Form Layout renders a compound form layout with a tooltip 1`] = `
+Array [
+  <fieldset
+    className="slds-form-element slds-form_compound"
+  >
+    <legend
+      className="slds-form-element__legend slds-form-element__label"
+    >
+      Location
+    </legend>
+    <div
+      className="slds-form-element__control"
+    >
+      <div
+        className="slds-form-element__group"
+      >
+        <div
+          className="slds-form-element__row"
+        >
+          <div
+            className="slds-form-element slds-size_1-of-2"
+          >
+            <label
+              className="slds-form-element__label"
+              htmlFor="input-10"
+            >
+              Latitude
+            </label>
+            <div
+              className="slds-form-element__control"
+            >
+              <input
+                className="slds-input"
+                id="input-10"
+                type="text"
+              />
+            </div>
+          </div>
+          <div
+            className="slds-form-element slds-size_1-of-2"
+          >
+            <label
+              className="slds-form-element__label"
+              htmlFor="input-11"
+            >
+              Longitude
+            </label>
+            <div
+              className="slds-form-element__control"
+            >
+              <input
+                className="slds-input"
+                id="input-11"
+                type="text"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </fieldset>,
+  <fieldset
+    className="slds-form-element slds-form_compound slds-form-element_address"
+  >
+    <legend
+      className="slds-form-element__legend slds-form-element__label"
+    >
+      Shipping Address
+    </legend>
+    <div
+      className="slds-form-element__control"
+    >
+      <div
+        className="slds-form-element__group"
+      >
+        <div
+          className="slds-form-element__row"
+        >
+          <div
+            className="slds-form-element slds-size_1-of-1"
+          >
+            <label
+              className="slds-form-element__label"
+              htmlFor="input-12"
+            >
+              Shipping Street
+            </label>
+            <div
+              className="slds-form-element__control"
+            >
+              <input
+                className="slds-input"
+                id="input-12"
+                type="text"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="slds-form-element__row"
+        >
+          <div
+            className="slds-form-element slds-size_4-of-6"
+          >
+            <label
+              className="slds-form-element__label"
+              htmlFor="input-13"
+            >
+              Shipping City
+            </label>
+            <div
+              className="slds-form-element__control"
+            >
+              <input
+                className="slds-input"
+                id="input-13"
+                type="text"
+              />
+            </div>
+          </div>
+          <div
+            className="slds-form-element slds-size_2-of-6"
+          >
+            <label
+              className="slds-form-element__label"
+              htmlFor="input-14"
+            >
+              Shipping State/Province
+            </label>
+            <div
+              className="slds-form-element__control"
+            >
+              <input
+                className="slds-input"
+                defaultValue="MT"
+                id="input-14"
+                type="text"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="slds-form-element__row"
+        >
+          <div
+            className="slds-form-element slds-size_4-of-6"
+          >
+            <label
+              className="slds-form-element__label"
+              htmlFor="input-15"
+            >
+              Shipping Zip/Postal Code
+            </label>
+            <div
+              className="slds-form-element__control"
+            >
+              <input
+                className="slds-input"
+                id="input-15"
+                type="text"
+              />
+            </div>
+          </div>
+          <div
+            className="slds-form-element slds-size_2-of-6"
+          >
+            <label
+              className="slds-form-element__label"
+              htmlFor="input-16"
+            >
+              Shipping Country
+            </label>
+            <div
+              className="slds-form-element__control"
+            >
+              <input
+                className="slds-input"
+                defaultValue="Canada"
+                id="input-16"
+                type="text"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </fieldset>,
+]
+`;
