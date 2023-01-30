@@ -28,6 +28,33 @@ session_start();
 </head>
 
 <body>
+    <!-- <div class="slds-card-wrapper slds-grid">
+        <div class="slds-card slds-card_boundary">
+            <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                    <div class="slds-media__figure">
+                        <span class="slds-icon_container slds-icon-standard-contact" title="contact">
+                            <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                                <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#contact"></use>
+                            </svg>
+                            <span class="slds-assistive-text">contact</span>
+                        </span>
+                    </div>
+                    <div class="slds-media__body">
+                        <h2 class="slds-card__header-title">
+                            <a href="#" class="slds-card__header-link slds-truncate" title="Contacts">
+                                <span>Contacts</span>
+                            </a>
+                        </h2>
+                    </div>
+                    <div class="slds-no-flex">
+                        <button class="slds-button slds-button_neutral">New</button>
+                    </div>
+                </header>
+            </div>
+            
+        </div>
+    </div> -->
 
     <?php
 
@@ -353,7 +380,7 @@ session_start();
         }
         // click Add To Cart
         if (isset($_POST['CartSubmit'])) {
-            if (($_POST['StoreID'] != $_SESSION['StoreID']) && $_SESSION['StoreID']&&count($_SESSION['NumCart'])) {
+            if (($_POST['StoreID'] != $_SESSION['StoreID']) && $_SESSION['StoreID'] && count($_SESSION['NumCart'])) {
             ?>
                 <div class="slds-notify_container slds-is-absolute">
                     <div class="slds-notify slds-notify_toast slds-theme_warning" role="status">
@@ -516,14 +543,11 @@ session_start();
         ?>
         <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="header43" class="slds-modal slds-fade-in-open slds-modal_large slds-app-launcher">
             <div class="slds-modal__container">
-
-                <form method="post" class="slds-text-align_right">
-                    <button class=" slds-button slds-button_icon slds-modal__close slds-button_icon-inverse">
-                        <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
-                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
-                        </svg>
+                <!-- <form method="post" class="slds-text-align_right">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse">
+                            <img src="/assets/icons/utility/close_120.png" class="slds-button__icon slds-button__icon_large">
                     </button>
-                </form>
+                </form> -->
                 <div class="slds-modal__header">
                     <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">CART</h1>
                 </div>
@@ -801,7 +825,7 @@ session_start();
                             </div>
                         </fieldset>
                     </div>
-                    
+
                 </div>
             </div>
         </form>
@@ -935,18 +959,16 @@ session_start();
     $total_pages = ceil($numrows / $_SESSION['NumPage']);
     $pageURL = "";
     ?>
-    <div class="slds-grid <?php if ($disableBackground == true) echo "DisableBox" ?>">
-        <!-- block to show all product -->
-        <!-- id="showBox slds-form-element " -->
-        <div class=" slds-card slds-form-element slds-grid slds-wrap slds-size_<?php if (isset($_POST['viewDetail'])) echo 3;
-                                                                                else echo 4; ?>-of-4">
+    <div class="slds-grid">
+        <div class="slds-card slds-grid slds-wrap slds-p-around_small slds-size_<?php if (isset($_POST['viewDetail'])) echo 3;
+                                                                                                        else echo 4; ?>-of-4">
             <?php
             if ($numrows > 0) {
                 foreach ($categoryOnePageSQL as $item) {
             ?>
                     <!-- 1 product -->
                     <!-- product product<?php echo $_SESSION['NumPage']; ?> -->
-                    <div style="height:400px" class='slds-form-element__control slds-text-align_center slds-m-top_small   slds-size_1-of-<?php echo $_SESSION['NumPage'] / 2; ?> ' id="<?php echo $item['ProductID'] . '_' . $item['InvenID'] . '_' . $_SESSION['NumPage']; ?>">
+                    <div style="height:400px" class='slds-card slds-card_boundary slds-text-align_center slds-m-horizontal_x-small slds-m-top_medium slds-size_1-of-<?php echo $_SESSION['NumPage'] / 2 + 1; ?> ' id="<?php echo $item['ProductID'] . '_' . $item['InvenID'] . '_' . $_SESSION['NumPage']; ?>">
                         <!-- image -->
                         <div style="height:50%;display:block;" class="slds-form-element__control slds-is-relative ">
                             <img style="max-height:100%;max-width:100%" class="slds-p-around_large" src="<?php echo $item['Link']; ?>" style="border-radius: 10px">
@@ -997,7 +1019,7 @@ session_start();
             ?>
 
             <!-- Pagination -->
-            <div class="slds-form-element__control slds-size_2-of-2 slds-text-align_center slds-m-bottom_small">
+            <div class=" slds-size_2-of-2 slds-text-align_center slds-m-vertical_small">
                 <?php
                 for ($i = 1; $i <= $total_pages; $i++) {
                     if ($i == $_SESSION['page_number']) {
