@@ -129,12 +129,10 @@ session_start();
 
             //Change Num of product // <-- những chỗ logic phức tạp như này chú thích lại là đúng r đó
             if (isset($_POST['number' . $i])) {
-                $disableBackground = true;
-                $showCart = true;
                 if ($_POST['number' . $i] <= 0) {
                     $_SESSION['NumCart'][$i] = 1;
                 } else {
-                    $remainSQL = "SELECT Remain FROM productinventory WHERE productID=" . $_SESSION['Cart'][$i];
+                    $remainSQL = "SELECT Remain FROM productinventory WHERE productID=" . $_SESSION['Cart'][$i]." AND InvenID=".$_SESSION['StoreID'];
                     $remainValidate = mysqli_query($mysqli, $remainSQL);
                     $remain = 0;
                     foreach ($remainValidate as $item) {
@@ -177,7 +175,7 @@ session_start();
                 $showCart = true;
                 if (isset($_POST['incqty' . $i])) {
                     $_SESSION['NumCart'][$i]++;
-                    $remainSQL = "SELECT Remain FROM productinventory WHERE productID=" . $_SESSION['Cart'][$i];
+                    $remainSQL = "SELECT Remain FROM productinventory WHERE productID=" . $_SESSION['Cart'][$i] . " AND InvenID=" . $_SESSION['StoreID'];
                     $remainValidate = mysqli_query($mysqli, $remainSQL);
                     $remain = 0;
                     foreach ($remainValidate as $item) {
