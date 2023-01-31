@@ -8,54 +8,29 @@ session_start();
     <title>Page product</title>
     <link rel="stylesheet" href="interface.php">
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="cart.php">
     <link rel="stylesheet" href="cart.css">
     <link rel="stylesheet" href="assets/styles/salesforce-lightning-design-system-offline.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript">
     </script>
-
     <script>
-        function addToCart(event) {
-            console.log(event);
-            document.getElementById("bubble").innerHTML = event;
-        }
-    </script>
-    <script>
-        function Alert() {
-            alert("Error: product in different shop");
+        function viewDetail(event) {
+            const xhttp = new XMLHttpRequest();
+            var myArray = event.split("*_*");
+            var element1 = document.getElementById("productItems");
+            element1.classList.remove("slds-size_4-of-4");
+            element1.classList.add("slds-size_3-of-4");
+            var element2 = document.getElementById("show");
+            element2.classList.add("slds-size_1-of-4");
+            xhttp.onload = function() {
+                document.getElementById("show").innerHTML = this.responseText;
+            }
+            xhttp.open("GET", "interface.php?q=" + myArray[0] + "&r=" + myArray[1]);
+            xhttp.send();
         }
     </script>
 </head>
 
 <body>
-    <!-- <div class="slds-card-wrapper slds-grid">
-        <div class="slds-card slds-card_boundary">
-            <div class="slds-card__header slds-grid">
-                <header class="slds-media slds-media_center slds-has-flexi-truncate">
-                    <div class="slds-media__figure">
-                        <span class="slds-icon_container slds-icon-standard-contact" title="contact">
-                            <svg class="slds-icon slds-icon_small" aria-hidden="true">
-                                <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#contact"></use>
-                            </svg>
-                            <span class="slds-assistive-text">contact</span>
-                        </span>
-                    </div>
-                    <div class="slds-media__body">
-                        <h2 class="slds-card__header-title">
-                            <a href="#" class="slds-card__header-link slds-truncate" title="Contacts">
-                                <span>Contacts</span>
-                            </a>
-                        </h2>
-                    </div>
-                    <div class="slds-no-flex">
-                        <button class="slds-button slds-button_neutral">New</button>
-                    </div>
-                </header>
-            </div>
-            
-        </div>
-    </div> -->
-
     <?php
 
     $res = 0;
@@ -122,10 +97,6 @@ session_start();
         $res = round($res, 1);
         $res *= 1000;
         $_SESSION['rate'] = $res;
-    }
-    function showDetail($productID, $price, $remain, $storeID, $address, $link)
-    {
-        return $productID . '*_*' . transferNumber(round($price * $_SESSION['rate'])) . '*_*' . $remain . '*_*' . $storeID . '*_*' . $address . '*_*' . $link;
     }
     function findInformationProduct($event)
     {
@@ -373,10 +344,6 @@ session_start();
         if (isset($_POST['cancel'])) {
             $disableBackground = 0;
             $showCart = false;
-        }
-        //click View Detail
-        if (isset($_POST['viewDetail'])) {
-            $inforProduct = showDetail($_POST['ProductID'], $_POST['Price'], $_POST['Remain'], $_POST['StoreID'], $_POST['Address'], $_POST['link']);
         }
         // click Add To Cart
         if (isset($_POST['CartSubmit'])) {
@@ -960,15 +927,14 @@ session_start();
     $pageURL = "";
     ?>
     <div class="slds-grid">
-        <div class="slds-card slds-grid slds-wrap slds-p-around_small slds-size_<?php if (isset($_POST['viewDetail'])) echo 3;
-                                                                                                        else echo 4; ?>-of-4">
+        <div id="productItems" class="slds-card slds-grid slds-wrap slds-p-horizontal_xx-large slds-size_4-of-4">
             <?php
             if ($numrows > 0) {
                 foreach ($categoryOnePageSQL as $item) {
             ?>
                     <!-- 1 product -->
                     <!-- product product<?php echo $_SESSION['NumPage']; ?> -->
-                    <div style="height:400px" class='slds-card slds-card_boundary slds-text-align_center slds-m-horizontal_x-small slds-m-top_medium slds-size_1-of-<?php echo $_SESSION['NumPage'] / 2 + 1; ?> ' id="<?php echo $item['ProductID'] . '_' . $item['InvenID'] . '_' . $_SESSION['NumPage']; ?>">
+                    <div style="height:400px" class='items slds-card slds-card_boundary slds-text-align_center slds-m-horizontal_xxx-small slds-m-top_medium slds-size_1-of-<?php echo $_SESSION['NumPage'] / 2 + 1; ?> ' id="<?php echo $item['ProductID'] . '_' . $item['InvenID'] . '_' . $_SESSION['NumPage']; ?>">
                         <!-- image -->
                         <div style="height:50%;display:block;" class="slds-form-element__control slds-is-relative ">
                             <img style="max-height:100%;max-width:100%" class="slds-p-around_large" src="<?php echo $item['Link']; ?>" style="border-radius: 10px">
@@ -986,18 +952,11 @@ session_start();
                             <p style="font-weight:bold; color: black;margin-top:0px;height:3% "><?php echo TransferNumber(round($item['Price'] * $_SESSION['rate'])); ?> VND</p>
                             <!-- inventory -->
                             <p style="color: #000;height:3%"><?php echo $item['StoreName']; ?></p>
+
                             <div class="slds-p-around_small slds-text-align_center">
                                 <!-- view details -->
                                 <div class="slds-m-bottom_xx-small">
-                                    <form method="post">
-                                        <input type="hidden" name="ProductID" value="<?php echo $item['Product']; ?>" />
-                                        <input type="hidden" name="StoreID" value="<?php echo $item['StoreName']; ?>">
-                                        <input type="hidden" name="Remain" value="<?php echo $item['Empty']; ?>">
-                                        <input type="hidden" name="Price" value="<?php echo $item['Price']; ?>">
-                                        <input type="hidden" name="Address" value="<?php echo $item['Address']; ?>">
-                                        <input type="hidden" name="link" value="<?php echo $item['Link']; ?>">
-                                        <input type="submit" name="viewDetail" value="View Detail" class="slds-button slds-button_neutral">
-                                    </form>
+                                    <button class="slds-button slds-button_neutral" onclick='viewDetail("<?= $item['ProductID'] . '*_*' . $item['InvenID']; ?>")'>View Detail</button>
                                 </div>
                                 <!-- add to cart -->
                                 <div class="">
@@ -1039,45 +998,9 @@ session_start();
 
 
         <!-- block to show detail of product -->
-        <?php if (isset($_POST['viewDetail'])) {
-        ?>
-
-            <div class="slds-card slds-form-element slds-p-around_large slds-size_<?php if (isset($_POST['viewDetail'])) echo 1;
-                                                                                    else echo 0; ?>-of-4 slds-m-top_none">
-                <?php
-                $details = explode("*_*", $inforProduct);
-                ?>
-                <div style="height: 20%"></div>
-                <div style="height: 40%; padding:auto;" class="slds-p-around_large slds-text-align_center">
-                    <img src="<?php echo $details[5]; ?>" style="max-height:100%">
-                </div>
-                <div class="slds-form-element__control slds-text-align_center" style="height:30%;">
-                    <table class="slds-table " style="max-height:100%">
-                        <tr>
-                            <td>Name:</td>
-                            <td style="font-weight: bold"><?php echo $details[0]; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Price:</td>
-                            <td style="font-weight: bold"><?php echo $details[1]; ?> VND</td>
-                        </tr>
-                        <tr>
-                            <td>Remain:</td>
-                            <td style="font-weight: bold"><?php echo $details[2]; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Store:</td>
-                            <td style="font-weight: bold"><?php echo $details[3]; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Address:</td>
-                            <td style="font-weight: bold"><?php echo $details[4]; ?></td>
-                        </tr>
-                    </table>
-                </div>
-
-            </div>
-        <?php } ?>
+        <div id="show" class="slds-card slds-m-top_none">
+            <div style="height: 20%"></div>
+        </div>
     </div>
 
 </body>

@@ -10,9 +10,6 @@ session_start();
 </head>
 
 <body>
-
-
-
     <?php
     $mysqli = new mysqli("localhost", "root", "", "e_commerce");
     if ($mysqli->connect_error) {
@@ -47,14 +44,33 @@ session_start();
         return $str;
     }
     ?>
-    <div class="details">
-        <h1>Details</h1>
-        <br>
-        <h3> Product name: <span><?php echo $name; ?></span></h3>
-        <h3> Product price: <span class="infor"><?php echo TransferNumber(round($price * $_SESSION['rate'])); ?> VND</span></h3>
-        <h3> Remain: <span><?php echo $remain; ?></span></h3>
-        <h3> Store name: <span><?php echo $inven; ?></span></h3>
-        <h3> Address bill : <span><?php echo $address; ?></span></h3>
+    <div style="height: 20%"></div>
+    <div style="height: 40%; padding:auto;" class="slds-p-around_large slds-text-align_center">
+        <img src="<?=$link; ?>" style="max-height:100%">
+    </div>
+    <div class="slds-form-element__control slds-text-align_center" style="height:30%;">
+        <table class="slds-table " style="max-height:100%">
+            <tr>
+                <td>Name:</td>
+                <td style="font-weight: bold"><?=$name; ?></td>
+            </tr>
+            <tr>
+                <td>Price:</td>
+                <td style="font-weight: bold"><?=TransferNumber(round($price * $_SESSION['rate'])); ?> VND</td>
+            </tr>
+            <tr>
+                <td>Remain:</td>
+                <td style="font-weight: bold"><?=$remain; ?></td>
+            </tr>
+            <tr>
+                <td>Store:</td>
+                <td style="font-weight: bold"><?=$inven; ?></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td style="font-weight: bold"><?=$address; ?></td>
+            </tr>
+        </table>
     </div>
 </body>
 

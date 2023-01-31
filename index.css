@@ -1,63 +1,18 @@
 
+.mystyle{
+    background-color:red;
+}
+#myDiv{
+   color:blue;
+}
+.items:hover{
+    transform:scale(1.1);
+    z-index: 10;
+    border-radius:25px;
+}
+
 body{
     height: 100%;
-}
-.items{
-    margin-top:0px;
-    width: 100%;
-    text-align: center;
-}
-.itemss {
-
-    font-weight: bold;
-    border: 1px solid;
-    font-size: 18px;
-
-    color: black;
-
-    padding: 8px 16px;
-
-    text-decoration: none;
-
-    margin: 2px;
-
-}
-.current{
-    float: left;
-    border: 1px solid;
-    width: 5%;
-}
-.next{
-    border: 1px solid;
-    float: left;
-    width: 5%;
-}
-.Prev{
-    border: 1px solid;
-    float: left;
-    width: 5%;
-    margin-left:40%;
-}
-.active {
-    font-weight: bold;
-    border: 1px solid;
-    font-size: 18px;
-
-    color: black;
-
-    padding: 8px 16px;
-
-    text-decoration: none;
-
-    margin: 2px;
-    background-color: rgba(175, 201, 244, 0.97);
-
-}
-
-.itemss:hover:not(.active) {
-
-    background-color: #87ceeb;
-
 }
 #form{
     width: 100%;
@@ -85,24 +40,6 @@ body{
     border-radius: 25px;
     z-index: 1;
     background-color:  white;
-}
-/* .product:hover{
-    transform:scale(1.1);
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-} */
-.details {
-   
-    padding: 20px;
-    float: right;
-    text-align: left;
-    position: sticky;
-    position: -webkit-sticky;
-    margin-top: 50px;
-    margin-right: 0px;
-    width: 20%;
-    height: 450px;
-    border-radius: 15px;
-    background-image: linear-gradient(#7EE8FA, #fdf9fa);
 }
 .LargeCat,.ChildCat{
     text-align: left;
@@ -162,21 +99,6 @@ body{
     font-size: 1.5rem;
     margin-bottom: 5px;
     
-}
-#NumOfPro{
-    float: left;
-}
-#submit{
-    background-color: rgb(34, 93, 244);
-    color: white;
-    font-size: 1.5rem;
-    border-radius: 5px;
-}
-#ClearSearch{
-    background-color: rgb(225, 56, 56);
-    color: white;
-    font-size: 1.5rem;
-    border-radius: 5px;
 }
 #IsPublic,#IsEmpty{
     font-size: 1.2rem;
