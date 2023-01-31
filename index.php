@@ -27,10 +27,21 @@ session_start();
             xhttp.open("GET", "interface.php?q=" + myArray[0] + "&r=" + myArray[1]);
             xhttp.send();
         }
+
+        function addCart(event) {
+            const xhttp = new XMLHttpRequest();
+            var myArray = event.split("*_*");
+            xhttp.onload = function() {
+                document.getElementById("count").innerHTML = this.responseText;
+            }
+            xhttp.open("GET", "cart.php?q=" + myArray[0] + "&r=" + myArray[1]);
+            xhttp.send();
+        }
     </script>
 </head>
 
 <body>
+
     <?php
 
     $res = 0;
@@ -637,166 +648,167 @@ session_start();
     }
     ?>
 
+    <button onclick="increase()">Add</button>
+    <div id="count" class=""><?php echo $_SESSION['NumCart'][0]; ?> </div>
+
 
     <!-- FORM -->
-
-    <div>
-        <form method="post">
-            <div class="slds-card slds-form-element">
-                <!-- Input KEYWORD -->
-                <div class="slds-form-element__control slds-card__header slds-size_2-of-2">
-                    <input class="slds-input " id="fontSize" type="text" placeholder="Enter keyword..." name="KeyWord" value="<?php echo $_SESSION["KeyWord"]; ?>">
-                </div>
-
-                <!-- Input CATEGORY -->
-                <div class="slds-form-element__control slds-card__header slds-grid">
-                    <div class="slds-size_1-of-2 slds-text-align_left ">
-                        <select id="LargeCategory" class="slds-select" name="LargeName" onchange="giveSelection(this.value)">
-                            <?php
-                            foreach ($categorySelectorDB as $item) {
-                                if ($item['hierarchy_level'] == 0) {
-                            ?>
-                                    <option <?php if ($_SESSION['Large'] == $item['ProName']) { ?>selected="true" <?php }; ?>value="<?php echo $item['ProName']; ?>"><?php echo $item['ProName']; ?></option>
-                            <?php
-                                }
-                            }
-                            ?>
-                            <option <?php if ($_SESSION['Large'] == "" || isset($_POST['ClearSearch'])) { ?>selected="true" <?php }; ?> value="">Large Category</option>
-                        </select>
-                    </div>
-                    <div class="slds-size_1-of-2 slds-text-align_right">
-                        <select id="ChildCategory" name="ChildName" class="slds-select ">
-                            <?php
-
-                            foreach ($categorySelectorDB as $child) {
-                                if ($child['hierarchy_level'] == 1) {
-                            ?>
-                                    <option <?php if ($_SESSION['Child'] == $child['ProName']) { ?>selected="true" <?php }; ?>data-option="<?php echo $child['CatName']; ?>" value="<?php echo $child['ProName']; ?>"><?php echo $child['ProName']; ?></option>
-
-                                <?php
-                                } else {
-                                ?>
-                                    <option <?php if ($_SESSION['Child'] == "") { ?>selected="true" <?php }; ?> data-option="<?php echo $child['ProName']; ?>" value="">Child Category</option>
-
-                            <?php
-                                }
-                            }
-
-                            ?>
-                            <option <?php if ($_SESSION['Child'] == "" || isset($_POST['ClearSearch'])) { ?>selected=" true" <?php }; ?> data-option="" value="">Child Category</option>
-                        </select>
-                    </div>
-
-                </div>
-
-                <!-- Input PRICE -->
-                <div class="slds-form-element__control slds-card__header slds-grid">
-                    <div class="slds-size_1-of-2 slds-text-align_left">
-                        <input id="price" class="slds-input" type="text" placeholder="Price from" id="MinPrice" name="MinPrice" value="<?php echo $_SESSION['Min']; ?>">
-                        <p id="ChildComent" style="color: red; font-size: 1.5rem;font-weight:bold"><?php echo $_SESSION['faultmin']; ?></p><br>
-                    </div>
-                    <div class="slds-size_1-of-2 slds-text-align_right">
-                        <input id="price" class="slds-input" type="text" placeholder="Price to" id="MaxPrice" name="MaxPrice" value="<?php echo $_SESSION['Max']; ?>">
-                        <p id="ChildComent" style="color: red; font-size: 1.5rem;font-weight:bold"><?php echo $_SESSION['faultmax']; ?></p>
-                    </div>
-                </div>
-
-                <!-- Input EMPTY/PUBLIC -->
-                <div class="slds-form-element__control slds-card__header slds-grid">
-                    <div class="slds-checkbox ">
-                        <input type="checkbox" name="Publish" id="IsPublic" value="1" <?php echo $_SESSION['CheckedPublic']; ?> />
-                        <label class="slds-checkbox__label" for="IsPublic">
-                            <span class="slds-checkbox_faux"></span>
-                            <span class="slds-form-element__label">Is Public?</span>
-                        </label>
-                    </div>
-                    <div class="slds-checkbox">
-                        <input type="checkbox" name="Empty" id="IsEmpty" value="1" <?php echo $_SESSION['CheckedEmpty']; ?> />
-                        <label class="slds-checkbox__label" for="IsEmpty">
-                            <span class="slds-checkbox_faux"></span>
-                            <span class="slds-form-element__label">Empty inventory?</span>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- click Search/ClearSearch -->
-                <div class="slds-form-element__control slds-card__header slds-grid">
-                    <div class="slds-text-align_right slds-size_1-of-2 slds-m-right_x-small">
-                        <input class="slds-button slds-button_brand " type="submit" name="submit" value="Search">
-                    </div>
-                    <div class="slds-text-align_left slds-size_1-of-2">
-                        <input class="slds-button slds-button_destructive" type="submit" name="ClearSearch" value="Clear Search" />
-                    </div>
-                </div>
+    <form method="post">
+        <div class="slds-card slds-form-element">
+            <!-- Input KEYWORD -->
+            <div class="slds-form-element__control slds-card__header slds-size_2-of-2">
+                <input class="slds-input " id="fontSize" type="text" placeholder="Enter keyword..." name="KeyWord" value="<?php echo $_SESSION["KeyWord"]; ?>">
             </div>
-        </form>
-        <form method="post">
-            <!-- filter by NUMBER OF PRODUCT -->
-            <div class="slds-form-element__control slds-grid slds-m-top_large slds-m-bottom_large">
-                <div class="slds-size_3-of-4 slds-text-align_left slds-p-left_large slds-form-element__control">
-                    <select class="slds-select slds-size_1-of-8" name="NumOfPro" onchange="this.form.submit()">
-                        <option value="12" <?php if ($_SESSION["NumPage"] == 12) echo 'selected=true'; ?>>12</option>
-                        <option value="10" <?php if ($_SESSION["NumPage"] == 10) echo 'selected=true'; ?>>10</option>
-                        <option value="8" <?php if ($_SESSION["NumPage"] == 8) echo 'selected=true'; ?>>8</option>
 
+            <!-- Input CATEGORY -->
+            <div class="slds-form-element__control slds-card__header slds-grid">
+                <div class="slds-size_1-of-2 slds-text-align_left ">
+                    <select id="LargeCategory" class="slds-select" name="LargeName" onchange="giveSelection(this.value)">
+                        <?php
+                        foreach ($categorySelectorDB as $item) {
+                            if ($item['hierarchy_level'] == 0) {
+                        ?>
+                                <option <?php if ($_SESSION['Large'] == $item['ProName']) { ?>selected="true" <?php }; ?>value="<?php echo $item['ProName']; ?>"><?php echo $item['ProName']; ?></option>
+                        <?php
+                            }
+                        }
+                        ?>
+                        <option <?php if ($_SESSION['Large'] == "" || isset($_POST['ClearSearch'])) { ?>selected="true" <?php }; ?> value="">Large Category</option>
+                    </select>
+                </div>
+                <div class="slds-size_1-of-2 slds-text-align_right">
+                    <select id="ChildCategory" name="ChildName" class="slds-select ">
+                        <?php
+
+                        foreach ($categorySelectorDB as $child) {
+                            if ($child['hierarchy_level'] == 1) {
+                        ?>
+                                <option <?php if ($_SESSION['Child'] == $child['ProName']) { ?>selected="true" <?php }; ?>data-option="<?php echo $child['CatName']; ?>" value="<?php echo $child['ProName']; ?>"><?php echo $child['ProName']; ?></option>
+
+                            <?php
+                            } else {
+                            ?>
+                                <option <?php if ($_SESSION['Child'] == "") { ?>selected="true" <?php }; ?> data-option="<?php echo $child['ProName']; ?>" value="">Child Category</option>
+
+                        <?php
+                            }
+                        }
+
+                        ?>
+                        <option <?php if ($_SESSION['Child'] == "" || isset($_POST['ClearSearch'])) { ?>selected=" true" <?php }; ?> data-option="" value="">Child Category</option>
                     </select>
                 </div>
 
-                <!-- CART -->
-                <div class="slds-size_1-of-4 slds-grid">
-                    <div class="slds-size_1-of-4 slds-is-relative">
-                        <div class="">
-                            <form method="post">
-                                <button class="slds-button slds-size_3-of-4 slds-button_outline-brand slds-is-relative" name="subCart" onclick="DisableBox()">Cart</button>
-                            </form>
-                        </div>
-                        <div class="bubble slds-is-absolute" id="bubble" style="left:66%;">
-                            <?php
-                            $val = 0;
-                            for ($i = 0; $i < count($_SESSION['NumCart']); $i++) {
-                                $val += $_SESSION['NumCart'][$i];
-                            }
-                            echo $val;
-                            ?>
-                        </div>
-                        <!-- BUBBLE -->
-                    </div>
+            </div>
 
-
-                    <!-- filter by NAME/PRICE -->
-                    <div class="slds-size_1-of-4 slds-text-align_right">
-                        <select class="slds-select" name="SortBy" onchange="this.form.submit()">
-                            <option value="name" <?php if ($_SESSION["Field"] == 'name') echo 'selected=true'; ?>>Name</option>
-                            <option value="price" <?php if ($_SESSION["Field"] == 'price') echo 'selected=true'; ?>>Price</option>
-                        </select>
-                    </div>
-
-                    <!-- filter by ASC/DESC -->
-                    <div class="slds-size_1-of-2 slds-m-left_small">
-                        <fieldset class="slds-form-element">
-                            <div class="slds-form-element__control">
-                                <div class="slds-radio_button-group">
-                                    <span class="slds-button slds-radio_button">
-                                        <input type="radio" name="sort" id="ASC" value="ASC" onclick="this.form.submit()" <?php if ($_SESSION["Order"] == 'ASC') echo 'checked'; ?> />
-                                        <label class="slds-radio_button__label" for="ASC">
-                                            <span class="slds-radio_faux">ASC</span>
-                                        </label>
-                                    </span>
-                                    <span class="slds-button slds-radio_button">
-                                        <input type="radio" name="sort" id="DESC" value="DESC" onclick="this.form.submit()" <?php if ($_SESSION["Order"] == 'DESC') echo 'checked'; ?> />
-                                        <label class="slds-radio_button__label" for="DESC">
-                                            <span class="slds-radio_faux">DESC</span>
-                                        </label>
-                                    </span>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-
+            <!-- Input PRICE -->
+            <div class="slds-form-element__control slds-card__header slds-grid">
+                <div class="slds-size_1-of-2 slds-text-align_left">
+                    <input id="price" class="slds-input" type="text" placeholder="Price from" id="MinPrice" name="MinPrice" value="<?php echo $_SESSION['Min']; ?>">
+                    <p id="ChildComent" style="color: red; font-size: 1.5rem;font-weight:bold"><?php echo $_SESSION['faultmin']; ?></p><br>
+                </div>
+                <div class="slds-size_1-of-2 slds-text-align_right">
+                    <input id="price" class="slds-input" type="text" placeholder="Price to" id="MaxPrice" name="MaxPrice" value="<?php echo $_SESSION['Max']; ?>">
+                    <p id="ChildComent" style="color: red; font-size: 1.5rem;font-weight:bold"><?php echo $_SESSION['faultmax']; ?></p>
                 </div>
             </div>
-        </form>
-    </div>
+
+            <!-- Input EMPTY/PUBLIC -->
+            <div class="slds-form-element__control slds-card__header slds-grid">
+                <div class="slds-checkbox ">
+                    <input type="checkbox" name="Publish" id="IsPublic" value="1" <?php echo $_SESSION['CheckedPublic']; ?> />
+                    <label class="slds-checkbox__label" for="IsPublic">
+                        <span class="slds-checkbox_faux"></span>
+                        <span class="slds-form-element__label">Is Public?</span>
+                    </label>
+                </div>
+                <div class="slds-checkbox">
+                    <input type="checkbox" name="Empty" id="IsEmpty" value="1" <?php echo $_SESSION['CheckedEmpty']; ?> />
+                    <label class="slds-checkbox__label" for="IsEmpty">
+                        <span class="slds-checkbox_faux"></span>
+                        <span class="slds-form-element__label">Empty inventory?</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- click Search/ClearSearch -->
+            <div class="slds-form-element__control slds-card__header slds-grid">
+                <div class="slds-text-align_right slds-size_1-of-2 slds-m-right_x-small">
+                    <input class="slds-button slds-button_brand " type="submit" name="submit" value="Search">
+                </div>
+                <div class="slds-text-align_left slds-size_1-of-2">
+                    <input class="slds-button slds-button_destructive" type="submit" name="ClearSearch" value="Clear Search" />
+                </div>
+            </div>
+        </div>
+    </form>
+    <form method="post">
+        <!-- filter by NUMBER OF PRODUCT -->
+        <div class="slds-form-element__control slds-grid slds-m-top_large slds-m-bottom_large">
+            <div class="slds-size_3-of-4 slds-text-align_left slds-p-left_large slds-form-element__control">
+                <select class="slds-select slds-size_1-of-8" name="NumOfPro" onchange="this.form.submit()">
+                    <option value="12" <?php if ($_SESSION["NumPage"] == 12) echo 'selected=true'; ?>>12</option>
+                    <option value="10" <?php if ($_SESSION["NumPage"] == 10) echo 'selected=true'; ?>>10</option>
+                    <option value="8" <?php if ($_SESSION["NumPage"] == 8) echo 'selected=true'; ?>>8</option>
+
+                </select>
+            </div>
+
+            <!-- CART -->
+            <div class="slds-size_1-of-4 slds-grid">
+                <div class="slds-size_1-of-4 slds-is-relative">
+                    <div class="">
+                        <form method="post">
+                            <button class="slds-button slds-size_3-of-4 slds-button_outline-brand slds-is-relative" name="subCart" onclick="DisableBox()">Cart</button>
+                        </form>
+                    </div>
+                    <div class="bubble slds-is-absolute" id="bubble" style="left:66%;">
+                        <?php
+                        $val = 0;
+                        for ($i = 0; $i < count($_SESSION['NumCart']); $i++) {
+                            $val += $_SESSION['NumCart'][$i];
+                        }
+                        echo $val;
+                        ?>
+                    </div>
+                    <!-- BUBBLE -->
+                </div>
+
+
+                <!-- filter by NAME/PRICE -->
+                <div class="slds-size_1-of-4 slds-text-align_right">
+                    <select class="slds-select" name="SortBy" onchange="this.form.submit()">
+                        <option value="name" <?php if ($_SESSION["Field"] == 'name') echo 'selected=true'; ?>>Name</option>
+                        <option value="price" <?php if ($_SESSION["Field"] == 'price') echo 'selected=true'; ?>>Price</option>
+                    </select>
+                </div>
+
+                <!-- filter by ASC/DESC -->
+                <div class="slds-size_1-of-2 slds-m-left_small">
+                    <fieldset class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <div class="slds-radio_button-group">
+                                <span class="slds-button slds-radio_button">
+                                    <input type="radio" name="sort" id="ASC" value="ASC" onclick="this.form.submit()" <?php if ($_SESSION["Order"] == 'ASC') echo 'checked'; ?> />
+                                    <label class="slds-radio_button__label" for="ASC">
+                                        <span class="slds-radio_faux">ASC</span>
+                                    </label>
+                                </span>
+                                <span class="slds-button slds-radio_button">
+                                    <input type="radio" name="sort" id="DESC" value="DESC" onclick="this.form.submit()" <?php if ($_SESSION["Order"] == 'DESC') echo 'checked'; ?> />
+                                    <label class="slds-radio_button__label" for="DESC">
+                                        <span class="slds-radio_faux">DESC</span>
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+            </div>
+        </div>
+    </form>
+
 
 
 
@@ -958,6 +970,9 @@ session_start();
                                 <div class="slds-m-bottom_xx-small">
                                     <button class="slds-button slds-button_neutral" onclick='viewDetail("<?= $item['ProductID'] . '*_*' . $item['InvenID']; ?>")'>View Detail</button>
                                 </div>
+                                <div class="slds-m-bottom_xx-small">
+                                    <button class="slds-button " onclick='addCart("<?= $item['ProductID'] . '*_*' . $item['InvenID']; ?>")'>Click</button>
+                                </div>
                                 <!-- add to cart -->
                                 <div class="">
                                     <form method="post">
@@ -966,7 +981,6 @@ session_start();
                                         <input class="slds-button slds-button_neutral" name="CartSubmit" type="submit" value="Add To Cart" <?php if ($item['Empty'] == 0) echo "disabled";  ?>>
                                     </form>
                                 </div>
-                                <!-- sold-out -->
                             </div>
 
                         </div>
@@ -999,7 +1013,6 @@ session_start();
 
         <!-- block to show detail of product -->
         <div id="show" class="slds-card slds-m-top_none">
-            <div style="height: 20%"></div>
         </div>
     </div>
 
