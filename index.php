@@ -140,12 +140,10 @@ session_start();
 
             //Change Num of product // <-- những chỗ logic phức tạp như này chú thích lại là đúng r đó
             if (isset($_POST['number' . $i])) {
-                $disableBackground = true;
-                $showCart = true;
                 if ($_POST['number' . $i] <= 0) {
                     $_SESSION['NumCart'][$i] = 1;
                 } else {
-                    $remainSQL = "SELECT Remain FROM productinventory WHERE productID=" . $_SESSION['Cart'][$i];
+                    $remainSQL = "SELECT Remain FROM productinventory WHERE productID=" . $_SESSION['Cart'][$i] . " AND InvenID=" . $_SESSION['StoreID'];
                     $remainValidate = mysqli_query($mysqli, $remainSQL);
                     $remain = 0;
                     foreach ($remainValidate as $item) {
@@ -159,7 +157,6 @@ session_start();
 
             //click DELETE product
             if (isset($_POST['delete' . $i]) || $_SESSION['NumCart'][$i] == 0) {
-                $disableBackground = true;
     ?>
                 <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
                     <div class="slds-modal__container">
@@ -184,11 +181,9 @@ session_start();
             }
             //click INCREASE/DECREASE product
             if (isset($_POST['incqty' . $i]) || isset($_POST['decqty' . $i])) {
-                $disableBackground = true;
-                $showCart = true;
                 if (isset($_POST['incqty' . $i])) {
                     $_SESSION['NumCart'][$i]++;
-                    $remainSQL = "SELECT Remain FROM productinventory WHERE productID=" . $_SESSION['Cart'][$i];
+                    $remainSQL = "SELECT Remain FROM productinventory WHERE productID=" . $_SESSION['Cart'][$i]." AND InvenID=".$_SESSION['StoreID'];
                     $remainValidate = mysqli_query($mysqli, $remainSQL);
                     $remain = 0;
                     foreach ($remainValidate as $item) {
@@ -208,16 +203,12 @@ session_start();
             }
             //Agree DELETE
             if (isset($_POST['YPermit' . $i])) {
-                $disableBackground = true;
                 array_splice($_SESSION['NumCart'], $i, 1);
                 array_splice($_SESSION['Cart'], $i, 1);
-                $showCart = true;
                 break;
             }
             //Disagree DELETE
             if (isset($_POST['NPermit' . $i])) {
-                $disableBackground = true;
-                $showCart = true;
                 break;
             }
         }
@@ -649,7 +640,8 @@ session_start();
     ?>
 
     <button onclick="increase()">Add</button>
-    <div id="count" class=""><?php echo $_SESSION['NumCart'][0]; ?> </div>
+    <div id="count" class=""><?php if (count($_SESSION['NumCart']) == 0)
+        echo 0; else echo $_SESSION['NumCart'][0]; ?> </div>
 
 
     <!-- FORM -->
