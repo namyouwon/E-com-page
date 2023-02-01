@@ -32,16 +32,50 @@ session_start();
             const xhttp = new XMLHttpRequest();
             var myArray = event.split("*_*");
             xhttp.onload = function() {
-                document.getElementById("count").innerHTML = this.responseText;
+                document.getElementById("bubble").innerHTML = this.responseText;
             }
             xhttp.open("GET", "cart.php?q=" + myArray[0] + "&r=" + myArray[1]);
             xhttp.send();
+            var x = document.getElementById("snackbar");
+            x.className = "show";
+            setTimeout(function() {
+                x.className = x.className.replace("show", "");
+            }, 2000);
+        }
+
+        function myFunction() {
+
         }
     </script>
 </head>
 
 <body>
-
+    <div id="snackbar" class="slds-notify_container slds-is-relative">
+        <div class="slds-notify slds-notify_toast slds-theme_success" role="status">
+            <span class="slds-assistive-text">success</span>
+            <span class="slds-icon_container slds-icon-utility-success slds-m-right_small slds-no-flex slds-align-top" title="Description of icon when needed">
+                <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#success"></use>
+                </svg>
+            </span>
+            <div class="slds-notify__content">
+                <h2 class="slds-text-heading_small ">Added successfully</h2>
+            </div>
+        </div>
+    </div>
+    <div id="warning_bar" class="slds-notify_container slds-is-relative">
+        <div class="slds-notify slds-notify_toast slds-theme_warning" role="status">
+            <span class="slds-assistive-text">warning</span>
+            <span class="slds-icon_container slds-icon-utility-warning slds-m-right_small slds-no-flex slds-align-top" title="Description of icon when needed">
+                <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#warning"></use>
+                </svg>
+            </span>
+            <div class="slds-notify__content">
+                <h2 class="slds-text-heading_small ">Please choose product in <?=$_SESSION['StoreID'];?> shop</h2>
+            </div>
+        </div>
+    </div>
     <?php
 
     $res = 0;
@@ -136,10 +170,11 @@ session_start();
 
         //Inc,Dec,Delete,ChangeNum in Cart
         for ($i = 0; $i < count($_SESSION['NumCart']); $i++) {
-            $_SESSION['NumCart'][$i] = isset($_POST["number" . $i]) ? $_POST['number' . $i] : $_SESSION['NumCart'][$i];
 
+            $_SESSION['NumCart'][$i] = isset($_POST["number" . $i]) ? $_POST['number' . $i] : $_SESSION['NumCart'][$i];
             //Change Num of product // <-- những chỗ logic phức tạp như này chú thích lại là đúng r đó
             if (isset($_POST['number' . $i])) {
+                $showCart = true;
                 if ($_POST['number' . $i] <= 0) {
                     $_SESSION['NumCart'][$i] = 1;
                 } else {
@@ -181,9 +216,10 @@ session_start();
             }
             //click INCREASE/DECREASE product
             if (isset($_POST['incqty' . $i]) || isset($_POST['decqty' . $i])) {
+                $showCart = true;
                 if (isset($_POST['incqty' . $i])) {
                     $_SESSION['NumCart'][$i]++;
-                    $remainSQL = "SELECT Remain FROM productinventory WHERE productID=" . $_SESSION['Cart'][$i]." AND InvenID=".$_SESSION['StoreID'];
+                    $remainSQL = "SELECT Remain FROM productinventory WHERE productID=" . $_SESSION['Cart'][$i] . " AND InvenID=" . $_SESSION['StoreID'];
                     $remainValidate = mysqli_query($mysqli, $remainSQL);
                     $remain = 0;
                     foreach ($remainValidate as $item) {
@@ -639,10 +675,6 @@ session_start();
     }
     ?>
 
-    <button onclick="increase()">Add</button>
-    <div id="count" class=""><?php if (count($_SESSION['NumCart']) == 0)
-        echo 0; else echo $_SESSION['NumCart'][0]; ?> </div>
-
 
     <!-- FORM -->
     <form method="post">
@@ -963,7 +995,7 @@ session_start();
                                     <button class="slds-button slds-button_neutral" onclick='viewDetail("<?= $item['ProductID'] . '*_*' . $item['InvenID']; ?>")'>View Detail</button>
                                 </div>
                                 <div class="slds-m-bottom_xx-small">
-                                    <button class="slds-button " onclick='addCart("<?= $item['ProductID'] . '*_*' . $item['InvenID']; ?>")'>Click</button>
+                                    <button class="slds-button " onclick='addCart("<?= $item['ProductID'] . '*_*' . $item['InvenID']. '*_*' .$_SESSION['StoreID']; ?>")'>Click</button>
                                 </div>
                                 <!-- add to cart -->
                                 <div class="">
